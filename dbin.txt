@@ -1,0 +1,20 @@
+[Start]
+title=Test
+description=This is a card with a description here.
+effect_type=3
+effect_amount=4
+min_wpm=110
+min_accuracy=20
+icon_sheet=0
+icon_index=22
+[End]
+[Start]
+title=Test 2
+description=The quick brown fox jumped over the lazy dog.
+effect_type=4
+effect_amount=5
+min_wpm=120
+min_accuracy=90
+icon_sheet=0
+icon_index=10
+[End]

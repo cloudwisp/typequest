@@ -1,0 +1,12 @@
+*.bak
+*.obj
+*.exe
+*.~de
+*.r$p
+Thumbs.db
+*.mrt
+*.csm
+*.tfw
+*.tpw
+*.dsw
+*.mbt
