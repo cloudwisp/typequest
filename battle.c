@@ -12,17 +12,16 @@
 #include "keyboard.h"
 #include "battle.h"
 #include "state.h"
+#include "fonts.h"
 
 
 int sprite_x, sprite_y;
 int i,x,y;
 unsigned int k;
 BITMAP backimg;
-BITMAP venice_fontimg;
+
 BITMAP cardbg;
-BitmapFont venice_font;
-BITMAP silk_fontimg;
-BitmapFont silk_font;
+
 GlyphSet johnny;
 GlyphSet test;
 GlyphRenderInfo curRenderChar;
@@ -52,12 +51,7 @@ void init_battle(){
   load_bmp("castle.bmp", &backimg);
   load_bmp("card.bmp", &cardbg);
 
-  load_bmp("venice2.bmp", &venice_fontimg);
-  parseFntFile("venice.fnt", &venice_font);
-
-  load_bmp("font/silkscr/silk8.bmp", &silk_fontimg);
-  parseFntFile("font/silkscr/silkscr8.fnt", &silk_font);
-
+  
   get_text_glyphs(&venice_font, &johnny,
 	 "There was Johnny McEldoo and Mcgee and me and a couple two or three went on a spree one day",
 	  10, 10, 300, 140, ALIGN_RIGHT, ALIGN_MIDDLE);
@@ -68,8 +62,6 @@ void init_battle(){
 void destroy_battle(){
   farfree(cardbg.data);
   farfree(backimg.data);
-  farfree(venice_fontimg.data);
-  farfree(silk_fontimg.data);
 }
 
 void update_battle(){
@@ -126,9 +118,9 @@ void keypress_battle(KeyEvent key){
 
 				}
 				if (key.code == johnny.glyphs[curGlyph].charId){
-					johnny.glyphs[curGlyph].style = GLYPHSTYLE_CORRECT;
+					johnny.glyphs[curGlyph].style = Correct;
 				} else {
-					johnny.glyphs[curGlyph].style = GLYPHSTYLE_ERROR;
+					johnny.glyphs[curGlyph].style = Incorrect;
 					errors++;
 				}
 				curGlyph++;
@@ -136,6 +128,6 @@ void keypress_battle(KeyEvent key){
 				 battleEnd = 1;
              return;
 				}
-				johnny.glyphs[curGlyph].style = GLYPHSTYLE_NEXT;
+				johnny.glyphs[curGlyph].style = Next;
 			}
 }

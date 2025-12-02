@@ -2,32 +2,33 @@
  Start  Stop   Length Name               Class
 
  00000H 0857BH 0857CH _TEXT              CODE
- 0857CH 087D9H 0025EH BATTLE_TEXT        CODE
- 087DAH 087F2H 00019H MENU_TEXT          CODE
- 087F3H 08888H 00096H STATE_TEXT         CODE
- 08889H 088C3H 0003BH KEYBOARD_TEXT      CODE
- 088C4H 092D0H 00A0DH BMPFNT_TEXT        CODE
- 092D1H 097BFH 004EFH BITMAP_TEXT        CODE
- 097C0H 098A2H 000E3H VGA_TEXT           CODE
- 098A3H 09917H 00075H DRAW_TEXT          CODE
- 09918H 09918H 00000H GLOBALS_TEXT       CODE
- 09918H 09A82H 0016BH TYPEQUES_TEXT      CODE
- 09A83H 0A6D0H 00C4EH _TEXTC             CODE
- 0A6E0H 0A6E0H 00000H _FARDATA           FAR_DATA
- 0A6E0H 0A6E0H 00000H _FARBSS            FAR_BSS
- 0A6E0H 0A6E0H 00000H _OVERLAY_          OVRINFO
- 0A6E0H 0A6E0H 00000H _1STUB_            STUBSEG
- 0A6E0H 0BA6FH 01390H _DATA              DATA
- 0BA70H 0BA71H 00002H _CVTSEG            DATA
- 0BA72H 0BA77H 00006H _SCNSEG            DATA
- 0BA78H 0BA78H 00000H _CONST             CONST
- 0BA78H 0BA9BH 00024H _INIT_             INITDATA
- 0BA9CH 0BA9CH 00000H _INITEND_          INITDATA
- 0BA9CH 0BAADH 00012H _EXIT_             EXITDATA
- 0BAAEH 0BAAEH 00000H _EXITEND_          EXITDATA
- 0BAAEH 10D67H 052BAH _BSS               BSS
- 10D68H 10D68H 00000H _BSSEND            BSSEND
- 10D70H 10DEFH 00080H _STACK             STACK
+ 0857CH 085E5H 0006AH FONTS_TEXT         CODE
+ 085E6H 087E3H 001FEH BATTLE_TEXT        CODE
+ 087E4H 08926H 00143H MENU_TEXT          CODE
+ 08927H 089BCH 00096H STATE_TEXT         CODE
+ 089BDH 089F7H 0003BH KEYBOARD_TEXT      CODE
+ 089F8H 09404H 00A0DH BMPFNT_TEXT        CODE
+ 09405H 098F3H 004EFH BITMAP_TEXT        CODE
+ 098F4H 099D6H 000E3H VGA_TEXT           CODE
+ 099D7H 09A4BH 00075H DRAW_TEXT          CODE
+ 09A4CH 09A4CH 00000H GLOBALS_TEXT       CODE
+ 09A4CH 09BC0H 00175H TYPEQUES_TEXT      CODE
+ 09BC1H 0A80EH 00C4EH _TEXTC             CODE
+ 0A810H 0A810H 00000H _FARDATA           FAR_DATA
+ 0A810H 0A810H 00000H _FARBSS            FAR_BSS
+ 0A810H 0A810H 00000H _OVERLAY_          OVRINFO
+ 0A810H 0A810H 00000H _1STUB_            STUBSEG
+ 0A810H 0BC09H 013FAH _DATA              DATA
+ 0BC0AH 0BC0BH 00002H _CVTSEG            DATA
+ 0BC0CH 0BC11H 00006H _SCNSEG            DATA
+ 0BC12H 0BC12H 00000H _CONST             CONST
+ 0BC12H 0BC35H 00024H _INIT_             INITDATA
+ 0BC36H 0BC36H 00000H _INITEND_          INITDATA
+ 0BC36H 0BC47H 00012H _EXIT_             EXITDATA
+ 0BC48H 0BC48H 00000H _EXITEND_          EXITDATA
+ 0BC48H 13489H 07842H _BSS               BSS
+ 1348AH 1348AH 00000H _BSSEND            BSSEND
+ 13490H 1350FH 00080H _STACK             STACK
 
   Address         Publics by Name
 
@@ -37,32 +38,32 @@
  0000:3A12       set_new_handler(void(far*)())
  0000:4706       set_terminate(void(far*)())
  0000:4803       set_unexpected(void(far*)())
- 09A8:0003       string::string(const string far&)
- 09A8:00EC       string::string(const char far*)
- 09A8:0308       string::~string()
- 09A8:038F       string::assert_element(unsigned int) const
- 09A8:044D       string::assert_index(unsigned int) const
- 0A6E:132A       string::case_sensitive
- 0A6E:1334       string::freeboard
- 0A6E:1330       string::initial_capac
- 09A8:0A9D       string::initial_capacity(unsigned int)
- 09A8:0AE4       string::max_waste(unsigned int)
- 0A6E:132C       string::paranoid_check
- 0A6E:1332       string::resize_inc
- 09A8:0ABA       string::resize_increment(unsigned int)
- 09A8:0A46       string::set_case_sensitive(int)
- 09A8:0A63       string::set_paranoid_check(int)
- 0A6E:132E       string::skip_white
- 09A8:0A80       string::skip_whitespace(int)
+ 09BC:0001       string::string(const string far&)
+ 09BC:00EA       string::string(const char far*)
+ 09BC:0306       string::~string()
+ 09BC:038D       string::assert_element(unsigned int) const
+ 09BC:044B       string::assert_index(unsigned int) const
+ 0A81:1394       string::case_sensitive
+ 0A81:139E       string::freeboard
+ 0A81:139A       string::initial_capac
+ 09BC:0A9B       string::initial_capacity(unsigned int)
+ 09BC:0AE2       string::max_waste(unsigned int)
+ 0A81:1396       string::paranoid_check
+ 0A81:139C       string::resize_inc
+ 09BC:0AB8       string::resize_increment(unsigned int)
+ 09BC:0A44       string::set_case_sensitive(int)
+ 09BC:0A61       string::set_paranoid_check(int)
+ 0A81:1398       string::skip_white
+ 09BC:0A7E       string::skip_whitespace(int)
  0000:46FC       terminate()
- 09A8:05C6       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
- 09A8:06AF       tstringref::~tstringref()
- 09A8:077E       tstringref::check_freeboard()
- 09A8:07E6       tstringref::grow_to(unsigned int)
- 09A8:0710       tstringref::reserve(unsigned int)
- 09A8:0848       tstringref::round_capacity(unsigned int)
- 09A8:0887       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
- 09A8:050B       tsubstring::assert_element(unsigned int) const
+ 09BC:05C4       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
+ 09BC:06AD       tstringref::~tstringref()
+ 09BC:077C       tstringref::check_freeboard()
+ 09BC:07E4       tstringref::grow_to(unsigned int)
+ 09BC:070E       tstringref::reserve(unsigned int)
+ 09BC:0846       tstringref::round_capacity(unsigned int)
+ 09BC:0885       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
+ 09BC:0509       tsubstring::assert_element(unsigned int) const
  0000:7C1B       typeinfo::operator =(const typeinfo far&)
  0000:7BAD       typeinfo::typeinfo(const typeinfo far&)
  0000:7C2A       typeinfo::~typeinfo()
@@ -90,7 +91,7 @@
  0000:7B9B       __throwexceptionname()
  0000:7B7B       __throwfilename()
  0000:7B8D       __throwlinenumber()
- 0A6E:0000       DATASEG@
+ 0A81:0000       DATASEG@
  0000:026D       DGROUP@
  0000:33CD       F_LDIV@
  0000:33DC       F_LMOD@
@@ -117,33 +118,34 @@
  0000:40B8       PSUB@
  0000:418D       _abort
  0000:41A1       _atexit
- 0A6E:13DA       _backimg
- 0A6E:63BE       _battleEnd
- 0A6E:63C0       _battleStart
- 0A6E:13EA       _cardbg
- 0991:004C       _change_screen
+ 0A81:4B04       _backimg
+ 0A81:6428       _battleEnd
+ 0A81:642A       _battleStart
+ 0A81:4B0C       _cardbg
+ 09A4:0050       _change_screen
  0000:1B10       _close
  0000:0441       _cprintf
- 097C:000C       _create_offscreen_buffer
- 0A6E:63BC       _curCard
- 0A6E:63B6       _curGlyph
- 0A6E:63AE       _curRenderChar
- 097C:008C       _delete_offscreen_buffer
- 0857:00EA       _destroy_battle
- 087D:0019       _destroy_menu
- 092D:02BD       _draw_bitmap
- 092D:0327       _draw_bitmap_sprite
- 098A:0003       _draw_fill
- 098A:0021       _draw_pixel
- 0857:000C       _draw_player_info
- 098A:0046       _draw_sprite
- 088C:0364       _draw_text
- 092D:02EB       _draw_transparent_bitmap
+ 098F:0010       _create_offscreen_buffer
+ 0A81:6426       _curCard
+ 0A81:6420       _curGlyph
+ 0A81:6418       _curRenderChar
+ 0A81:652C       _currentItem
+ 098F:0090       _delete_offscreen_buffer
+ 085E:00A4       _destroy_battle
+ 087E:00E3       _destroy_menu
+ 0940:02C1       _draw_bitmap
+ 0940:032B       _draw_bitmap_sprite
+ 099D:0007       _draw_fill
+ 099D:0025       _draw_pixel
+ 085E:0006       _draw_player_info
+ 099D:004A       _draw_sprite
+ 089F:0368       _draw_text
+ 0940:02EF       _draw_transparent_bitmap
  0000:2DB8       _eof
- 0A6E:007E       _errno
- 0A6E:63B8       _errors
+ 0A81:007E       _errno
+ 0A81:6422       _errors
  0000:4231       _exit
- 0991:00C6       _exit_program
+ 09A4:00CA       _exit_program
  0000:3C14       _farfree
  0000:3D28       _farmalloc
  0000:3E8C       _farrealloc
@@ -154,178 +156,182 @@
  0000:1CD8       _fgets
  0000:1DC9       _flushall
  0000:2055       _fopen
- 0A6E:65D2       _forceExit
+ 0A81:8BC4       _forceExit
  0000:2565       _fputc
  0000:2700       _fputchar
  0000:208E       _fputs
  0000:2202       _fread
  0000:3C14       _free
  0000:2326       _fseek
- 092D:0001       _fskip
+ 0940:0005       _fskip
  0000:23AB       _ftell
- 0A6E:6542       _game_state
+ 0A81:8B34       _game_state
  0000:0B47       _getch
  0000:0B67       _getche
- 088C:0315       _getKerning
+ 089F:0319       _getKerning
  0000:045F       _gettext
  0000:4297       _getvect
- 0888:0009       _get_key_event
- 088C:03D4       _get_text_glyphs
- 0A6E:13D2       _i
- 092D:0319       _image_byte_pos
- 0857:0033       _init_battle
- 087D:000A       _init_menu
+ 089B:000D       _get_key_event
+ 089F:03D8       _get_text_glyphs
+ 0A81:4AFC       _i
+ 0940:031D       _image_byte_pos
+ 085E:002D       _init_battle
+ 087E:0004       _init_menu
  0000:339D       _ioctl
  0000:108A       _isatty
- 0A6E:4AAA       _johnny
- 0A6E:13D8       _k
+ 0A81:4B14       _johnny
+ 0A81:4B02       _k
  0000:0BBB       _kbhit
- 0A6E:65CE       _key
- 0857:01F9       _keypress_battle
- 087D:001E       _keypress_menu
- 092D:0020       _load_bmp
+ 0A81:8BC0       _key
+ 085E:0193       _keypress_battle
+ 087E:00E8       _keypress_menu
+ 0940:0024       _load_bmp
+ 0857:000C       _load_global_fonts
  0000:109F       _lseek
- 0991:00D1       _main
+ 09A4:00D5       _main
  0000:3D1E       _malloc
  0000:0C57       _memcmp
  0000:0C7F       _memcpy
  0000:0D3E       _memmove
  0000:0CC9       _memset
+ 0A81:652E       _menuGlyphs
+ 0A81:015C       _menuItems
  0000:0527       _movetext
  0000:0CEC       _movmem
- 0A6E:0772       _offscreen_buffer
- 0991:0091       _on_keypress
+ 0A81:07DC       _offscreen_buffer
+ 09A4:0095       _on_keypress
  0000:305C       _open
- 088C:0004       _parseFntFile
+ 089F:0008       _parseFntFile
  0000:248D       _perror
  0000:2524       _printf
  0000:05CF       _putch
  0000:04C3       _puttext
- 0A6E:63BA       _quitEarly
+ 0A81:6424       _quitEarly
  0000:4665       _raise
  0000:6092       _RaiseException
  0000:3E85       _realloc
- 0857:0166       _render_battle
- 087D:0014       _render_menu
- 0991:002A       _render_screen
- 088C:07F9       _render_text_glyphs
- 0A6E:63C2       _scoreText
+ 085E:0100       _render_battle
+ 087E:00B0       _render_menu
+ 09A4:002E       _render_screen
+ 089F:07FD       _render_text_glyphs
+ 0A81:642C       _scoreText
  0000:4066       _setblock
  0000:0CA3       _setmem
  0000:292A       _setvbuf
  0000:42AA       _setvect
- 087F:0003       _set_initial_state
- 097C:00A9       _set_palette
- 097C:00D3       _set_shared_palette
- 097C:0000       _set_video_mode
- 0A6E:046E       _shared_palette
- 097C:0062       _show_offscreen_buffer
+ 0892:0007       _set_initial_state
+ 098F:00AD       _set_palette
+ 098F:00D7       _set_shared_palette
+ 098F:0004       _set_video_mode
+ 0A81:04D8       _shared_palette
+ 098F:0066       _show_offscreen_buffer
  0000:4537       _signal
- 0A6E:2F52       _silk_font
- 0A6E:2F4A       _silk_fontimg
+ 0A81:2FA0       _silk_font
+ 0A81:2F98       _silk_fontimg
  0000:2A94       _sprintf
- 0A6E:13CE       _sprite_x
- 0A6E:13D0       _sprite_y
+ 0A81:4AF8       _sprite_x
+ 0A81:4AFA       _sprite_y
  0000:2B18       _sscanf
  0000:0D63       _strcat
  0000:0DA2       _strcmp
  0000:0DD2       _strcpy
  0000:0DFB       _strlen
  0000:0E1C       _strncmp
- 0A6E:572C       _test
+ 0A81:5796       _test
  0000:0B99       _ungetch
  0000:1619       _unlink
- 0857:012F       _update_battle
- 087D:000F       _update_menu
- 0991:0008       _update_screen
- 088C:08FF       _validate_font_bitmap
- 0A6E:13F2       _venice_font
- 0A6E:13E2       _venice_fontimg
- 0A6E:076E       _video_buffer
+ 0857:0051       _unload_global_fonts
+ 085E:00C9       _update_battle
+ 087E:0072       _update_menu
+ 09A4:000C       _update_screen
+ 089F:0903       _validate_font_bitmap
+ 0A81:1440       _venice_font
+ 0A81:1438       _venice_fontimg
+ 0A81:07D8       _video_buffer
  0000:2ABA       _vsprintf
  0000:2B3F       _vsscanf
- 097C:0046       _wait_for_retrace
+ 098F:004A       _wait_for_retrace
  0000:0964       _wherex
  0000:0977       _wherey
- 0A6E:13D4       _x
- 0A6E:13D6       _y
- 0A6E:1198       __8086
+ 0A81:4AFE       _x
+ 0A81:4B00       _y
+ 0A81:1202       __8086
  0000:427C       __abort
  0000:1000  Abs  __AHINCR
  0000:000C  Abs  __AHSHIFT
- 0A6E:119A       __atexitcnt
- 0A6E:65EE       __atexittbl
+ 0A81:1204       __atexitcnt
+ 0A81:8BE0       __atexittbl
  0000:3F94       __brk
- 0A6E:0088       __brklvl
- 0A6E:006A       __C0argc
- 0A6E:006C       __C0argv
+ 0A81:0088       __brklvl
+ 0A81:006A       __C0argc
+ 0A81:006C       __C0argv
  0000:0A60       __c0crtinit
- 0A6E:0070       __C0environ
- 0A6E:07D5       __cChar
+ 0A81:0070       __C0environ
+ 0A81:083F       __cChar
  0000:425A       __cexit
- 0A6E:07D4       __cFlag
+ 0A81:083E       __cFlag
  0000:0159       __checknull
  0000:0146       __cleanup
  0000:2DA7       __close
  0000:030F       __CPUTN
  0000:0A81       __crtinit
- 0A6E:104C       __ctype
+ 0A81:10B6       __ctype
  0000:7B26       __CurrExcContext
  0000:0000  Abs  __cvtfak
  0000:426C       __c_exit
- 0A6E:667A       __DestructorCountPtr
- 0A6E:07CA       __directvideo
- 0A6E:0C32       __doserrno
+ 0A81:8C6C       __DestructorCountPtr
+ 0A81:0834       __directvideo
+ 0A81:0C9C       __doserrno
  0000:1076       __DOSERROR
- 0A6E:0C34       __dosErrorToSV
- 0A6E:0074       __envLng
- 0A6E:0076       __envseg
- 0A6E:0078       __envSize
+ 0A81:0C9E       __dosErrorToSV
+ 0A81:0074       __envLng
+ 0A81:0076       __envseg
+ 0A81:0078       __envSize
  0000:4949       __ExceptInit
  0000:6DAD       __ExceptionHandler
- 0A6E:0080       __Exception_list
+ 0A81:0080       __Exception_list
  0000:4244       __exit
- 0A6E:119C       __exitbuf
- 0A6E:11A0       __exitfopen
- 0A6E:11A4       __exitopen
+ 0A81:1206       __exitbuf
+ 0A81:120A       __exitfopen
+ 0A81:120E       __exitopen
  0000:2EF7       __fgetc
  0000:1D76       __flushall
  0000:1DD2       __flushout
  0000:0C34       __fmemset
- 0A6E:0C24       __fmode
+ 0A81:0C8E       __fmode
  0000:2543       __fputc
  0000:2718       __FPUTN
  0000:0F5D       __freeio
  0000:0C0E       __fsetmem
  0000:2008       __GETFP
  0000:6046       __Global_unwind
- 0A6E:0084       __heapbase
- 0A6E:008C       __heaptop
- 0A6E:005A       __Int0Vector
- 0A6E:005E       __Int4Vector
- 0A6E:0062       __Int5Vector
- 0A6E:0066       __Int6Vector
+ 0A81:0084       __heapbase
+ 0A81:008C       __heaptop
+ 0A81:005A       __Int0Vector
+ 0A81:005E       __Int4Vector
+ 0A81:0062       __Int5Vector
+ 0A81:0066       __Int6Vector
  0000:1038       __IOERROR
  0000:6CD7       __Local_unwind
  0000:34B0       __LONGTOA
  0000:0E54       __MKNAME
  0000:026F       __MMODEL
- 0A6E:65E6       __new_handler
+ 0A81:8BD8       __new_handler
  0000:2F12       __Nfgetc
- 0A6E:0BBE       __nfile
+ 0A81:0C28       __nfile
  0000:0B64       __Ngetche
- 0A6E:0C26       __notUmask
+ 0A81:0C90       __notUmask
  0000:0B96       __Nungetch
  0000:3257       __open
- 0A6E:0BC0       __openfd
+ 0A81:0C2A       __openfd
  0000:1F35       __OPENFP
- 0A6E:007C       __osmajor
- 0A6E:007D       __osminor
- 0A6E:007C       __osversion
- 0A6E:007A       __psp
+ 0A81:007C       __osmajor
+ 0A81:007D       __osminor
+ 0A81:007C       __osversion
+ 0A81:007A       __psp
  0000:10FF       __read
  0000:3746       __REALCVT
- 0A6E:1390       __RealCvtVector
+ 0A81:13FA       __RealCvtVector
  0000:01BB       __restorezero
  0000:6CF7       __Return_unwind
  0000:2D64       __rtl_chmod
@@ -338,42 +344,42 @@
  0000:3752       __scanpop
  0000:374E       __scanrslt
  0000:374A       __scantod
- 0A6E:1392       __ScanTodVector
+ 0A81:13FC       __ScanTodVector
  0000:3585       __scantol
  0000:072C       __SCREENIO
  0000:07E9       __SCROLL
  0000:0EB5       __setupio
- 0A6E:1180       __stklen
+ 0A81:11EA       __stklen
  0000:0BD1       __stpcpy
- 0A6E:07D6       __streams
- 0A6E:0D76       __sys_errlist
- 0A6E:0E36       __sys_nerr
+ 0A81:0840       __streams
+ 0A81:0DE0       __sys_errlist
+ 0A81:0EA0       __sys_nerr
  0000:015A       __terminate
  0000:0000  Abs  __turboCrt
  0000:3532       __UTOA
  0000:076A       __VALIDATEXY
- 0A6E:007C       __version
- 0A6E:07BA       __video
+ 0A81:007C       __version
+ 0A81:0824       __video
  0000:09D1       __VideoInt
  0000:164D       __VPRINTER
  0000:0271       __VPTR
  0000:0295       __VRAM
  0000:0956       __wherexy
  0000:3381       __write
- 0A6E:07B8       __wscroll
+ 0A81:0822       __wscroll
  0000:101E       __xclose
  0000:2CD1       __xfclose
  0000:2D1B       __xfflush
- 0A6E:0082       ___brklvl
+ 0A81:0082       ___brklvl
  0000:477B       ___call_terminate
  0000:484E       ___call_unexpected
- 0A6E:11F0       ___CPPexceptionList
+ 0A81:125A       ___CPPexceptionList
  0000:4107       ___ErrorMessage
- 0A6E:11F4       ___exceptFlags
- 0A6E:1218       ___exceptionNameBuff
- 0A6E:1214       ___exceptMemAllocVars
- 0A6E:1210       ___exceptStaticBuffP
- 0A6E:1298       ___ExceptStaticXbuff
+ 0A81:125E       ___exceptFlags
+ 0A81:1282       ___exceptionNameBuff
+ 0A81:127E       ___exceptMemAllocVars
+ 0A81:127A       ___exceptStaticBuffP
+ 0A81:1302       ___ExceptStaticXbuff
  0000:4FF0       ___ExitExceptBlocks
  0000:3AD4       ___first
  0000:4F81       ___InitExceptBlocks
@@ -381,18 +387,18 @@
  0000:3AD6       ___last
  0000:3270       ___read
  0000:3AD8       ___rover
- 0A6E:11F6       ___savedDS
- 0A6E:11F8       ___savedSI
- 0A6E:666E       ___SignalPtr
- 0A6E:11FA       ___terminatePTR
- 0A6E:1202       ___terminate_DS
- 0A6E:120C       ___throwExceptionName
- 0A6E:1206       ___throwFileName
- 0A6E:120A       ___throwLineNumber
- 0A6E:11FE       ___unexpectdPTR
- 0A6E:1204       ___unexpectd_DS
+ 0A81:1260       ___savedDS
+ 0A81:1262       ___savedSI
+ 0A81:8C60       ___SignalPtr
+ 0A81:1264       ___terminatePTR
+ 0A81:126C       ___terminate_DS
+ 0A81:1276       ___throwExceptionName
+ 0A81:1270       ___throwFileName
+ 0A81:1274       ___throwLineNumber
+ 0A81:1268       ___unexpectdPTR
+ 0A81:126E       ___unexpectd_DS
  0000:2B67       ___write
- 0A6E:1182       ___xalloc
+ 0A81:11EC       ___xalloc
 
   Address         Publics by Value
 
@@ -503,8 +509,8 @@
  0000:33CD       F_LDIV@
  0000:33CD       LDIV@
  0000:33D1       N_LUDIV@
- 0000:33D4       LUDIV@
  0000:33D4       F_LUDIV@
+ 0000:33D4       LUDIV@
  0000:33D9       N_LMOD@
  0000:33DC       F_LMOD@
  0000:33DC       LMOD@
@@ -599,309 +605,328 @@
  0000:7D29       typeinfo::name() const
  0000:7D43       __gettypeinfo(void far*,void far*,void far*,void far*)
  0000:8010       __dynamiccast(void far*,void far*,void far*,void far*,int)
- 0857:000C       _draw_player_info
- 0857:0033       _init_battle
- 0857:00EA       _destroy_battle
- 0857:012F       _update_battle
- 0857:0166       _render_battle
- 0857:01F9       _keypress_battle
- 087D:000A       _init_menu
- 087D:000F       _update_menu
- 087D:0014       _render_menu
- 087D:0019       _destroy_menu
- 087D:001E       _keypress_menu
- 087F:0003       _set_initial_state
- 0888:0009       _get_key_event
- 088C:0004       _parseFntFile
- 088C:0315       _getKerning
- 088C:0364       _draw_text
- 088C:03D4       _get_text_glyphs
- 088C:07F9       _render_text_glyphs
- 088C:08FF       _validate_font_bitmap
- 092D:0001       _fskip
- 092D:0020       _load_bmp
- 092D:02BD       _draw_bitmap
- 092D:02EB       _draw_transparent_bitmap
- 092D:0319       _image_byte_pos
- 092D:0327       _draw_bitmap_sprite
- 097C:0000       _set_video_mode
- 097C:000C       _create_offscreen_buffer
- 097C:0046       _wait_for_retrace
- 097C:0062       _show_offscreen_buffer
- 097C:008C       _delete_offscreen_buffer
- 097C:00A9       _set_palette
- 097C:00D3       _set_shared_palette
- 098A:0003       _draw_fill
- 098A:0021       _draw_pixel
- 098A:0046       _draw_sprite
- 0991:0008       _update_screen
- 0991:002A       _render_screen
- 0991:004C       _change_screen
- 0991:0091       _on_keypress
- 0991:00C6       _exit_program
- 0991:00D1       _main
- 09A8:0003       string::string(const string far&)
- 09A8:00EC       string::string(const char far*)
- 09A8:0308       string::~string()
- 09A8:038F       string::assert_element(unsigned int) const
- 09A8:044D       string::assert_index(unsigned int) const
- 09A8:050B       tsubstring::assert_element(unsigned int) const
- 09A8:05C6       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
- 09A8:06AF       tstringref::~tstringref()
- 09A8:0710       tstringref::reserve(unsigned int)
- 09A8:077E       tstringref::check_freeboard()
- 09A8:07E6       tstringref::grow_to(unsigned int)
- 09A8:0848       tstringref::round_capacity(unsigned int)
- 09A8:0887       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
- 09A8:0A46       string::set_case_sensitive(int)
- 09A8:0A63       string::set_paranoid_check(int)
- 09A8:0A80       string::skip_whitespace(int)
- 09A8:0A9D       string::initial_capacity(unsigned int)
- 09A8:0ABA       string::resize_increment(unsigned int)
- 09A8:0AE4       string::max_waste(unsigned int)
- 0A6E:0000       DATASEG@
- 0A6E:005A       __Int0Vector
- 0A6E:005E       __Int4Vector
- 0A6E:0062       __Int5Vector
- 0A6E:0066       __Int6Vector
- 0A6E:006A       __C0argc
- 0A6E:006C       __C0argv
- 0A6E:0070       __C0environ
- 0A6E:0074       __envLng
- 0A6E:0076       __envseg
- 0A6E:0078       __envSize
- 0A6E:007A       __psp
- 0A6E:007C       __version
- 0A6E:007C       __osversion
- 0A6E:007C       __osmajor
- 0A6E:007D       __osminor
- 0A6E:007E       _errno
- 0A6E:0080       __Exception_list
- 0A6E:0082       ___brklvl
- 0A6E:0084       __heapbase
- 0A6E:0088       __brklvl
- 0A6E:008C       __heaptop
- 0A6E:046E       _shared_palette
- 0A6E:076E       _video_buffer
- 0A6E:0772       _offscreen_buffer
- 0A6E:07B8       __wscroll
- 0A6E:07BA       __video
- 0A6E:07CA       __directvideo
- 0A6E:07D4       __cFlag
- 0A6E:07D5       __cChar
- 0A6E:07D6       __streams
- 0A6E:0BBE       __nfile
- 0A6E:0BC0       __openfd
- 0A6E:0C24       __fmode
- 0A6E:0C26       __notUmask
- 0A6E:0C32       __doserrno
- 0A6E:0C34       __dosErrorToSV
- 0A6E:0D76       __sys_errlist
- 0A6E:0E36       __sys_nerr
- 0A6E:104C       __ctype
- 0A6E:1180       __stklen
- 0A6E:1182       ___xalloc
- 0A6E:1198       __8086
- 0A6E:119A       __atexitcnt
- 0A6E:119C       __exitbuf
- 0A6E:11A0       __exitfopen
- 0A6E:11A4       __exitopen
- 0A6E:11F0       ___CPPexceptionList
- 0A6E:11F4       ___exceptFlags
- 0A6E:11F6       ___savedDS
- 0A6E:11F8       ___savedSI
- 0A6E:11FA       ___terminatePTR
- 0A6E:11FE       ___unexpectdPTR
- 0A6E:1202       ___terminate_DS
- 0A6E:1204       ___unexpectd_DS
- 0A6E:1206       ___throwFileName
- 0A6E:120A       ___throwLineNumber
- 0A6E:120C       ___throwExceptionName
- 0A6E:1210       ___exceptStaticBuffP
- 0A6E:1214       ___exceptMemAllocVars
- 0A6E:1218       ___exceptionNameBuff
- 0A6E:1298       ___ExceptStaticXbuff
- 0A6E:132A       string::case_sensitive
- 0A6E:132C       string::paranoid_check
- 0A6E:132E       string::skip_white
- 0A6E:1330       string::initial_capac
- 0A6E:1332       string::resize_inc
- 0A6E:1334       string::freeboard
- 0A6E:1390       __RealCvtVector
- 0A6E:1392       __ScanTodVector
- 0A6E:13CE       _sprite_x
- 0A6E:13D0       _sprite_y
- 0A6E:13D2       _i
- 0A6E:13D4       _x
- 0A6E:13D6       _y
- 0A6E:13D8       _k
- 0A6E:13DA       _backimg
- 0A6E:13E2       _venice_fontimg
- 0A6E:13EA       _cardbg
- 0A6E:13F2       _venice_font
- 0A6E:2F4A       _silk_fontimg
- 0A6E:2F52       _silk_font
- 0A6E:4AAA       _johnny
- 0A6E:572C       _test
- 0A6E:63AE       _curRenderChar
- 0A6E:63B6       _curGlyph
- 0A6E:63B8       _errors
- 0A6E:63BA       _quitEarly
- 0A6E:63BC       _curCard
- 0A6E:63BE       _battleEnd
- 0A6E:63C0       _battleStart
- 0A6E:63C2       _scoreText
- 0A6E:6542       _game_state
- 0A6E:65CE       _key
- 0A6E:65D2       _forceExit
- 0A6E:65E6       __new_handler
- 0A6E:65EE       __atexittbl
- 0A6E:666E       ___SignalPtr
- 0A6E:667A       __DestructorCountPtr
+ 0857:000C       _load_global_fonts
+ 0857:0051       _unload_global_fonts
+ 085E:0006       _draw_player_info
+ 085E:002D       _init_battle
+ 085E:00A4       _destroy_battle
+ 085E:00C9       _update_battle
+ 085E:0100       _render_battle
+ 085E:0193       _keypress_battle
+ 087E:0004       _init_menu
+ 087E:0072       _update_menu
+ 087E:00B0       _render_menu
+ 087E:00E3       _destroy_menu
+ 087E:00E8       _keypress_menu
+ 0892:0007       _set_initial_state
+ 089B:000D       _get_key_event
+ 089F:0008       _parseFntFile
+ 089F:0319       _getKerning
+ 089F:0368       _draw_text
+ 089F:03D8       _get_text_glyphs
+ 089F:07FD       _render_text_glyphs
+ 089F:0903       _validate_font_bitmap
+ 0940:0005       _fskip
+ 0940:0024       _load_bmp
+ 0940:02C1       _draw_bitmap
+ 0940:02EF       _draw_transparent_bitmap
+ 0940:031D       _image_byte_pos
+ 0940:032B       _draw_bitmap_sprite
+ 098F:0004       _set_video_mode
+ 098F:0010       _create_offscreen_buffer
+ 098F:004A       _wait_for_retrace
+ 098F:0066       _show_offscreen_buffer
+ 098F:0090       _delete_offscreen_buffer
+ 098F:00AD       _set_palette
+ 098F:00D7       _set_shared_palette
+ 099D:0007       _draw_fill
+ 099D:0025       _draw_pixel
+ 099D:004A       _draw_sprite
+ 09A4:000C       _update_screen
+ 09A4:002E       _render_screen
+ 09A4:0050       _change_screen
+ 09A4:0095       _on_keypress
+ 09A4:00CA       _exit_program
+ 09A4:00D5       _main
+ 09BC:0001       string::string(const string far&)
+ 09BC:00EA       string::string(const char far*)
+ 09BC:0306       string::~string()
+ 09BC:038D       string::assert_element(unsigned int) const
+ 09BC:044B       string::assert_index(unsigned int) const
+ 09BC:0509       tsubstring::assert_element(unsigned int) const
+ 09BC:05C4       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
+ 09BC:06AD       tstringref::~tstringref()
+ 09BC:070E       tstringref::reserve(unsigned int)
+ 09BC:077C       tstringref::check_freeboard()
+ 09BC:07E4       tstringref::grow_to(unsigned int)
+ 09BC:0846       tstringref::round_capacity(unsigned int)
+ 09BC:0885       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
+ 09BC:0A44       string::set_case_sensitive(int)
+ 09BC:0A61       string::set_paranoid_check(int)
+ 09BC:0A7E       string::skip_whitespace(int)
+ 09BC:0A9B       string::initial_capacity(unsigned int)
+ 09BC:0AB8       string::resize_increment(unsigned int)
+ 09BC:0AE2       string::max_waste(unsigned int)
+ 0A81:0000       DATASEG@
+ 0A81:005A       __Int0Vector
+ 0A81:005E       __Int4Vector
+ 0A81:0062       __Int5Vector
+ 0A81:0066       __Int6Vector
+ 0A81:006A       __C0argc
+ 0A81:006C       __C0argv
+ 0A81:0070       __C0environ
+ 0A81:0074       __envLng
+ 0A81:0076       __envseg
+ 0A81:0078       __envSize
+ 0A81:007A       __psp
+ 0A81:007C       __version
+ 0A81:007C       __osversion
+ 0A81:007C       __osmajor
+ 0A81:007D       __osminor
+ 0A81:007E       _errno
+ 0A81:0080       __Exception_list
+ 0A81:0082       ___brklvl
+ 0A81:0084       __heapbase
+ 0A81:0088       __brklvl
+ 0A81:008C       __heaptop
+ 0A81:015C       _menuItems
+ 0A81:04D8       _shared_palette
+ 0A81:07D8       _video_buffer
+ 0A81:07DC       _offscreen_buffer
+ 0A81:0822       __wscroll
+ 0A81:0824       __video
+ 0A81:0834       __directvideo
+ 0A81:083E       __cFlag
+ 0A81:083F       __cChar
+ 0A81:0840       __streams
+ 0A81:0C28       __nfile
+ 0A81:0C2A       __openfd
+ 0A81:0C8E       __fmode
+ 0A81:0C90       __notUmask
+ 0A81:0C9C       __doserrno
+ 0A81:0C9E       __dosErrorToSV
+ 0A81:0DE0       __sys_errlist
+ 0A81:0EA0       __sys_nerr
+ 0A81:10B6       __ctype
+ 0A81:11EA       __stklen
+ 0A81:11EC       ___xalloc
+ 0A81:1202       __8086
+ 0A81:1204       __atexitcnt
+ 0A81:1206       __exitbuf
+ 0A81:120A       __exitfopen
+ 0A81:120E       __exitopen
+ 0A81:125A       ___CPPexceptionList
+ 0A81:125E       ___exceptFlags
+ 0A81:1260       ___savedDS
+ 0A81:1262       ___savedSI
+ 0A81:1264       ___terminatePTR
+ 0A81:1268       ___unexpectdPTR
+ 0A81:126C       ___terminate_DS
+ 0A81:126E       ___unexpectd_DS
+ 0A81:1270       ___throwFileName
+ 0A81:1274       ___throwLineNumber
+ 0A81:1276       ___throwExceptionName
+ 0A81:127A       ___exceptStaticBuffP
+ 0A81:127E       ___exceptMemAllocVars
+ 0A81:1282       ___exceptionNameBuff
+ 0A81:1302       ___ExceptStaticXbuff
+ 0A81:1394       string::case_sensitive
+ 0A81:1396       string::paranoid_check
+ 0A81:1398       string::skip_white
+ 0A81:139A       string::initial_capac
+ 0A81:139C       string::resize_inc
+ 0A81:139E       string::freeboard
+ 0A81:13FA       __RealCvtVector
+ 0A81:13FC       __ScanTodVector
+ 0A81:1438       _venice_fontimg
+ 0A81:1440       _venice_font
+ 0A81:2F98       _silk_fontimg
+ 0A81:2FA0       _silk_font
+ 0A81:4AF8       _sprite_x
+ 0A81:4AFA       _sprite_y
+ 0A81:4AFC       _i
+ 0A81:4AFE       _x
+ 0A81:4B00       _y
+ 0A81:4B02       _k
+ 0A81:4B04       _backimg
+ 0A81:4B0C       _cardbg
+ 0A81:4B14       _johnny
+ 0A81:5796       _test
+ 0A81:6418       _curRenderChar
+ 0A81:6420       _curGlyph
+ 0A81:6422       _errors
+ 0A81:6424       _quitEarly
+ 0A81:6426       _curCard
+ 0A81:6428       _battleEnd
+ 0A81:642A       _battleStart
+ 0A81:642C       _scoreText
+ 0A81:652C       _currentItem
+ 0A81:652E       _menuGlyphs
+ 0A81:8B34       _game_state
+ 0A81:8BC0       _key
+ 0A81:8BC4       _forceExit
+ 0A81:8BD8       __new_handler
+ 0A81:8BE0       __atexittbl
+ 0A81:8C60       ___SignalPtr
+ 0A81:8C6C       __DestructorCountPtr
 
+Line numbers for fonts.obj(fonts.c) segment FONTS_TEXT
+
+    11 0857:000C    12 0857:000F    13 0857:001F    15 0857:002F
+    16 0857:003F    17 0857:004F    19 0857:0051    20 0857:0054
+    21 0857:0064    22 0857:0074
 Line numbers for battle.obj(battle.c) segment BATTLE_TEXT
 
-    38 0857:000C    39 0857:000F    40 0857:0031    42 0857:0033
-    43 0857:0036    44 0857:003C    45 0857:0042    46 0857:0048
-    47 0857:004E    48 0857:0054    49 0857:005A    50 0857:0060
-    52 0857:0066    53 0857:0076    55 0857:0086    56 0857:0096
-    58 0857:00A6    59 0857:00B6    61 0857:00C6    66 0857:00E8
-    68 0857:00EA    69 0857:00ED    70 0857:00FD    71 0857:010D
-    72 0857:011D    73 0857:012D    75 0857:012F    76 0857:0132
-    78 0857:0140    80 0857:0154    81 0857:0156    83 0857:015D
-    84 0857:0162    88 0857:0164    92 0857:0166    93 0857:0169
-    95 0857:0170    96 0857:0176    98 0857:0178   100 0857:017F
-   101 0857:018F   103 0857:0193   105 0857:01A9   106 0857:01AE
-   108 0857:01B0   110 0857:01BE   112 0857:01C6   114 0857:01E8
-   115 0857:01ED   116 0857:01F2   119 0857:01F7   120 0857:01F9
-   121 0857:01FC   122 0857:0202   123 0857:0208   124 0857:020E
-   125 0857:0214   128 0857:0216   129 0857:0226   130 0857:0233
-   131 0857:0235   132 0857:0242   134 0857:0246   135 0857:024A
-   136 0857:0253   137 0857:0259   139 0857:025B   141 0857:0268
+    37 085E:0006    38 085E:0009    39 085E:002B    41 085E:002D
+    42 085E:0030    43 085E:0036    44 085E:003C    45 085E:0042
+    46 085E:0048    47 085E:004E    48 085E:0054    49 085E:005A
+    51 085E:0060    52 085E:0070    55 085E:0080    60 085E:00A2
+    62 085E:00A4    63 085E:00A7    64 085E:00B7    65 085E:00C7
+    67 085E:00C9    68 085E:00CC    70 085E:00DA    72 085E:00EE
+    73 085E:00F0    75 085E:00F7    76 085E:00FC    80 085E:00FE
+    84 085E:0100    85 085E:0103    87 085E:010A    88 085E:0110
+    90 085E:0112    92 085E:0119    93 085E:0129    95 085E:012D
+    97 085E:0143    98 085E:0148   100 085E:014A   102 085E:0158
+   104 085E:0160   106 085E:0182   107 085E:0187   108 085E:018C
+   111 085E:0191   112 085E:0193   113 085E:0196   114 085E:019C
+   115 085E:01A2   116 085E:01A8   117 085E:01AE   120 085E:01B0
+   121 085E:01C0   122 085E:01CD   123 085E:01CF   124 085E:01DC
+   126 085E:01E0   127 085E:01E4   128 085E:01ED   129 085E:01F3
+   131 085E:01F5   133 085E:0202
 Line numbers for menu.obj(menu.c) segment MENU_TEXT
 
-     5 087D:000A     7 087D:000D     9 087D:000F    11 087D:0012
-    13 087D:0014    15 087D:0017    17 087D:0019    19 087D:001C
-    21 087D:001E    23 087D:0021
+    15 087E:0004    18 087E:0009    19 087E:000F    20 087E:0012
+    21 087E:001E    22 087E:0023    23 087E:0027    22 087E:0057
+    27 087E:005D    28 087E:0069    29 087E:006E    31 087E:0072
+    34 087E:0076    35 087E:007A    36 087E:007C    37 087E:0082
+    39 087E:0085    40 087E:0089    39 087E:009A    34 087E:00A7
+    43 087E:00AD    45 087E:00B0    47 087E:00B4    48 087E:00B8
+    47 087E:00D5    50 087E:00DB    51 087E:00E0    53 087E:00E3
+    56 087E:00E6    58 087E:00E8    59 087E:00EB    60 087E:00F1
+    61 087E:00F7    63 087E:010A    64 087E:0112    67 087E:0114
+    69 087E:0116    70 087E:011B    74 087E:011D    78 087E:011F
+    79 087E:0125    80 087E:012C    82 087E:012E    84 087E:0132
+    85 087E:0138    86 087E:013F    88 087E:0141    91 087E:0145
 Line numbers for state.obj(state.c) segment STATE_TEXT
 
-     4 087F:0003     6 087F:0007     7 087F:0010     8 087F:0022
-     9 087F:002A    10 087F:0032    11 087F:003A    12 087F:0042
-    13 087F:004A    14 087F:0052    15 087F:005A    16 087F:0062
-    18 087F:006A    20 087F:0074    22 087F:007D    23 087F:0081
-    22 087F:0090    26 087F:0096
+     4 0892:0007     6 0892:000B     7 0892:0014     8 0892:0026
+     9 0892:002E    10 0892:0036    11 0892:003E    12 0892:0046
+    13 0892:004E    14 0892:0056    15 0892:005E    16 0892:0066
+    18 0892:006E    20 0892:0078    22 0892:0081    23 0892:0085
+    22 0892:0094    26 0892:009A
 Line numbers for keyboard.obj(keyboard.c) segment KEYBOARD_TEXT
 
-     4 0888:0009     6 0888:000E     8 0888:0015     9 0888:001F
-    10 0888:0024    11 0888:002C    12 0888:002E    13 0888:0033
-    16 0888:0036    17 0888:0041
+     4 089B:000D     6 089B:0012     8 089B:0019     9 089B:0023
+    10 089B:0028    11 089B:0030    12 089B:0032    13 089B:0037
+    16 089B:003A    17 089B:0045
 Line numbers for bmpfnt.obj(bmpfnt.c) segment BMPFNT_TEXT
 
-    11 088C:0004    12 088C:000A    14 088C:0022    18 088C:0024
-    19 088C:002B    20 088C:003D    24 088C:0043    25 088C:005B
-    27 088C:00A5    28 088C:00C0    30 088C:0104    31 088C:011F
-    32 088C:0130    33 088C:0148    34 088C:0159    35 088C:0173
-    36 088C:018A    39 088C:01FC    40 088C:01FD    41 088C:0200
-    42 088C:0218    43 088C:0234    44 088C:024E    45 088C:026D
-    23 088C:0299    50 088C:02B6    51 088C:02BB    52 088C:02BF
-    53 088C:02D3    51 088C:02E5    56 088C:02F0    58 088C:0303
-    59 088C:0311    61 088C:0315    63 088C:0318    64 088C:031C
-    65 088C:0344    63 088C:0355    68 088C:0360    69 088C:0362
-    71 088C:0364    73 088C:0368    74 088C:037C    76 088C:03A8
-    78 088C:03C4    79 088C:03D2    81 088C:03D4    82 088C:03DA
-    83 088C:03E0    84 088C:03E6    85 088C:03E8    87 088C:03ED
-    88 088C:0401    89 088C:0412    95 088C:0417    96 088C:041C
-    97 088C:0421   101 088C:0429   102 088C:042E   103 088C:0433
-   108 088C:043B   109 088C:0440   112 088C:0445   114 088C:044A
-   113 088C:045D   116 088C:047E   119 088C:0486   120 088C:048B
-   121 088C:0490   122 088C:0498   123 088C:04A0   124 088C:04A7
-   125 088C:04BC   126 088C:04D4   123 088C:04D6   129 088C:04E6
-   130 088C:04EF   131 088C:050B   132 088C:0515   120 088C:051B
-   136 088C:0523   137 088C:0534   138 088C:0537   142 088C:053A
-   143 088C:053E   142 088C:0557   147 088C:055D   148 088C:0568
-   149 088C:057E   150 088C:0582   151 088C:0594   152 088C:05A6
-   149 088C:05A8   155 088C:05B3   158 088C:05B4   106 088C:05BA
-   162 088C:05D2   164 088C:05DE   165 088C:05F1   166 088C:0601
-   100 088C:0604   169 088C:0611   170 088C:061F   171 088C:0632
-   172 088C:0639   173 088C:0649   179 088C:0651   180 088C:0659
-   182 088C:065F   183 088C:0665   184 088C:067D   185 088C:0685
-   188 088C:0698   189 088C:069E   191 088C:06A3   192 088C:06A8
-   193 088C:06BD   194 088C:06C5   195 088C:06CC   196 088C:06E1
-   197 088C:06F9   194 088C:06FB   200 088C:070B   201 088C:0715
-   203 088C:0731   204 088C:0743   205 088C:075C   206 088C:0780
-   207 088C:0791   208 088C:0797   209 088C:079A   210 088C:07A4
-   191 088C:07AA   213 088C:07C1   179 088C:07CC   215 088C:07D9
-   216 088C:07E7   217 088C:07F5   219 088C:07F9   225 088C:07FF
-   227 088C:0804   228 088C:080C   229 088C:0813   230 088C:0833
-   231 088C:084B   228 088C:084D   234 088C:085D   235 088C:086E
-   236 088C:0874   237 088C:0877   238 088C:0879   239 088C:087C
-   240 088C:088B   241 088C:0890   242 088C:0895   243 088C:089A
-   247 088C:089F   225 088C:08E8   257 088C:08F3   259 088C:08FF
-   263 088C:0904   265 088C:0910   266 088C:0915   269 088C:092C
-   270 088C:0940   271 088C:0960   275 088C:0963   278 088C:09A4
-   283 088C:09D2   284 088C:09DC   265 088C:09F5   288 088C:0A02
-   289 088C:0A0E
+    11 089F:0008    12 089F:000E    14 089F:0026    18 089F:0028
+    19 089F:002F    20 089F:0041    24 089F:0047    25 089F:005F
+    27 089F:00A9    28 089F:00C4    30 089F:0108    31 089F:0123
+    32 089F:0134    33 089F:014C    34 089F:015D    35 089F:0177
+    36 089F:018E    39 089F:0200    40 089F:0201    41 089F:0204
+    42 089F:021C    43 089F:0238    44 089F:0252    45 089F:0271
+    23 089F:029D    50 089F:02BA    51 089F:02BF    52 089F:02C3
+    53 089F:02D7    51 089F:02E9    56 089F:02F4    58 089F:0307
+    59 089F:0315    61 089F:0319    63 089F:031C    64 089F:0320
+    65 089F:0348    63 089F:0359    68 089F:0364    69 089F:0366
+    71 089F:0368    73 089F:036C    74 089F:0380    76 089F:03AC
+    78 089F:03C8    79 089F:03D6    81 089F:03D8    82 089F:03DE
+    83 089F:03E4    84 089F:03EA    85 089F:03EC    87 089F:03F1
+    88 089F:0405    89 089F:0416    95 089F:041B    96 089F:0420
+    97 089F:0425   101 089F:042D   102 089F:0432   103 089F:0437
+   108 089F:043F   109 089F:0444   112 089F:0449   114 089F:044E
+   113 089F:0461   116 089F:0482   119 089F:048A   120 089F:048F
+   121 089F:0494   122 089F:049C   123 089F:04A4   124 089F:04AB
+   125 089F:04C0   126 089F:04D8   123 089F:04DA   129 089F:04EA
+   130 089F:04F3   131 089F:050F   132 089F:0519   120 089F:051F
+   136 089F:0527   137 089F:0538   138 089F:053B   142 089F:053E
+   143 089F:0542   142 089F:055B   147 089F:0561   148 089F:056C
+   149 089F:0582   150 089F:0586   151 089F:0598   152 089F:05AA
+   149 089F:05AC   155 089F:05B7   158 089F:05B8   106 089F:05BE
+   162 089F:05D6   164 089F:05E2   165 089F:05F5   166 089F:0605
+   100 089F:0608   169 089F:0615   170 089F:0623   171 089F:0636
+   172 089F:063D   173 089F:064D   179 089F:0655   180 089F:065D
+   182 089F:0663   183 089F:0669   184 089F:0681   185 089F:0689
+   188 089F:069C   189 089F:06A2   191 089F:06A7   192 089F:06AC
+   193 089F:06C1   194 089F:06C9   195 089F:06D0   196 089F:06E5
+   197 089F:06FD   194 089F:06FF   200 089F:070F   201 089F:0719
+   203 089F:0735   204 089F:0747   205 089F:0760   206 089F:0784
+   207 089F:0795   208 089F:079B   209 089F:079E   210 089F:07A8
+   191 089F:07AE   213 089F:07C5   179 089F:07D0   215 089F:07DD
+   216 089F:07EB   217 089F:07F9   219 089F:07FD   225 089F:0803
+   227 089F:0808   228 089F:0810   229 089F:0817   230 089F:0837
+   231 089F:084F   228 089F:0851   234 089F:0861   235 089F:0872
+   236 089F:0878   237 089F:087B   238 089F:087D   239 089F:0880
+   240 089F:088F   241 089F:0894   242 089F:0899   243 089F:089E
+   247 089F:08A3   225 089F:08EC   257 089F:08F7   259 089F:0903
+   263 089F:0908   265 089F:0914   266 089F:0919   269 089F:0930
+   270 089F:0944   271 089F:0964   275 089F:0967   278 089F:09A8
+   283 089F:09D6   284 089F:09E0   265 089F:09F9   288 089F:0A06
+   289 089F:0A12
 Line numbers for bitmap.obj(bitmap.c) segment BITMAP_TEXT
 
-    10 092D:0001    13 092D:0005    14 092D:0009    13 092D:0017
-    15 092D:001D    17 092D:0020    26 092D:0026    27 092D:0042
-    28 092D:0054    32 092D:005C    33 092D:0082    34 092D:0090
-    35 092D:00A2    39 092D:00AA    40 092D:00B9    41 092D:00D1
-    42 092D:00E0    45 092D:00FC    46 092D:010B    47 092D:0122
-    49 092D:0131    52 092D:013C    53 092D:0155    54 092D:015F
-    55 092D:016F    56 092D:017D    60 092D:0185    61 092D:019C
-    62 092D:01A7    63 092D:01B9    64 092D:01C7    68 092D:01CF
-    71 092D:01E3    72 092D:01F5    73 092D:0204    74 092D:020B
-    75 092D:0217    76 092D:022A    77 092D:0238    81 092D:0240
-    82 092D:024D    83 092D:0266    84 092D:026A    83 092D:028B
-    81 092D:0294    88 092D:029D    89 092D:02AB    90 092D:02B9
-    93 092D:02BD    95 092D:02C0    96 092D:02E9    99 092D:02EB
-   101 092D:02EE   102 092D:0317   104 092D:0319   105 092D:031C
-   106 092D:0325   108 092D:0327   114 092D:0333   115 092D:0338
-   117 092D:033D   118 092D:034A   120 092D:0355   121 092D:0363
-   123 092D:036F   124 092D:0385   127 092D:0388   129 092D:03A6
-   132 092D:03A9   133 092D:03AF   135 092D:03B7   136 092D:03BD
-   139 092D:03C5   140 092D:03CD   141 092D:03D9   142 092D:03E5
-   144 092D:03EF   145 092D:03F7   146 092D:0403   147 092D:040F
-   149 092D:0419   150 092D:042F   151 092D:0442   152 092D:0454
-   154 092D:0456   155 092D:045D   158 092D:045F   160 092D:046F
-   161 092D:048D   162 092D:0498   163 092D:049A   164 092D:04A6
-   165 092D:04B3   167 092D:04B5   168 092D:04C1   144 092D:04CE
-   139 092D:04DD   172 092D:04EC
+    10 0940:0005    13 0940:0009    14 0940:000D    13 0940:001B
+    15 0940:0021    17 0940:0024    26 0940:002A    27 0940:0046
+    28 0940:0058    32 0940:0060    33 0940:0086    34 0940:0094
+    35 0940:00A6    39 0940:00AE    40 0940:00BD    41 0940:00D5
+    42 0940:00E4    45 0940:0100    46 0940:010F    47 0940:0126
+    49 0940:0135    52 0940:0140    53 0940:0159    54 0940:0163
+    55 0940:0173    56 0940:0181    60 0940:0189    61 0940:01A0
+    62 0940:01AB    63 0940:01BD    64 0940:01CB    68 0940:01D3
+    71 0940:01E7    72 0940:01F9    73 0940:0208    74 0940:020F
+    75 0940:021B    76 0940:022E    77 0940:023C    81 0940:0244
+    82 0940:0251    83 0940:026A    84 0940:026E    83 0940:028F
+    81 0940:0298    88 0940:02A1    89 0940:02AF    90 0940:02BD
+    93 0940:02C1    95 0940:02C4    96 0940:02ED    99 0940:02EF
+   101 0940:02F2   102 0940:031B   104 0940:031D   105 0940:0320
+   106 0940:0329   108 0940:032B   114 0940:0337   115 0940:033C
+   117 0940:0341   118 0940:034E   120 0940:0359   121 0940:0367
+   123 0940:0373   124 0940:0389   127 0940:038C   129 0940:03AA
+   132 0940:03AD   133 0940:03B3   135 0940:03BB   136 0940:03C1
+   139 0940:03C9   140 0940:03D1   141 0940:03DD   142 0940:03E9
+   144 0940:03F3   145 0940:03FB   146 0940:0407   147 0940:0413
+   149 0940:041D   150 0940:0433   151 0940:0446   152 0940:0458
+   154 0940:045A   155 0940:0461   158 0940:0463   160 0940:0473
+   161 0940:0491   162 0940:049C   163 0940:049E   164 0940:04AA
+   165 0940:04B7   167 0940:04B9   168 0940:04C5   144 0940:04D2
+   139 0940:04E1   172 0940:04F0
 Line numbers for vga.obj(vga.c) segment VGA_TEXT
 
-   270 097C:0000   271 097C:0003   272 097C:0005   273 097C:0008
-   274 097C:000A   277 097C:000C   279 097C:000F   280 097C:0028
-   282 097C:002C   283 097C:0041   284 097C:0044   286 097C:0046
-   289 097C:004B   291 097C:0055   292 097C:0060   295 097C:0062
-   297 097C:0068   298 097C:0070   300 097C:0075   303 097C:0079
-   304 097C:007A   305 097C:007D   306 097C:0081   307 097C:0084
-   308 097C:0085   309 097C:0087   310 097C:0088   312 097C:008C
-   314 097C:008F   315 097C:00A7   317 097C:00A9   321 097C:00AC
-   323 097C:00B2   324 097C:00B6   323 097C:00CA   325 097C:00D1
-   327 097C:00D3   328 097C:00D6   329 097C:00E1
+   270 098F:0004   271 098F:0007   272 098F:0009   273 098F:000C
+   274 098F:000E   277 098F:0010   279 098F:0013   280 098F:002C
+   282 098F:0030   283 098F:0045   284 098F:0048   286 098F:004A
+   289 098F:004F   291 098F:0059   292 098F:0064   295 098F:0066
+   297 098F:006C   298 098F:0074   300 098F:0079   303 098F:007D
+   304 098F:007E   305 098F:0081   306 098F:0085   307 098F:0088
+   308 098F:0089   309 098F:008B   310 098F:008C   312 098F:0090
+   314 098F:0093   315 098F:00AB   317 098F:00AD   321 098F:00B0
+   323 098F:00B6   324 098F:00BA   323 098F:00CE   325 098F:00D5
+   327 098F:00D7   328 098F:00DA   329 098F:00E5
 Line numbers for draw.obj(draw.c) segment DRAW_TEXT
 
-    11 098A:0003    12 098A:0006    13 098A:001F    16 098A:0021
-    17 098A:0027    18 098A:0044    20 098A:0046    22 098A:004B
-    23 098A:004F    24 098A:0053    23 098A:0068    22 098A:006E
-    27 098A:0074
+    11 099D:0007    12 099D:000A    13 099D:0023    16 099D:0025
+    17 099D:002B    18 099D:0048    20 099D:004A    22 099D:004F
+    23 099D:0053    24 099D:0057    23 099D:006C    22 099D:0072
+    27 099D:0078
 Line numbers for typeques.obj(typeques.c) segment TYPEQUES_TEXT
 
-    16 0991:0008    17 0991:000B    19 0991:001A    20 0991:001F
-    22 0991:0021    23 0991:0026    25 0991:0028    27 0991:002A
-    28 0991:002D    30 0991:003C    31 0991:0041    33 0991:0043
-    34 0991:0048    36 0991:004A    38 0991:004C    39 0991:004F
-    41 0991:005E    42 0991:0063    44 0991:0065    45 0991:006A
-    47 0991:006C    48 0991:0072    50 0991:0081    51 0991:0086
-    53 0991:0088    54 0991:008D    56 0991:008F    58 0991:0091
-    59 0991:0094    61 0991:00A3    64 0991:00AE    65 0991:00BA
-    67 0991:00BC    69 0991:00C4    71 0991:00C6    72 0991:00C9
-    73 0991:00CF    75 0991:00D1    76 0991:00D4    77 0991:00DA
-    78 0991:00E6    80 0991:00EB    82 0991:00F3    83 0991:00FC
-    84 0991:0104    85 0991:0110    86 0991:011C    89 0991:0124
-    91 0991:0129    94 0991:0130    95 0991:0137    97 0991:0139
-    98 0991:0142    99 0991:014E   102 0991:015A   103 0991:015E
-   107 0991:0164   109 0991:0169   110 0991:0171
+    16 09A4:000C    17 09A4:000F    19 09A4:001E    20 09A4:0023
+    22 09A4:0025    23 09A4:002A    25 09A4:002C    27 09A4:002E
+    28 09A4:0031    30 09A4:0040    31 09A4:0045    33 09A4:0047
+    34 09A4:004C    36 09A4:004E    38 09A4:0050    39 09A4:0053
+    41 09A4:0062    42 09A4:0067    44 09A4:0069    45 09A4:006E
+    47 09A4:0070    48 09A4:0076    50 09A4:0085    51 09A4:008A
+    53 09A4:008C    54 09A4:0091    56 09A4:0093    58 09A4:0095
+    59 09A4:0098    61 09A4:00A7    64 09A4:00B2    65 09A4:00BE
+    67 09A4:00C0    69 09A4:00C8    71 09A4:00CA    72 09A4:00CD
+    73 09A4:00D3    75 09A4:00D5    76 09A4:00D8    77 09A4:00DE
+    78 09A4:00EA    79 09A4:00EF    81 09A4:00F4    83 09A4:00FC
+    84 09A4:0105    85 09A4:010D    86 09A4:0119    87 09A4:0125
+    90 09A4:012D    92 09A4:0132    95 09A4:0139    96 09A4:0140
+    98 09A4:0142    99 09A4:014B   100 09A4:0157   103 09A4:0163
+   104 09A4:0167   108 09A4:016D   110 09A4:0172   112 09A4:0177
+   113 09A4:017F
 Program entry point at 0000:0000
 

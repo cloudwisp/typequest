@@ -73,9 +73,10 @@ void exit_program(){
 }
 
 void main(void) {
-	forceExit = 0;
+  forceExit = 0;
   set_initial_state(&game_state);
   getch();
+  load_global_fonts();
 
   set_video_mode(MODE13H);
 
@@ -88,7 +89,7 @@ void main(void) {
 
   set_shared_palette();
 
-  change_screen(Battle);
+  change_screen(Menu);
 
   while (1){
   		if (forceExit){
@@ -105,6 +106,8 @@ void main(void) {
   }
 
   delete_offscreen_buffer();
+
+  unload_global_fonts();
 
   set_video_mode(TEXT_MODE);
 }

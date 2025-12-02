@@ -220,7 +220,7 @@ void render_text_glyphs(BitmapFont *font, BITMAP *spritesheet, GlyphSet *glyphs,
 	int i, k;
 	FontChar *ch;
 	int maskColor;
-   int style;
+   FontStyle style;
 
    for (i = 0; i < glyphs->glyphCount; i++){
 
@@ -237,10 +237,10 @@ void render_text_glyphs(BitmapFont *font, BITMAP *spritesheet, GlyphSet *glyphs,
 				} else {
 					maskColor = 15;
 					switch (style){
-					  case GLYPHSTYLE_DEFAULT: maskColor = 15; break;
-					  case GLYPHSTYLE_NEXT: maskColor = 7; break;
-					  case GLYPHSTYLE_ERROR: maskColor = 12; break;
-					  case GLYPHSTYLE_CORRECT: maskColor = 10; break;
+					  case Normal: maskColor = 15; break;
+					  case Next: maskColor = 7; break;
+					  case Incorrect: maskColor = 12; break;
+					  case Correct: maskColor = 10; break;
 					}
 				}
 		

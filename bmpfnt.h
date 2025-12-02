@@ -1,3 +1,4 @@
+#include "bitmap.h"
 #ifndef BMPFNT_H
 #define BMPFNT_H
 
@@ -58,10 +59,17 @@ typedef enum {
     ALIGN_BOTTOM
 } VerticalAlign;
 
+typedef enum {
+	Normal,
+   Correct,
+   Incorrect,
+   Next
+} FontStyle;
+
 typedef struct {
     int charId;
     int x, y;
-    int style; // e.g. 0 = normal, 1 = correct, 2 = incorrect, 3 = next
+    FontStyle style;
 } GlyphRenderInfo;
 
 typedef struct {
