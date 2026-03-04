@@ -23,8 +23,8 @@ BITMAP backimg;
 BITMAP cardbg;
 
 GlyphSet johnny;
-GlyphSet test;
 GlyphRenderInfo curRenderChar;
+
 
 int curGlyph;
 int errors;
@@ -32,6 +32,8 @@ int quitEarly;
 int curCard;
 int battleEnd;
 int battleStart;
+int card_x;
+int card_y;
 char scoreText[255];
 
 void draw_player_info(){
@@ -51,8 +53,10 @@ void init_battle(){
   load_bmp("castle.bmp", &backimg);
   load_bmp("card.bmp", &cardbg);
 
+  card_x = 320 - cardbg.width - 2;
+  card_y = 2;
   
-  get_text_glyphs(&venice_font, &johnny,
+  get_text_glyphs(&pixantiqua_font, &johnny,
 	 "There was Johnny McEldoo and Mcgee and me and a couple two or three went on a spree one day",
 	  10, 10, 300, 140, ALIGN_RIGHT, ALIGN_MIDDLE);
 
@@ -90,9 +94,12 @@ void render_battle(){
 	if (!battleEnd){
    	//main draw
    	draw_bitmap(&backimg, 0, 0);
+
+      draw_transparent_bitmap(&cardbg, card_x, card_y);
+
    	draw_player_info();
 
-		render_text_glyphs(&venice_font, &venice_fontimg, &johnny, 0);
+		render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &johnny, 0);
 
 		show_offscreen_buffer();
       return;
@@ -111,23 +118,23 @@ void render_battle(){
 }
 void keypress_battle(KeyEvent key){
 	if (key.isAscii){
-				if (key.code == KEY_ESC){
-					quitEarly = 1;
-               battleEnd = 1;
-					return;
+      if (key.code == KEY_ESC){
+         quitEarly = 1;
+         battleEnd = 1;
+         return;
 
-				}
-				if (key.code == johnny.glyphs[curGlyph].charId){
-					johnny.glyphs[curGlyph].style = Correct;
-				} else {
-					johnny.glyphs[curGlyph].style = Incorrect;
-					errors++;
-				}
-				curGlyph++;
-				if (curGlyph >= johnny.glyphCount){
-				 battleEnd = 1;
-             return;
-				}
-				johnny.glyphs[curGlyph].style = Next;
-			}
+      }
+      if (key.code == johnny.glyphs[curGlyph].charId){
+         johnny.glyphs[curGlyph].style = Correct;
+      } else {
+         johnny.glyphs[curGlyph].style = Incorrect;
+         errors++;
+      }
+      curGlyph++;
+      if (curGlyph >= johnny.glyphCount){
+       battleEnd = 1;
+       return;
+      }
+      johnny.glyphs[curGlyph].style = Next;
+   }
 }

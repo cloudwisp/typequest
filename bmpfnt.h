@@ -4,7 +4,7 @@
 
 #define MAX_CHARS 256
 #define MAX_LINE 256
-#define MAX_KERNINGS 256
+#define MAX_KERNINGS 400
 #define MAX_GLYPHS 400
 #define GLYPHSTYLE_DEFAULT 0
 #define GLYPHSTYLE_NEXT 1

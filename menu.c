@@ -17,14 +17,14 @@ void init_menu(){
 
 	currentItem = 0;
    lineHeight = 200 / MENU_ITEM_COUNT;
-   printf("before get_text_glyphs");
-   getch();
+
+ 
    for (i = 0; i < MENU_ITEM_COUNT; i++){
    	  get_text_glyphs(&venice_font, &menuGlyphs[i],
    	menuItems[i],
 	  0, i * lineHeight, 320, lineHeight, ALIGN_CENTER, ALIGN_MIDDLE);
    }
-   printf("affter get_text_glyphs");
+
    getch();
 }
 
@@ -64,6 +64,7 @@ void keypress_menu(KeyEvent event){
       		break;
          case 1:
          	//do nothing - tbd
+            change_screen(Battle);
             break;
          case 2:
          	exit_program();

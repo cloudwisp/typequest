@@ -78,6 +78,7 @@ void draw_text(BitmapFont *font, BITMAP *spritesheet, const char *text,
 	 farfree(glyphs);
 }
 
+
 void get_text_glyphs(BitmapFont *font, GlyphSet *glyphs, const char *text, int startX, int startY, int containerWidth, int containerHeight, TextAlign align, VerticalAlign vAlign){
 	int x = startX;
     int y = startY;
@@ -86,6 +87,7 @@ void get_text_glyphs(BitmapFont *font, GlyphSet *glyphs, const char *text, int s
 
     char far *lineBuffer = (char far *)farmalloc(20 * 256);
     int far *lineWidths = (int far *)farmalloc(20 * sizeof(int));
+    char far *word = (char far *)farmalloc(128 * sizeof(char));
     int lineCount = 0;
     int j, k;
     FontChar *ch;
@@ -95,6 +97,7 @@ void get_text_glyphs(BitmapFont *font, GlyphSet *glyphs, const char *text, int s
     int curGlyph = 0;
     int totalHeight = 0;
 	 int yOffset = 0;
+    glyphs->glyphCount = 0;
 
 	 // Step 1: Wrap text into lines
     while (text[i] != '\0') {
@@ -104,7 +107,6 @@ void get_text_glyphs(BitmapFont *font, GlyphSet *glyphs, const char *text, int s
 
         // Build one line
         while (text[i] != '\0' && text[i] != '\n') {
-            static char word[128];
             int wordLen = 0;
             int wordWidth = 0;
 
@@ -127,7 +129,7 @@ void get_text_glyphs(BitmapFont *font, GlyphSet *glyphs, const char *text, int s
                     }
                 }
                 if (!ch) continue;
-                if (prevCharId != -1) wordWidth += getKerning(font, prevCharId, charId);
+                if (prevCharId != -1) wordWidth += 0; //getKerning(font, prevCharId, charId);
                 wordWidth += ch->xadvance;
                 prevCharId = charId;
             }
@@ -214,6 +216,7 @@ void get_text_glyphs(BitmapFont *font, GlyphSet *glyphs, const char *text, int s
 	 }
     farfree(lineBuffer);
     farfree(lineWidths);
+    farfree(word);
 }
 
 void render_text_glyphs(BitmapFont *font, BITMAP *spritesheet, GlyphSet *glyphs, int customTextColor){
