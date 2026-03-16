@@ -16,12 +16,16 @@ void set_initial_state(GAME_STATE *state){
    state->stats.charisma = 70;
 
    state->enemyid = 0;
+   
 
    state->screen = Battle;
 
+   state->inventoryCount = 2;
    for (i = 0; i < MAX_INVENTORY; i++){
    	state->inventory[i] = 0;
    }
+   state->inventory[0] = 0; //basic attack
+   state->inventory[1] = 1; //heal
 
 }
 

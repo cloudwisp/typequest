@@ -74,20 +74,13 @@ void exit_program(){
 }
 
 void main(void) {
-	int i;
+
   forceExit = 0;
   set_initial_state(&game_state);
 
   load_global_fonts();
   load_enemies();
-
-  for (i = 0; i < enemy_header.Count; i++){
-  	printf("Name = %s\n", enemies[i].Name);
-   printf("Health = %d\n", enemies[i].Health);
-   printf("======\n");
-  }
-
-  getch();
+  load_cards();
 
   set_video_mode(MODE13H);
 
@@ -120,6 +113,7 @@ void main(void) {
 
   unload_global_fonts();
   unload_enemies();
+  unload_cards();
 
   set_video_mode(TEXT_MODE);
 }

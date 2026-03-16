@@ -24,6 +24,9 @@ typedef struct
    byte dexterity;
    byte intelligence;
    byte charisma;
+   byte reserved1;
+   byte reserved2;
+   byte reserved3;
 } PlayerStats;
 #pragma pack(pop)
 
@@ -34,7 +37,9 @@ typedef struct
    GameScreen screen;
    int difficulty;
    PlayerStats stats;
+   PlayerStats enemystats;
    int inventory[MAX_INVENTORY];
+   int inventoryCount;
    int enemyid;
 } GAME_STATE;
 #pragma pack(pop)

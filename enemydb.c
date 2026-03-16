@@ -1,3 +1,19 @@
+#ifdef __SMALL__
+#pragma message("SMALL model")
+#endif
+#ifdef __MEDIUM__
+#pragma message("MEDIUM model")
+#endif
+#ifdef __COMPACT__
+#pragma message("COMPACT model")
+#endif
+#ifdef __LARGE__
+#pragma message("LARGE model")
+#endif
+#ifdef __HUGE__
+#pragma message("HUGE model")
+#endif
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

@@ -1,0 +1,7 @@
+Large memory model
+
+- You can't printf from a string in a far pointer, it needs to be copied to a local buffer
+- If you forget to include <alloc.h>, your farmalloc will succeed, but you'll be writing into the wrong location and segfault
+- Pointer arithmetic doesn't seem to work with far pointer to iterate an array, use &array[i]
+- Variables need to be declared at the top of the method before any statements or assignments
+- The stack size is very small. Still haven't figured out how to change it.

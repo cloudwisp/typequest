@@ -13,6 +13,7 @@
 #include "battle.h"
 #include "state.h"
 #include "fonts.h"
+#include "cards.h"
 
 
 int sprite_x, sprite_y;
@@ -22,7 +23,8 @@ BITMAP backimg;
 
 BITMAP cardbg;
 
-GlyphSet johnny;
+GlyphSet activeCardText;
+GlyphSet activeCardTitle;
 GlyphRenderInfo curRenderChar;
 
 
@@ -32,9 +34,12 @@ int quitEarly;
 int curCard;
 int battleEnd;
 int battleStart;
+int battleSelect;
 int card_x;
 int card_y;
+int enemyId;
 char scoreText[255];
+int activeCard;
 
 void draw_player_info(){
 	draw_text(&silk_font, &silk_fontimg, game_state.player_name, 0, 0, 320, 200, ALIGN_CENTER, ALIGN_TOP);
@@ -46,21 +51,34 @@ void init_battle(){
   curGlyph = 0;
   errors = 0;
   curCard = 0;
+  battleSelect = 1;
   battleEnd = 0;
   battleStart = 0;
   quitEarly = 0;
+  enemyId = 0;
+  activeCard = game_state.inventory[0];
 
   load_bmp("castle.bmp", &backimg);
   load_bmp("card.bmp", &cardbg);
 
   card_x = 320 - cardbg.width - 2;
   card_y = 2;
-  
-  get_text_glyphs(&pixantiqua_font, &johnny,
-	 "There was Johnny McEldoo and Mcgee and me and a couple two or three went on a spree one day",
-	  10, 10, 300, 140, ALIGN_RIGHT, ALIGN_MIDDLE);
 
 
+}
+
+void battle_select(){
+	battleSelect = 1;
+}
+
+void play_card(){
+   get_text_glyphs(&pixantiqua_font, &activeCardText, &(cards[activeCard].Description), 10, 10, 300, 140, ALIGN_RIGHT, ALIGN_MIDDLE);
+   battleSelect = 0;
+}
+
+void draw_card(){
+	draw_transparent_bitmap(&cardbg, card_x, card_y);
+   draw_text(&silk_font, &silk_fontimg, cards[activeCard].Title, card_x, card_y + 10, 16, cardbg.width, ALIGN_CENTER, ALIGN_MIDDLE);
 }
 
 void destroy_battle(){
@@ -95,28 +113,62 @@ void render_battle(){
    	//main draw
    	draw_bitmap(&backimg, 0, 0);
 
-      draw_transparent_bitmap(&cardbg, card_x, card_y);
 
    	draw_player_info();
 
-		render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &johnny, 0);
+      if (battleSelect){
+   		draw_card();
+      } else {
+	      render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &activeCardText, 0);
+      }
 
 		show_offscreen_buffer();
       return;
    }
    if (battleEnd && !quitEarly){
-              
+
 		draw_fill(20);
 
 		draw_text(&silk_font, &silk_fontimg, scoreText, 0, 0, 320, 200, ALIGN_CENTER, ALIGN_MIDDLE);
-      
+
 		show_offscreen_buffer();
       getch(); //pause program
       exit_program();
-   } 
+   }
 
 }
+
+void keypress_battle_select(KeyEvent key){
+	if (key.isAscii){
+      if (key.code == KEY_ESC){
+         quitEarly = 1;
+         battleEnd = 1;
+         return;
+
+      } else if (key.code == KEY_ENTER){
+      	play_card();
+      }
+   } else if (key.code == KEY_RIGHT){
+   	if (activeCard + 1 >= game_state.inventoryCount){
+      	activeCard = 0;
+      	return; //wrap to first
+      }
+      activeCard++;
+      return;
+   } else if (key.code == KEY_LEFT){
+    	if (activeCard == 0){
+       	activeCard = game_state.inventoryCount - 1;
+         return;
+      }
+      activeCard--;
+   }
+}
+
 void keypress_battle(KeyEvent key){
+	if (battleSelect){
+    	keypress_battle_select(key);
+      return;
+   }
 	if (key.isAscii){
       if (key.code == KEY_ESC){
          quitEarly = 1;
@@ -124,17 +176,17 @@ void keypress_battle(KeyEvent key){
          return;
 
       }
-      if (key.code == johnny.glyphs[curGlyph].charId){
-         johnny.glyphs[curGlyph].style = Correct;
+      if (key.code == activeCardText.glyphs[curGlyph].charId){
+         activeCardText.glyphs[curGlyph].style = Correct;
       } else {
-         johnny.glyphs[curGlyph].style = Incorrect;
+         activeCardText.glyphs[curGlyph].style = Incorrect;
          errors++;
       }
       curGlyph++;
-      if (curGlyph >= johnny.glyphCount){
+      if (curGlyph >= activeCardText.glyphCount){
        battleEnd = 1;
        return;
       }
-      johnny.glyphs[curGlyph].style = Next;
+      activeCardText.glyphs[curGlyph].style = Next;
    }
 }

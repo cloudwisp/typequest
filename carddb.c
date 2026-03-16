@@ -17,8 +17,8 @@ int pack_file(const char *in_path, const char *out_path){
    Card card;
 
    card_count = 0;
-   header.count = 0;
-   header.version = 1;
+   header.Count = 0;
+   header.Version = 1;
 
    if ((in_file = fopen(in_path, "r")) == NULL) {
      printf("Error opening file %s.\n", in_path);
@@ -94,7 +94,7 @@ int pack_file(const char *in_path, const char *out_path){
       }
    }
 
-   header.count = card_count;
+   header.Count = card_count;
 
    fseek(out_file, 0, SEEK_SET);
    fwrite(&header, sizeof(CardHeader), 1, out_file);
@@ -119,9 +119,9 @@ int validate(const char *packed_file){
    }
 
    fread(&header, sizeof(CardHeader), 1, file);
-   printf("Card count %d\n", header.count);
-   printf("Version %d\n", header.version);
-	for (i = 0; i < header.count; i++){
+   printf("Card count %d\n", header.Count);
+   printf("Version %d\n", header.Version);
+	for (i = 0; i < header.Count; i++){
 		fread(&card, sizeof(Card), 1, file);
       printf("Title = %s\n", card.Title);
       printf("Description = %s\n", card.Description);

@@ -9,5 +9,4 @@ extern Enemy far * enemies;
 void load_enemies();
 void unload_enemies();
 
-
 #endif

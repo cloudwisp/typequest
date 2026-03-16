@@ -16,8 +16,8 @@ typedef struct {
 
 #pragma pack(push, 1)
 typedef struct {
-	int version;
-	int count;
+	int Version;
+	int Count;
 } CardHeader;
 #pragma pack(pop)
 

@@ -1,6 +1,6 @@
 [Start]
-title=Test
-description=This is a card with a description here.
+title=Basic Attack 
+description=A strong arm flies swiftly through the air and strikes the enemy with ease.
 effect_type=3
 effect_amount=4
 min_wpm=110
@@ -9,8 +9,8 @@ icon_sheet=0
 icon_index=22
 [End]
 [Start]
-title=Test 2
-description=The quick brown fox jumped over the lazy dog.
+title=Herbal Remedy
+description=Uncork the bottle quickly and drink the potion. You will feel better in no time.
 effect_type=4
 effect_amount=5
 min_wpm=120
