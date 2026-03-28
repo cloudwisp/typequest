@@ -1,0 +1,5 @@
+Fonts used:
+
+Card and enemy names: PixAntiqua - 12px
+Card text: grand9k_pixel - 12px?
+Tiny text: zepto-tiny8x

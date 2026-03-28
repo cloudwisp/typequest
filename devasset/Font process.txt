@@ -1,0 +1,13 @@
+# TTF conversion process
+
+1. Download pixel font as TTF
+2. Use converter here: https://snowb.org
+3. Import TTF
+4. Review glyphs. Usually remove the "No" defaulted in the list
+5. Set Fill to White
+6. Set BG Color to black
+7. Export as "fnt" (zip include fnt and png). Extract
+8. Open png in paint, and save as BMP (256)
+9. Open in Win98 VM in paint
+10. Save as BMP 16-color
+11. Then re-save as 256-color (this forces the first 16 colors to match the EGA palette)
