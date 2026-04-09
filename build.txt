@@ -1,0 +1,34 @@
+MAKE Version 5.0  Copyright (c) 1987, 1997 Borland International
+
+Available memory 474448 bytes
+
+        Bcc +BccDos.cfg -P- -c @MAKE0006.@@@
+        Bcc +BccDos.cfg -P- -c @MAKE0007.@@@
+        Bcc +BccDos.cfg -P- -c @MAKE0014.@@@
+        Bcc +BccDos.cfg -P- -c @MAKE0015.@@@
+        TLink @MAKE0000.@@@
+Turbo Link  Version 7.1.32.2. Copyright (c) 1987, 1996 Borland International
+        echo MakeNode
+MakeNode
+eques.c 24: Call to function 'update_menu' with no prototype in function update_screen
+Warning typeques.c 27: Call to function 'update_battle' with no prototype in function update_screen
+Warning typeques.c 35: Call to function 'render_menu' with no prototype in function render_screen
+Warning typeques.c 38: Call to function 'render_battle' with no prototype in function render_screen
+Warning typeques.c 46: Call to function 'destroy_menu' with no prototype in function change_screen
+Warning typeques.c 49: Call to function 'destroy_battle' with no prototype in function change_screen
+Warning typeques.c 55: Call to function 'init_menu' with no prototype in function change_screen
+Warning typeques.c 58: Call to function 'init_battle' with no prototype in function change_screen
+Warning typeques.c 88: Call to function 'opl_init' with no prototype in function main
+Warning typeques.c 92: Call to function 'test_music' with no prototype in function main
+Warning typeques.c 102: Call to function 'load_global_fonts' with no prototype in function main
+Warning typeques.c 103: Call to function 'load_enemies' with no prototype in function main
+Warning typeques.c 104: Call to function 'load_cards' with no prototype in function main
+Warning typeques.c 108: Call to function 'create_offscreen_buffer' with no prototype in function main
+Warning typeques.c 115: Call to function 'set_shared_palette' with no prototype in function main
+Warning typeques.c 125: Call to function 'get_key_event' with no prototype in function main
+Warning typeques.c 131: Call to function 'update_screen' with no prototype in function main
+Warning typeques.c 134: Call to function 'render_screen' with no prototype in function main
+Warning typeques.c 143: Call to function 'opl_cleanup' with no prototype in function main
+Warning typeques.c 149: Call to function 'unload_global_fonts' with no prototype in function main
+Warning typeques.c 150: Call to function 'unload_enemies' with no prototype in function main
+Warning typeques.c 151: Call to function 'unload_cards' with no prototype in function main

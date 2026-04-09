@@ -46,11 +46,13 @@ int enemyId;
 char scoreText[255];
 int activeCard;
 int finishCount;
+int redrawFlag;
+int initRender;
 BattleStep step;
 
 //intro state
 bool intro_done;
-int introTick;
+unsigned long stepTicks;
 GlyphSet introTextTitle;
 GlyphSet introTextName;
 
@@ -64,6 +66,8 @@ void init_battle(){
   quitEarly = 0;
   enemyId = 0;
   finishCount = 0;
+  redrawFlag = 0; //can be used by steps to invalidate screen
+  initRender = 0;
   activeCard = game_state.inventory[0];
 
   load_bmp("castle.bmp", &backimg);
@@ -89,8 +93,9 @@ void destroy_battle(){
 }
 
 void update_battle(){
+   stepTicks++;
 	if (quitEarly){
-   	ChangeScreen(Menu);
+   	change_screen(Menu);
       return;
    }
 	switch (step){
@@ -111,7 +116,6 @@ void update_battle(){
 
 void render_battle(){
 
-	draw_bitmap(&backimg, 0, 0);
 
 	switch (step){
     	case Intro:
@@ -179,13 +183,15 @@ void keypress_battle(KeyEvent key){
 
 }
 
-
+void draw_bg(){
+   draw_bitmap(&backimg, 0, 0);
+}
 
 void enter_step_intro(){
 	step = Intro;
 	intro_done = 0;
-   introTick = 0;
-	step = Intro;
+   stepTicks = 0;
+   initRender = 1;
 
    //TODO: get enemy name
 
@@ -196,17 +202,27 @@ void enter_step_intro(){
 }
 
 void render_step_intro(){
-	if (introTick > 100){
-		render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &introTextTitle, 0);
+   if (initRender){
+      draw_bg();
+      initRender = 0;
    }
-   if (introTick > 500){
-		render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &introTextName, 0);
+   //render in reverse order
+   if (stepTicks >= 360 && redrawFlag){
+      render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &introTextName, 0);
+      redrawFlag = 0;
+      return;
+   }
+	if (stepTicks >= 240 && redrawFlag){
+		render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &introTextTitle, 0);
+      redrawFlag = 0;
    }
 }
 
 void update_step_intro(){
-	introTick++;
-   if (introTick > 1000){
+   if (stepTicks == 360 || stepTicks == 240){
+      redrawFlag = 1;
+   }
+   if (stepTicks > 420){
     	intro_done = true;
    }
 }
@@ -219,6 +235,9 @@ void keypress_step_intro(KeyEvent event){
 
 void enter_step_select(){
  	step = Select;
+   stepTicks = 0;
+   redrawFlag = 1;
+   initRender = 1;
 }
 
 
@@ -227,8 +246,15 @@ void draw_player_info(){
 }
 
 void render_step_select(){
-	draw_player_info();
-   draw_card();
+   if (initRender){
+      draw_bg();
+      draw_player_info();
+      initRender = 0;
+   }
+   if (redrawFlag){
+      draw_card();
+      redrawFlag = 0;
+   }
 }
 
 void update_step_select(){
@@ -247,16 +273,20 @@ void keypress_step_select(KeyEvent key){
    } else if (key.code == KEY_RIGHT){
    	if (activeCard + 1 >= game_state.inventoryCount){
       	activeCard = 0;
+         redrawFlag = 1;
       	return; //wrap to first
       }
       activeCard++;
+      redrawFlag = 1;
       return;
    } else if (key.code == KEY_LEFT){
     	if (activeCard == 0){
        	activeCard = game_state.inventoryCount - 1;
+         redrawFlag = 1;
          return;
       }
       activeCard--;
+      redrawFlag = 1;
    }
 }
 
@@ -264,12 +294,24 @@ void keypress_step_select(KeyEvent key){
 
 void enter_step_play(){
 	step = Play;
+   stepTicks = 0;
+   initRender = 1;
+   redrawFlag = 1;
    get_text_glyphs(&pixantiqua_font, &activeCardText, &(cards[activeCard].Description), 10, 10, 300, 140, ALIGN_RIGHT, ALIGN_MIDDLE);
 }
 
 void render_step_play(){
-	draw_player_info();
-	render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &activeCardText, 0);
+   if (initRender){
+      draw_bg();
+      draw_player_info();
+      initRender = 0;
+   }
+	//currently the text can overlay previously rendered text. Use redraw flag if we're adding animations or anything.
+   if (redrawFlag){
+      render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &activeCardText, 0);
+      redrawFlag = 0;
+   }
+	
 }
 
 void update_step_play(){
@@ -290,16 +332,22 @@ void keypress_step_play(KeyEvent key){
    		return;
    	}
    	activeCardText.glyphs[curGlyph].style = Next;
+      redrawFlag = 1;
    }
 }
 
 void enter_step_score(){
 	step = Score;
+   stepTicks = 0;
+   initRender = 1;
 	sprintf(scoreText, "You made %d errors", errors);
 }
 
 void render_step_score(){
-	draw_text(&silk_font, &silk_fontimg, scoreText, 0, 0, 320, 200, ALIGN_CENTER, ALIGN_MIDDLE);
+   if (initRender){
+      draw_bg();
+      draw_text(&silk_font, &silk_fontimg, scoreText, 0, 0, 320, 200, ALIGN_CENTER, ALIGN_MIDDLE);
+   }
 }
 
 void update_step_score(){

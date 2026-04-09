@@ -10,9 +10,13 @@
 #include "menu.h"
 #include "battle.h"
 #include "enemies.h"
+#include "timer.h"
+#include "sound.h"
 
 KeyEvent key;
 int forceExit;
+unsigned long lastTick;
+unsigned long lastRenderTick;
 
 void update_screen(){
 	switch (game_state.screen){
@@ -76,6 +80,21 @@ void exit_program(){
 void main(void) {
 
   forceExit = 0;
+  lastTick = 0;
+  lastRenderTick = 0;
+
+  init_timer();
+
+  opl_init();
+  if (opl2){
+   printf("OPL 2 detected");
+   getch();
+   test_music();
+  } else {
+   printf("No OPL 2 detected");
+   getch();
+  }
+
   set_initial_state(&game_state);
 
   load_global_fonts();
@@ -95,6 +114,7 @@ void main(void) {
 
   change_screen(Menu);
 
+  
   while (1){
   		if (forceExit){
   			break;
@@ -104,10 +124,23 @@ void main(void) {
          on_keypress(key);
 		}
 
-      update_screen();
-      render_screen();
+      if (ticks60 != lastTick) {
+        lastTick = ticks60;
+        update_screen();
+      }
+      if (ticks60 > lastRenderTick){
+         render_screen();
+         lastRenderTick = ticks60;
+      }
 
   }
+
+  remove_timer();
+  
+  if (opl2){
+   opl_cleanup();
+  }
+  
 
   delete_offscreen_buffer();
 

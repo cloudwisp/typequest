@@ -1,0 +1,1 @@
+ -ml -f287 -dc- -Vf- -IC:\BC5\INCLUDE -ocards.obj cards.c
