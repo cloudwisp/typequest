@@ -4,6 +4,7 @@
 #include "bmpfnt.h"
 #include "fonts.h"
 #include "stdio.h"
+#include "sound.h"
 
 
 #define MENU_ITEM_COUNT 3
@@ -11,21 +12,21 @@
 int currentItem;
 GlyphSet menuGlyphs[MENU_ITEM_COUNT];
 char menuItems[MENU_ITEM_COUNT][20] = {"New Game", "Continue", "Exit to DOS"};
+int redraw = 0;
 
 void init_menu(){
 	int i, lineHeight;
 
+	play_menu_song();
 	currentItem = 0;
-   lineHeight = 200 / MENU_ITEM_COUNT;
+	lineHeight = 200 / MENU_ITEM_COUNT;
 
- 
-   for (i = 0; i < MENU_ITEM_COUNT; i++){
-   	  get_text_glyphs(&venice_font, &menuGlyphs[i],
-   	menuItems[i],
-	  0, i * lineHeight, 320, lineHeight, ALIGN_CENTER, ALIGN_MIDDLE);
-   }
-
-   getch();
+	for (i = 0; i < MENU_ITEM_COUNT; i++){
+		get_text_glyphs(&venice_font, &menuGlyphs[i],
+			menuItems[i],
+			0, i * lineHeight, 320, lineHeight, ALIGN_CENTER, ALIGN_MIDDLE);
+	}
+	redraw = 1;
 }
 
 void update_menu(){
@@ -44,15 +45,17 @@ void update_menu(){
 
 void render_menu(){
 	int i;
-   for (i = 0; i < MENU_ITEM_COUNT; i++){
+	if (!redraw){
+		return;
+	}
+	draw_fill(6);
+	for (i = 0; i < MENU_ITEM_COUNT; i++){
 		render_text_glyphs(&venice_font, &venice_fontimg, &menuGlyphs[i], 0);
-   }
+	}
 	show_offscreen_buffer();
 }
 
 void destroy_menu(){
-
-
 }
 
 void keypress_menu(KeyEvent event){
@@ -80,12 +83,14 @@ void keypress_menu(KeyEvent event){
    	if (currentItem == 0){
        	return;
       }
+			redraw = 1;
       currentItem--;
    }
    if (event.code == KEY_DOWN){
    	if (currentItem == MENU_ITEM_COUNT - 1){
       	return;
       }
+			redraw = 1;
       currentItem++;
    }
 

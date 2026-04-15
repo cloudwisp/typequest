@@ -12,6 +12,9 @@
 #include "enemies.h"
 #include "timer.h"
 #include "sound.h"
+#include "draw.h"
+#include "bmpfnt.h"
+#include "fonts.h"
 
 KeyEvent key;
 int forceExit;
@@ -40,7 +43,14 @@ void render_screen(){
    }
 }
 
+void show_loading(){
+   draw_fill(COLOR_BLACK);
+   draw_text(&venice_font, &venice_fontimg, "Loading...", 0, 0, 320, 200, ALIGN_CENTER, ALIGN_MIDDLE);
+	show_offscreen_buffer();
+}
+
 void change_screen(GameScreen screen){
+   show_loading();
 	switch (game_state.screen){
     	case Menu:
       	destroy_menu();
@@ -89,7 +99,6 @@ void main(void) {
   if (opl2){
    printf("OPL 2 detected");
    getch();
-   test_music();
   } else {
    printf("No OPL 2 detected");
    getch();

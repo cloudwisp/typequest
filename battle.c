@@ -14,6 +14,7 @@
 #include "state.h"
 #include "fonts.h"
 #include "cards.h"
+#include "sound.h"
 
 #define CARD_TITLE_OFFSET_X	 4
 #define CARD_TITLE_OFFSET_Y 	 16
@@ -69,8 +70,8 @@ void init_battle(){
   redrawFlag = 0; //can be used by steps to invalidate screen
   initRender = 0;
   activeCard = game_state.inventory[0];
-
-  load_bmp("castle.bmp", &backimg);
+  play_battle_song();
+  load_bmp("comasset/forest.bmp", &backimg);
   load_bmp("card.bmp", &cardbg);
 
   card_x = 320 - cardbg.width - 2;

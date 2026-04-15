@@ -3,3 +3,13 @@ Fonts used:
 Card and enemy names: PixAntiqua - 12px
 Card text: grand9k_pixel - 12px?
 Tiny text: zepto-tiny8x
+
+
+Steps to prepare assets:
+0. Load the image in aseprite
+1. create new empty image in aseprite. Indexed, same dimensions as source.
+2. Load the typeques.pal file
+3. Copy the image from the png/source, and paste into the new image. It should attempt to match colors to the new palette
+4. Export -> bmp.
+5. Copy the bmp to the bmpatch utility folder (aseprite will only export palette header for the colors used, so the indexes are wrong. bmpatch will map them to the correct index)
+

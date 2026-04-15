@@ -13,12 +13,13 @@ typedef struct {
  
 #define MAX_INSTRUMENTS 20
 #define PATTERN_MAX 50
-#define CHANNEL_COUNT 9
+#define CHANNEL_COUNT 11
 #define SEQUENCE_MAX 60
 #define NOTES_PER_PATTERN 16
 #define SONG_COUNTER_MAX SEQUENCE_MAX * NOTES_PER_PATTERN
 
 #define EMPTY_INSTRUMENT { 0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
+#define EMPTY_ACTIVE_INSTRUMENT { 1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 #define EMPTY_PATTERN { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 }
 #define EMPTY_SEQUENCE \
     { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, \
@@ -27,6 +28,12 @@ typedef struct {
       -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, \
       -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, \
       -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 }
+
+#define BD -3
+#define SD -4
+#define TT -5
+#define CM -6
+#define HH -7
 
 #define C0  0
 #define Cs0 1
@@ -145,13 +152,13 @@ void opl_write(short index, char data);
 void opl_play_note(int channel, unsigned int fnum, int octave);
 void opl_stop_note(int channel);
 void opl_init();
-void play_test_note();
 void opl_cleanup();
-void test_music();
 void set_tempo(unsigned int bpm, unsigned int resolution);
 void set_instrument(int channel, OPLInstrument instrument);
 void play_song(Song song);
 void stop_song();
+void play_battle_song();
+void play_menu_song();
 
 
 #endif

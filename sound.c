@@ -39,12 +39,57 @@ int sequence_counter = -1;
 int note_counter = -1;
 Song currentSong;
 
-Song test_song = {
+OPLInstrument bass_drum_6 = {
+    1,
+    0x01,   // mod_20
+    0x10,   // mod_40: output level
+    0xF6,   // mod_60: attack=F, decay6
+    0x09,   // mod_80: sustain=0, release=9
+    0x00,   // mod_E0: sine
+    0x01,   // car_20
+    0x00,   // car_40
+    0xF2,   // car_60
+    0x09,   // car_80
+    0x00,   // car_E0
+    0x00    // feedback = 0 (important)
+};
+
+OPLInstrument snare_hihat_7 = {
+    1,
+    0x01,   // mod_20
+    0x10,   // mod_40
+    0xF8,   // attack/decay
+    0xF5,   // sustain/release
+    0x00,   // mod_E0: sine
+    0x01,   // car_20
+    0x10,   // car_40
+    0xF6,   // attack/decay
+    0xF5,   // sustain/release
+    0x00,   // car_E0
+    0x00
+};
+
+OPLInstrument tom_cymbal_8 = {
+    1,
+    0x01,   // mod_20
+    0x00,   // mod_40
+    0xF8,   // attack/decay
+    0x05,   // sustain/release
+    0x00,   // mod_E0: sine
+    0x01,   // car_20
+    0x10,   // car_40
+    0xF6,   // attack/decay
+    0xFF,   // sustain/release
+    0x00,   // car_E0
+    0x00
+};
+
+Song menu_song = {
     //tempo
     60,
     //sequence count
     4,
-    //instruments for each channel 0-9
+    //instruments for each channel 0-9 (+ 2 dummy for percussion channels)
     {
         { 
             //0: Bass
@@ -94,9 +139,12 @@ Song test_song = {
         EMPTY_INSTRUMENT,
         EMPTY_INSTRUMENT,
         EMPTY_INSTRUMENT,
+        //percussion - unused
         EMPTY_INSTRUMENT,
         EMPTY_INSTRUMENT,
         EMPTY_INSTRUMENT,
+        EMPTY_INSTRUMENT,
+        EMPTY_INSTRUMENT
     },
     //patterns, -1 is rest with stop previous note. -2 is rest with sustain (no stop)
     {
@@ -165,6 +213,152 @@ Song test_song = {
         { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
         { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
         { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 }
+    }
+};
+
+
+Song battle_song = {
+    //tempo
+    107,
+    //sequence count
+    8,
+    //instruments for each channel 0-9
+    {
+        { 
+            //0: Bass
+            1,      // active
+            0x21,   // mod_20
+            0x18,   // mod_40 output level
+            0x52,   // mod_60 attack/decay
+            0x40,   // mod_80 sustain/release
+            0x00,   // mod_E0 wave
+            0x01,   // car_20
+            0x00,   // car_40 output level
+            0x68,   // car_60 attack/decay
+            0x20,   // car_80 sustain/release
+            0x00,   // car_E0 wave
+            0x06    // feedback
+        },
+        //1: Lead 1
+        {
+            1,      // active
+            0x01,   // mod_20
+            0xFF,   // mod_40 output level
+            0xF7,   // mod_60 attack/decay
+            0x80,   // mod_80 sustain/release
+            0x01,   // mod_E0 wave
+            0x01,   // car_20
+            0x00,   // car_40 output level
+            0xF7,   // car_60 attack/decay
+            0x80,   // car_80 sustain/release
+            0x01,   // car_E0 wave
+            0x02    // feedback
+        },
+        // 2: Lead 2
+        {
+            1,      // active
+            0x01,   // mod_20
+            0x3F,   // mod_40 output level
+            0xF7,   // mod_60 attack/decay
+            0xF0,   // mod_80 sustain/release
+            0x01,   // mod_E0 wave
+            0x01,   // car_20
+            0x00,   // car_40 output level
+            0xF7,   // car_60 attack/decay
+            0xF0,   // car_80 sustain/release
+            0x01,   // car_E0 wave
+            0x02    // feedback
+        },
+        EMPTY_INSTRUMENT,
+        EMPTY_INSTRUMENT,
+        EMPTY_INSTRUMENT,
+        //Percussion - unused
+        EMPTY_ACTIVE_INSTRUMENT,
+        EMPTY_ACTIVE_INSTRUMENT,
+        EMPTY_ACTIVE_INSTRUMENT,
+        EMPTY_ACTIVE_INSTRUMENT,
+        EMPTY_ACTIVE_INSTRUMENT
+    },
+    //patterns, -1 is rest with stop previous note. -2 is rest with sustain (no stop)
+    {
+        //0: Bass Ds2
+        { Ds2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2 },
+        //1: Bass Fs2.
+        { Fs2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2 },
+        //2: Bass Gs2
+        { Gs2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2 },
+        //3: Bass As2
+        { As2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2 },
+        //4: Lead arp
+        {  C4,  F4, Fs4, As4,  -2,  -2, Ds4,  -2,  -2,  -2,  -2,  -2, Cs4,  -2,  -2,  -2 },
+        //5: Bass drum and hi hat
+        {  HH,  HH,  HH,  HH,  HH,  HH,  HH,  HH,  HH,  HH,  HH,  HH,  HH,  HH,  HH,  HH },
+        //6: snare off beat
+        {  BD,  -2,  -2,  -2,  SD,  -2,  -2,  -2,  BD,  -2,  -2,  -2,  SD,  -2,  -2,  -2 },
+        //7: tom and crash
+        {  -2,  -2,  -2,  -2,  -2,  -2,  TT,  TT,  CM,  -2,  -2,  -2,  -2,  -2,  -2,  -2 },
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN
+    },
+    //sequence - one row per channel, reference pattern index.
+    // -1 for no pattern
+    {
+        {  0,  1,  2,  3,  0,  1,  2,  3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        {  4,  4,  4,  4,  4,  4,  4,  4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        //hi hat
+        {  5,  5,  5,  5,  5,  5,  5,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        //bd and snare
+        {  6,  6,  6,  6,  6,  6,  6,  6, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        //tt and cymbal
+        {  7, -2,  7, -1,  7, -1,  7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
         { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
         { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 }
     }
@@ -237,6 +431,42 @@ void opl_stop_note(int channel){
   opl_write(0xB0 + channel, data);
 }
 
+void opl_init_percussion(){
+  unsigned int ch;
+  unsigned int fnum;
+  int octave;
+  octave = 4;
+
+  opl_write(0xBD, 0x20); // enable rhythm mode
+  
+  set_instrument(6, bass_drum_6);
+  set_instrument(7, snare_hihat_7);
+  set_instrument(8, tom_cymbal_8);
+
+  //set fnums of channel 7 and 8
+  for (ch = 6; ch < 9; ch++){
+    if (ch == 6){
+      fnum = 0x157;
+      octave = 1;
+    }
+    else if (ch == 7){
+      fnum = 0x203;
+      octave = 1;
+    }
+    else {
+      fnum = 0x157;
+      octave = 3;
+    }
+    opl_write(0xA0 + ch, fnum & 0xFF);
+    opl_write(0xB0 + ch, ((fnum >> 8) &  0x03) | (octave << 2) );
+  }
+
+}
+
+void opl_stop_percussion_notes(){
+  opl_write(0xBD, 0x20); //all off, except for perc mode flag
+}
+
 
 void opl_init(){
   unsigned char s1, s2;
@@ -284,10 +514,24 @@ void play_next_note(){
   int ch;
   int note;
   int pattern;
+  int play_bd;
+  int play_sd;
+  int play_hh;
+  int play_tt;
+  int play_cm;
+  unsigned char drumdata;
+
+  play_bd = 0;
+  play_sd = 0;
+  play_hh = 0;
+  play_tt = 0;
+  play_cm = 0;
+  drumdata = 0x0;
+
   if (sequence_counter < 0){
     return;
   }
-
+  opl_stop_percussion_notes();
   for (ch = 0; ch < CHANNEL_COUNT; ch++){
     if (!currentSong.instruments[ch].active){
       continue;
@@ -297,6 +541,32 @@ void play_next_note(){
       continue;
     }
     note = currentSong.patterns[pattern][note_counter];
+    if (ch >= 6){
+      //percussion occupies 6, 7 and 8 in opl, in tracker, additional 2 tracks to support all sounds at once in sequencer
+      
+      if (note == -1 || note == -2){
+        continue;
+      }
+      switch (note){
+        case HH:
+          play_hh = 1;
+          break;
+        case SD:
+          play_sd = 1;
+          break;
+        case BD:
+          play_bd = 1;
+          break;
+        case CM:
+          play_cm = 1;
+          break;
+        case TT:
+          play_tt = 1;
+      }
+      
+      continue;
+    }
+
     if (note == -1){
       //stop previous note
       opl_stop_note(ch);
@@ -307,6 +577,28 @@ void play_next_note(){
       opl_stop_note(ch);
       opl_play_note_fullscale(ch, note);
     }
+  }
+
+  if (play_hh || play_sd || play_bd || play_cm || play_tt){
+    //need to play one or more drum notes
+    drumdata = 0x20;
+    if (play_bd){
+      drumdata = drumdata | 0x10;
+    }
+    if (play_hh){
+      drumdata = drumdata | 0x01;
+    }
+    if (play_sd){
+      drumdata = drumdata | 0x08;
+    }
+    if (play_tt){
+      drumdata = drumdata | 0x04;
+    }
+    if (play_cm){
+      drumdata = drumdata | 0x02; 
+    }
+    opl_write(0xBD, 0x20);
+    opl_write(0xBD, drumdata);
   }
   
   if (note_counter == NOTES_PER_PATTERN - 1){
@@ -362,16 +654,21 @@ void play_song(Song song){
   set_tempo(song.tempo, 4);
 
   //set instruments
-  for (ch = 0; ch < CHANNEL_COUNT; ch++){
+  for (ch = 0; ch < 6; ch++){
     if (song.instruments[ch].active){
       set_instrument(ch, song.instruments[ch]);
     }
   }
 
+  opl_init_percussion();
+
 }
 
-void test_music(){
-  play_song(test_song);
+void play_battle_song(){
+  play_song(battle_song);
+}
+void play_menu_song(){
+  play_song(menu_song);
 }
 
 void stop_song(){
