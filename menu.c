@@ -6,6 +6,7 @@
 #include "stdio.h"
 #include "sound.h"
 #include "ui.h"
+#include "vga.h"
 
 
 #define MENU_ITEM_COUNT 3
@@ -15,6 +16,10 @@ GlyphSet menuGlyphs[MENU_ITEM_COUNT];
 char menuItems[MENU_ITEM_COUNT][20] = {"New Game", "Continue", "Exit to DOS"};
 int redraw_menu = 0;
 int init_redraw_menu = 0;
+int menu_width = 0;
+int menu_height = 0;
+int menu_x = 0;
+int menu_y = 0;
 BITMAP menu_backimg;
 BITMAP menu_title;
 
@@ -39,8 +44,12 @@ void init_menu(){
 	for (i = 0; i < MENU_ITEM_COUNT; i++){
 		get_text_glyphs(&venice_font, &menuGlyphs[i],
 			menuItems[i],
-			0, (i * lineHeight) + yoffset, 320, lineHeight, ALIGN_CENTER, ALIGN_MIDDLE);
+			0, (i * lineHeight) + yoffset, SCREEN_WIDTH, lineHeight, ALIGN_CENTER, ALIGN_MIDDLE);
 	}
+	menu_y = yoffset;
+	menu_height = lineHeight * MENU_ITEM_COUNT;
+	menu_x = SCREEN_WIDTH * 0.3;
+	menu_width = SCREEN_WIDTH - (menu_x * 2);
 	redraw_menu = 1;
 	init_redraw_menu = 1;
 }
@@ -59,11 +68,9 @@ void update_menu(){
    }
 }
 
-void draw_test_box(){
-	draw_ui_sprite(0, 20, 20, 100, 100); //expanded 2 directions
-	draw_ui_sprite(UI_METAL_BOX, 270, 5, 44, 32); //exact size of src
-	draw_ui_sprite(UI_METAL_BOX, 20, 150, 200, 32); //expand width
-	draw_ui_sprite(UI_METAL_BOX, 280, 40, 44, 100);
+void draw_menu_box(){
+	//draw_rect(160, 100, 320, 200, 14);
+	draw_ui_sprite(UI_METAL_BOX, menu_x, menu_y, menu_width, menu_height);
 }
 
 void render_menu(){
@@ -71,7 +78,7 @@ void render_menu(){
 	if (init_redraw_menu){
 		draw_menu_bg();
 		draw_menu_title();
-		draw_test_box();
+		draw_menu_box();
 		init_redraw_menu = 0;
 	}
 	if (!redraw_menu){

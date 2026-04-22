@@ -1,7 +1,6 @@
 #include "ui.h"
 #include "bitmap.h"
-
-
+#include "draw.h"
 
 BITMAP ui_metal_box_img;
 
@@ -13,22 +12,25 @@ void unload_ui_assets(){
   farfree(ui_metal_box_img.data);
 }
 
-
-void draw_ui_sprite(int spriteIndex, int targetX, int targetY, int targetWidth, int targetHeight){
-  BITMAP * thisBmp;
-  if (spriteIndex == UI_METAL_BOX){
-    thisBmp = &ui_metal_box_img;
+BITMAP * resolve_sprite(int sprite){
+  switch (sprite){
+    case UI_METAL_BOX:
+      return &ui_metal_box_img;
   }
-  if (targetWidth <= thisBmp->width){
+}
+
+void draw_ui_sprite(int sprite, int targetX, int targetY, int targetWidth, int targetHeight){
+  BITMAP * bmp = resolve_sprite(sprite);
+  if (targetWidth <= bmp->width){
     targetWidth = 0;
   }
-  if (targetHeight <= thisBmp->height){
+  if (targetHeight <= bmp->height){
     targetHeight = 0;
   }
   if (targetWidth > 0 || targetHeight > 0){
-    draw_ui_sprite_img(thisBmp, targetX, targetY, targetWidth, targetHeight);
+    draw_ui_sprite_img(bmp, targetX, targetY, targetWidth, targetHeight);
   } else {
-    draw_transparent_bitmap(thisBmp, targetX, targetY);
+    draw_transparent_bitmap(bmp, targetX, targetY);
   } 
 }
 
@@ -80,6 +82,8 @@ void draw_ui_sprite_img(BITMAP * sprite, int targetX, int targetY, int targetWid
 
     if (targetWidth > 0){
       //middle - TODO solid color sampled from source
+      centerColor = sprite->data[(edgeHeight * sprite->width) + edgeWidth];
+      draw_rect(middleX, middleY, middleWidth, middleHeight, centerColor);
     }
 
     //expanded middle right

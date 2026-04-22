@@ -7,6 +7,8 @@ Available memory 473728 bytes
         Bcc +BccDos.cfg -P- -c @MAKE0006.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0007.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0008.@@@
+        Bcc +BccDos.cfg -P- -c @MAKE0012.@@@
+        Bcc +BccDos.cfg -P- -c @MAKE0013.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0014.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0015.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0016.@@@
