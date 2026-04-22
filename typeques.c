@@ -15,6 +15,7 @@
 #include "draw.h"
 #include "bmpfnt.h"
 #include "fonts.h"
+#include "ui.h"
 
 KeyEvent key;
 int forceExit;
@@ -107,6 +108,7 @@ void main(void) {
   set_initial_state(&game_state);
 
   load_global_fonts();
+  load_ui_assets();
   load_enemies();
   load_cards();
 
@@ -153,6 +155,7 @@ void main(void) {
 
   delete_offscreen_buffer();
 
+  unload_ui_assets();
   unload_global_fonts();
   unload_enemies();
   unload_cards();

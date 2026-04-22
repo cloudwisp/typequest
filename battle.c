@@ -208,30 +208,30 @@ void render_step_intro(){
       initRender = 0;
    }
    //render in reverse order
-   if (stepTicks >= 360 && redrawFlag){
+   if (stepTicks >= 240 && redrawFlag){
       render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &introTextName, 0);
       redrawFlag = 0;
       return;
    }
-	if (stepTicks >= 240 && redrawFlag){
+	if (stepTicks >= 180 && redrawFlag){
 		render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &introTextTitle, 0);
       redrawFlag = 0;
    }
 }
 
 void update_step_intro(){
-   if (stepTicks == 360 || stepTicks == 240){
+   if (stepTicks == 180 || stepTicks == 240){
       redrawFlag = 1;
    }
-   if (stepTicks > 420){
-    	intro_done = true;
+   if (stepTicks > 360){
+    	enter_step_select();
    }
 }
 
 void keypress_step_intro(KeyEvent event){
-	if (intro_done){
-    	enter_step_select();
-   }
+	// if (intro_done){
+   //  	enter_step_select();
+   // }
 }
 
 void enter_step_select(){

@@ -1,0 +1,23 @@
+#include "bitmap.h"
+#ifndef UI_H
+#define UI_H
+
+typedef struct {
+  unsigned short x;
+  unsigned short y;
+  unsigned short width;
+  unsigned short height;
+  int canExpandX;
+  int canExpandY;
+} UISprite;
+
+//named assets
+#define UI_METAL_BOX 0
+
+void load_ui_assets();
+void unload_ui_assets();
+
+void draw_ui_sprite(int spriteIndex, int targetX, int targetY, int targetWidth, int targetHeight);
+void draw_ui_sprite_img(BITMAP * sprite, int targetX, int targetY, int targetWidth, int targetHeight);
+
+#endif

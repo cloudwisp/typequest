@@ -5,6 +5,7 @@
 #include "fonts.h"
 #include "stdio.h"
 #include "sound.h"
+#include "ui.h"
 
 
 #define MENU_ITEM_COUNT 3
@@ -12,21 +13,36 @@
 int currentItem;
 GlyphSet menuGlyphs[MENU_ITEM_COUNT];
 char menuItems[MENU_ITEM_COUNT][20] = {"New Game", "Continue", "Exit to DOS"};
-int redraw = 0;
+int redraw_menu = 0;
+int init_redraw_menu = 0;
+BITMAP menu_backimg;
+BITMAP menu_title;
+
+void draw_menu_bg(){
+	draw_bitmap(&menu_backimg, 0, 0);
+}
+
+void draw_menu_title(){
+	draw_transparent_bitmap(&menu_title, 0, 0);
+}
 
 void init_menu(){
-	int i, lineHeight;
+	int i, lineHeight, yoffset;
 
 	play_menu_song();
+	load_bmp("comasset/plains.bmp", &menu_backimg);
+	load_bmp("devasset/title.bmp", &menu_title);
 	currentItem = 0;
-	lineHeight = 200 / MENU_ITEM_COUNT;
+	yoffset = 110;
+	lineHeight = (200 - yoffset) / MENU_ITEM_COUNT;
 
 	for (i = 0; i < MENU_ITEM_COUNT; i++){
 		get_text_glyphs(&venice_font, &menuGlyphs[i],
 			menuItems[i],
-			0, i * lineHeight, 320, lineHeight, ALIGN_CENTER, ALIGN_MIDDLE);
+			0, (i * lineHeight) + yoffset, 320, lineHeight, ALIGN_CENTER, ALIGN_MIDDLE);
 	}
-	redraw = 1;
+	redraw_menu = 1;
+	init_redraw_menu = 1;
 }
 
 void update_menu(){
@@ -43,12 +59,24 @@ void update_menu(){
    }
 }
 
+void draw_test_box(){
+	draw_ui_sprite(0, 20, 20, 100, 100); //expanded 2 directions
+	draw_ui_sprite(UI_METAL_BOX, 270, 5, 44, 32); //exact size of src
+	draw_ui_sprite(UI_METAL_BOX, 20, 150, 200, 32); //expand width
+	draw_ui_sprite(UI_METAL_BOX, 280, 40, 44, 100);
+}
+
 void render_menu(){
 	int i;
-	if (!redraw){
+	if (init_redraw_menu){
+		draw_menu_bg();
+		draw_menu_title();
+		draw_test_box();
+		init_redraw_menu = 0;
+	}
+	if (!redraw_menu){
 		return;
 	}
-	draw_fill(6);
 	for (i = 0; i < MENU_ITEM_COUNT; i++){
 		render_text_glyphs(&venice_font, &venice_fontimg, &menuGlyphs[i], 0);
 	}
@@ -56,6 +84,8 @@ void render_menu(){
 }
 
 void destroy_menu(){
+	farfree(menu_backimg.data);
+	farfree(menu_title.data);
 }
 
 void keypress_menu(KeyEvent event){
@@ -83,14 +113,14 @@ void keypress_menu(KeyEvent event){
    	if (currentItem == 0){
        	return;
       }
-			redraw = 1;
+			redraw_menu = 1;
       currentItem--;
    }
    if (event.code == KEY_DOWN){
    	if (currentItem == MENU_ITEM_COUNT - 1){
       	return;
       }
-			redraw = 1;
+			redraw_menu = 1;
       currentItem++;
    }
 

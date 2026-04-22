@@ -92,6 +92,8 @@ Dep_typequesdexe = \
    timer.obj\
    sound.h\
    sound.obj\
+   ui.h\
+   ui.obj\
    typedef.h\
    state.h\
    state.obj\
@@ -120,6 +122,7 @@ battle.obj+
 menu.obj+
 timer.obj+
 sound.obj+
+ui.obj+
 state.obj+
 keyboard.obj+
 bmpfnt.obj+
@@ -171,6 +174,10 @@ sound.obj :  sound.c
  $(CompOptsAt_typequesdexe) $(CompInheritOptsAt_typequesdexe) -o$@ sound.c
 |
 
+ui.obj :  ui.c
+  $(BCCDOS) -P- -c @&&|
+ $(CompOptsAt_typequesdexe) $(CompInheritOptsAt_typequesdexe) -o$@ ui.c
+|
 
 state.obj :  state.c
   $(BCCDOS) -P- -c @&&|
