@@ -3,19 +3,24 @@
 #include "draw.h"
 
 BITMAP ui_metal_box_img;
+BITMAP ui_scroll_img;
 
 void load_ui_assets(){
   load_bmp("comasset/ui/metalbox.bmp", &ui_metal_box_img);
+  load_bmp("comasset/ui/scroll.bmp", &ui_scroll_img);
 }
 
 void unload_ui_assets(){
   farfree(ui_metal_box_img.data);
+  farfree(ui_scroll_img.data);
 }
 
 BITMAP * resolve_sprite(int sprite){
   switch (sprite){
     case UI_METAL_BOX:
       return &ui_metal_box_img;
+    case UI_SCROLL_TITLE:
+      return &ui_scroll_img;
   }
 }
 
@@ -104,4 +109,37 @@ void draw_ui_sprite_img(BITMAP * sprite, int targetX, int targetY, int targetWid
   }
   //bottom right
   draw_bitmap_sprite(sprite, sprite->width - edgeWidth, sprite->height - edgeHeight, edgeWidth, edgeHeight, rightX, bottomY, true, false);
+}
+
+BITMAP backdrop;
+int backdrop_loaded = false;
+
+void backdrop_init(const char * path){
+  if (backdrop_loaded){
+    farfree(backdrop.data);
+  }
+  load_bmp(path, &backdrop);
+  backdrop_loaded = true;
+}
+
+void backdrop_draw(){
+  if (!backdrop_loaded){
+    return;
+  }
+  draw_bitmap(&backdrop, 0, 0);
+}
+
+void backdrop_draw_part(int x, int y, int width, int height){
+  if (!backdrop_loaded){
+    return;
+  }
+  draw_bitmap_sprite(&backdrop, x, y, width, height, x, y, false, 0);
+}
+
+void backdrop_free(){
+  if (!backdrop_loaded){
+    return;
+  }
+  farfree(backdrop.data);
+  backdrop_loaded = false;
 }

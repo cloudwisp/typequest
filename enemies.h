@@ -8,5 +8,6 @@ extern Enemy far * enemies;
 
 void load_enemies();
 void unload_enemies();
+void get_enemy(int id, Enemy * enemy);
 
 #endif

@@ -20,11 +20,11 @@ int menu_width = 0;
 int menu_height = 0;
 int menu_x = 0;
 int menu_y = 0;
-BITMAP menu_backimg;
+
 BITMAP menu_title;
 
 void draw_menu_bg(){
-	draw_bitmap(&menu_backimg, 0, 0);
+	backdrop_draw();
 }
 
 void draw_menu_title(){
@@ -35,7 +35,8 @@ void init_menu(){
 	int i, lineHeight, yoffset;
 
 	play_menu_song();
-	load_bmp("comasset/plains.bmp", &menu_backimg);
+	backdrop_init("comasset/plains.bmp");
+	
 	load_bmp("devasset/title.bmp", &menu_title);
 	currentItem = 0;
 	yoffset = 110;
@@ -91,7 +92,7 @@ void render_menu(){
 }
 
 void destroy_menu(){
-	farfree(menu_backimg.data);
+	backdrop_free();
 	farfree(menu_title.data);
 }
 

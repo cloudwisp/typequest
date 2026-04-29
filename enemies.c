@@ -30,3 +30,14 @@ void load_enemies(){
 void unload_enemies(){
 	farfree(enemies);
 }
+
+void get_enemy(int id, Enemy* enemy){
+  Enemy far *src;
+  if (id >= enemy_header.Count){
+    return;
+  }
+  src = (Enemy far *)enemies + id;
+  //copy to the near pointer
+  enemy->Health = src->Health;
+  _fstrcpy(enemy->Name, src->Name);
+}

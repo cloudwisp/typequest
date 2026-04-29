@@ -16,6 +16,8 @@
 #include "bmpfnt.h"
 #include "fonts.h"
 #include "ui.h"
+#include "state.h"
+#include "book.h"
 
 KeyEvent key;
 int forceExit;
@@ -80,7 +82,7 @@ void on_keypress(KeyEvent event){
       	keypress_battle(event);
          break;
       default:
-      	exit(1);
+      	exit_program();
    }
 }
 
@@ -109,8 +111,12 @@ void main(void) {
 
   load_global_fonts();
   load_ui_assets();
+  load_books();
   load_enemies();
   load_cards();
+
+  printf(get_random_sentence(1));
+  getch();
 
   set_video_mode(MODE13H);
 
@@ -159,6 +165,7 @@ void main(void) {
   unload_global_fonts();
   unload_enemies();
   unload_cards();
+  unload_books();
 
   set_video_mode(TEXT_MODE);
 }

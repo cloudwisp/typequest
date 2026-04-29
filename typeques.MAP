@@ -1,107 +1,108 @@
 
  Start  Stop   Length Name               Class
 
- 00000H 08E6EH 08E6FH _TEXT              CODE
- 08E6FH 08F19H 000ABH CARDS_TEXT         CODE
- 08F1AH 08FC2H 000A9H ENEMIES_TEXT       CODE
- 08FC3H 0905CH 0009AH FONTS_TEXT         CODE
- 0905DH 09689H 0062DH BATTLE_TEXT        CODE
- 0968AH 098A8H 0021FH MENU_TEXT          CODE
- 098A9H 09981H 000D9H TIMER_TEXT         CODE
- 09982H 0A029H 006A8H SOUND_TEXT         CODE
- 0A02AH 0A325H 002FCH UI_TEXT            CODE
- 0A326H 0A3D7H 000B2H STATE_TEXT         CODE
- 0A3D8H 0A40FH 00038H KEYBOARD_TEXT      CODE
- 0A410H 0AE42H 00A33H BMPFNT_TEXT        CODE
- 0AE43H 0B341H 004FFH BITMAP_TEXT        CODE
- 0B342H 0B429H 000E8H VGA_TEXT           CODE
- 0B42AH 0B4DEH 000B5H DRAW_TEXT          CODE
- 0B4DFH 0B4DFH 00000H GLOBALS_TEXT       CODE
- 0B4DFH 0B740H 00262H TYPEQUES_TEXT      CODE
- 0B750H 0BD0FH 005C0H E87_PROG           CODE
- 0BD10H 0C95DH 00C4EH _TEXTC             CODE
- 0C960H 0C960H 00000H _FARDATA           FAR_DATA
- 0C960H 0C960H 00000H _FARBSS            FAR_BSS
- 0C960H 0C960H 00000H _OVERLAY_          OVRINFO
- 0C960H 0C960H 00000H _1STUB_            STUBSEG
- 0C960H 0ED85H 02426H _DATA              DATA
- 0ED86H 0ED89H 00004H _CVTSEG            DATA
- 0ED8AH 0ED8FH 00006H _SCNSEG            DATA
- 0ED90H 0ED90H 00000H _CONST             CONST
- 0ED90H 0EDBFH 00030H _INIT_             INITDATA
- 0EDC0H 0EDC0H 00000H _INITEND_          INITDATA
- 0EDC0H 0EDD7H 00018H _EXIT_             EXITDATA
- 0EDD8H 0EDD8H 00000H _EXITEND_          EXITDATA
- 0EDD8H 1AB47H 0BD70H _BSS               BSS
- 1AB48H 1AB48H 00000H _BSSEND            BSSEND
- 1AB50H 1AC80H 00131H _STACK             STACK
+ 00000H 08E97H 08E98H _TEXT              CODE
+ 08E98H 08F42H 000ABH CARDS_TEXT         CODE
+ 08F43H 09035H 000F3H ENEMIES_TEXT       CODE
+ 09036H 090CFH 0009AH FONTS_TEXT         CODE
+ 090D0H 0988DH 007BEH BATTLE_TEXT        CODE
+ 0988EH 09A92H 00205H MENU_TEXT          CODE
+ 09A93H 09B6BH 000D9H TIMER_TEXT         CODE
+ 09B6CH 0A213H 006A8H SOUND_TEXT         CODE
+ 0A214H 0A5E3H 003D0H UI_TEXT            CODE
+ 0A5E4H 0A790H 001ADH BOOK_TEXT          CODE
+ 0A791H 0A842H 000B2H STATE_TEXT         CODE
+ 0A843H 0A87AH 00038H KEYBOARD_TEXT      CODE
+ 0A87BH 0B2ADH 00A33H BMPFNT_TEXT        CODE
+ 0B2AEH 0B7ACH 004FFH BITMAP_TEXT        CODE
+ 0B7ADH 0B894H 000E8H VGA_TEXT           CODE
+ 0B895H 0B949H 000B5H DRAW_TEXT          CODE
+ 0B94AH 0B94AH 00000H GLOBALS_TEXT       CODE
+ 0B94AH 0BBC9H 00280H TYPEQUES_TEXT      CODE
+ 0BBD0H 0C18FH 005C0H E87_PROG           CODE
+ 0C190H 0CDDDH 00C4EH _TEXTC             CODE
+ 0CDE0H 0CDE0H 00000H _FARDATA           FAR_DATA
+ 0CDE0H 0CDE0H 00000H _FARBSS            FAR_BSS
+ 0CDE0H 0CDE0H 00000H _OVERLAY_          OVRINFO
+ 0CDE0H 0CDE0H 00000H _1STUB_            STUBSEG
+ 0CDE0H 0F2B5H 024D6H _DATA              DATA
+ 0F2B6H 0F2B9H 00004H _CVTSEG            DATA
+ 0F2BAH 0F2BFH 00006H _SCNSEG            DATA
+ 0F2C0H 0F2C0H 00000H _CONST             CONST
+ 0F2C0H 0F2EFH 00030H _INIT_             INITDATA
+ 0F2F0H 0F2F0H 00000H _INITEND_          INITDATA
+ 0F2F0H 0F307H 00018H _EXIT_             EXITDATA
+ 0F308H 0F308H 00000H _EXITEND_          EXITDATA
+ 0F308H 1B187H 0BE80H _BSS               BSS
+ 1B188H 1B188H 00000H _BSSEND            BSSEND
+ 1B190H 1B2C0H 00131H _STACK             STACK
 
   Address         Publics by Name
 
- 0000:41E0       operator delete(void far*)
- 0000:41F6       operator delete[](void far*)
- 0000:4279       operator new(unsigned int)
- 0000:420C       set_new_handler(void(far*)())
- 0000:4FF9       set_terminate(void(far*)())
- 0000:50F6       set_unexpected(void(far*)())
- 0BD1:0000       string::string(const string far&)
- 0BD1:00E9       string::string(const char far*)
- 0BD1:0305       string::~string()
- 0BD1:038C       string::assert_element(unsigned int) const
- 0BD1:044A       string::assert_index(unsigned int) const
- 0C96:23C0       string::case_sensitive
- 0C96:23CA       string::freeboard
- 0C96:23C6       string::initial_capac
- 0BD1:0A9A       string::initial_capacity(unsigned int)
- 0BD1:0AE1       string::max_waste(unsigned int)
- 0C96:23C2       string::paranoid_check
- 0C96:23C8       string::resize_inc
- 0BD1:0AB7       string::resize_increment(unsigned int)
- 0BD1:0A43       string::set_case_sensitive(int)
- 0BD1:0A60       string::set_paranoid_check(int)
- 0C96:23C4       string::skip_white
- 0BD1:0A7D       string::skip_whitespace(int)
- 0000:4FEF       terminate()
- 0BD1:05C3       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
- 0BD1:06AC       tstringref::~tstringref()
- 0BD1:077B       tstringref::check_freeboard()
- 0BD1:07E3       tstringref::grow_to(unsigned int)
- 0BD1:070D       tstringref::reserve(unsigned int)
- 0BD1:0845       tstringref::round_capacity(unsigned int)
- 0BD1:0884       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
- 0BD1:0508       tsubstring::assert_element(unsigned int) const
- 0000:850E       typeinfo::operator =(const typeinfo far&)
- 0000:84A0       typeinfo::typeinfo(const typeinfo far&)
- 0000:851D       typeinfo::~typeinfo()
- 0000:8552       typeinfo::operator ==(const typeinfo far&) const
- 0000:8583       typeinfo::operator !=(const typeinfo far&) const
- 0000:85A5       typeinfo::before(const typeinfo far&) const
- 0000:861C       typeinfo::name() const
- 0000:50ED       unexpected()
- 0000:528A       xalloc::xalloc(const string far&,unsigned int)
- 0000:5309       xalloc::raise()
- 0000:572A       xmsg::operator =(const xmsg far&)
- 0000:5580       xmsg::xmsg(const xmsg far&)
- 0000:54B5       xmsg::xmsg(const string far&)
- 0000:562B       xmsg::~xmsg()
- 0000:56AE       xmsg::raise()
- 0000:6F6C       _catchcleanup()
- 0000:67FD       _rethrowexception(unsigned int,unsigned char far*)
- 0000:67A4       _throwexception(void far*,void far*,void far*,void far*,unsigned int,unsigned int,unsigned int,unsigned char far*)
- 0000:8903       __dynamiccast(void far*,void far*,void far*,void far*,int)
- 0000:5190       __getpolymorphicdtc(void far*,unsigned int)
- 0000:51E4       __getpolymorphicdtcfar(void far*,unsigned int)
- 0000:8636       __gettypeinfo(void far*,void far*,void far*,void far*)
- 0000:5868       __refdestructorcount()
- 0000:586E       __refexceptionlist()
- 0000:848E       __throwexceptionname()
- 0000:846E       __throwfilename()
- 0000:8480       __throwlinenumber()
- 0C96:0000       DATASEG@
+ 0000:4209       operator delete(void far*)
+ 0000:421F       operator delete[](void far*)
+ 0000:42A2       operator new(unsigned int)
+ 0000:4235       set_new_handler(void(far*)())
+ 0000:5022       set_terminate(void(far*)())
+ 0000:511F       set_unexpected(void(far*)())
+ 0C19:0000       string::string(const string far&)
+ 0C19:00E9       string::string(const char far*)
+ 0C19:0305       string::~string()
+ 0C19:038C       string::assert_element(unsigned int) const
+ 0C19:044A       string::assert_index(unsigned int) const
+ 0CDE:2470       string::case_sensitive
+ 0CDE:247A       string::freeboard
+ 0CDE:2476       string::initial_capac
+ 0C19:0A9A       string::initial_capacity(unsigned int)
+ 0C19:0AE1       string::max_waste(unsigned int)
+ 0CDE:2472       string::paranoid_check
+ 0CDE:2478       string::resize_inc
+ 0C19:0AB7       string::resize_increment(unsigned int)
+ 0C19:0A43       string::set_case_sensitive(int)
+ 0C19:0A60       string::set_paranoid_check(int)
+ 0CDE:2474       string::skip_white
+ 0C19:0A7D       string::skip_whitespace(int)
+ 0000:5018       terminate()
+ 0C19:05C3       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
+ 0C19:06AC       tstringref::~tstringref()
+ 0C19:077B       tstringref::check_freeboard()
+ 0C19:07E3       tstringref::grow_to(unsigned int)
+ 0C19:070D       tstringref::reserve(unsigned int)
+ 0C19:0845       tstringref::round_capacity(unsigned int)
+ 0C19:0884       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
+ 0C19:0508       tsubstring::assert_element(unsigned int) const
+ 0000:8537       typeinfo::operator =(const typeinfo far&)
+ 0000:84C9       typeinfo::typeinfo(const typeinfo far&)
+ 0000:8546       typeinfo::~typeinfo()
+ 0000:857B       typeinfo::operator ==(const typeinfo far&) const
+ 0000:85AC       typeinfo::operator !=(const typeinfo far&) const
+ 0000:85CE       typeinfo::before(const typeinfo far&) const
+ 0000:8645       typeinfo::name() const
+ 0000:5116       unexpected()
+ 0000:52B3       xalloc::xalloc(const string far&,unsigned int)
+ 0000:5332       xalloc::raise()
+ 0000:5753       xmsg::operator =(const xmsg far&)
+ 0000:55A9       xmsg::xmsg(const xmsg far&)
+ 0000:54DE       xmsg::xmsg(const string far&)
+ 0000:5654       xmsg::~xmsg()
+ 0000:56D7       xmsg::raise()
+ 0000:6F95       _catchcleanup()
+ 0000:6826       _rethrowexception(unsigned int,unsigned char far*)
+ 0000:67CD       _throwexception(void far*,void far*,void far*,void far*,unsigned int,unsigned int,unsigned int,unsigned char far*)
+ 0000:892C       __dynamiccast(void far*,void far*,void far*,void far*,int)
+ 0000:51B9       __getpolymorphicdtc(void far*,unsigned int)
+ 0000:520D       __getpolymorphicdtcfar(void far*,unsigned int)
+ 0000:865F       __gettypeinfo(void far*,void far*,void far*,void far*)
+ 0000:5891       __refdestructorcount()
+ 0000:5897       __refexceptionlist()
+ 0000:84B7       __throwexceptionname()
+ 0000:8497       __throwfilename()
+ 0000:84A9       __throwlinenumber()
+ 0CDE:0000       DATASEG@
  0000:026D       DGROUP@
- 0B75:04E0       e087_Entry
- 0B75:05A3       e087_Shortcut
- 0B75:003F       e087_Trap
+ 0BBD:04E0       e087_Entry
+ 0BBD:05A3       e087_Shortcut
+ 0BBD:003F       e087_Trap
  0000:0000  Abs  FIARQQ
  0000:0000  Abs  FICRQQ
  0000:0000  Abs  FIDRQQ
@@ -113,453 +114,475 @@
  0000:0000  Abs  FJSRQQ
  0000:09FE       FTOL@
  0000:09FE       F_FTOL@
- 0000:3BC7       F_LDIV@
- 0000:3BD6       F_LMOD@
- 0000:3BCE       F_LUDIV@
- 0000:3BDE       F_LUMOD@
- 0000:3C75       F_LXLSH@
- 0000:3BAD       F_LXMUL@
- 0000:489F       F_PADD@
- 0000:48CE       F_PSUB@
- 0000:4880       F_SCOPY@
- 0000:4902       F_SPUSH@
- 0000:3BC7       LDIV@
- 0000:3BD6       LMOD@
- 0000:3BCE       LUDIV@
- 0000:3BDE       LUMOD@
- 0000:3C75       LXLSH@
- 0000:3BAD       LXMUL@
- 0000:3BC4       N_LDIV@
- 0000:3BD3       N_LMOD@
- 0000:3BCB       N_LUDIV@
- 0000:3BDB       N_LUMOD@
- 0000:3C72       N_LXLSH@
- 0000:3C93       N_LXMUL@
- 0000:489C       N_PADD@
- 0000:4923       N_PCMP@
- 0000:48CB       N_PSUB@
- 0000:48FC       N_SPUSH@
- 0000:489F       PADD@
- 0000:48CE       PSUB@
- 0000:4880       SCOPY@
- 0000:4902       SPUSH@
- 0000:49CA       _abort
- 0C96:D9B2       _accumulator
- 0C96:9AFE       _activeCard
- 0C96:80E4       _activeCardText
- 0C96:8D66       _activeCardTitle
- 0000:49DE       _atexit
- 0C96:80D4       _backimg
- 0C96:0276       _bass_drum_6
- 0C96:097C       _battle_song
- 0C96:80DC       _cardbg
- 0C96:247C       _cards
- 0C96:2478       _card_header
- 0C96:99F8       _card_x
- 0C96:99FA       _card_y
- 0C96:0269       _carrier_offsets
- 0B4D:0087       _change_screen
- 0000:22C9       _close
+ 0000:3BF0       F_LDIV@
+ 0000:3BFF       F_LMOD@
+ 0000:3BF7       F_LUDIV@
+ 0000:3C07       F_LUMOD@
+ 0000:3C9E       F_LXLSH@
+ 0000:3BD6       F_LXMUL@
+ 0000:48C8       F_PADD@
+ 0000:48F7       F_PSUB@
+ 0000:48A9       F_SCOPY@
+ 0000:492B       F_SPUSH@
+ 0000:3BF0       LDIV@
+ 0000:3BFF       LMOD@
+ 0000:3BF7       LUDIV@
+ 0000:3C07       LUMOD@
+ 0000:3C9E       LXLSH@
+ 0000:3BD6       LXMUL@
+ 0000:3BED       N_LDIV@
+ 0000:3BFC       N_LMOD@
+ 0000:3BF4       N_LUDIV@
+ 0000:3C04       N_LUMOD@
+ 0000:3C9B       N_LXLSH@
+ 0000:3CBC       N_LXMUL@
+ 0000:48C5       N_PADD@
+ 0000:494C       N_PCMP@
+ 0000:48F4       N_PSUB@
+ 0000:4925       N_SPUSH@
+ 0000:48C8       PADD@
+ 0000:48F7       PSUB@
+ 0000:48A9       SCOPY@
+ 0000:492B       SPUSH@
+ 0CDE:E178       _ability_book
+ 0000:49F3       _abort
+ 0CDE:DA8E       _accumulator
+ 0CDE:8184       _action_bar
+ 0CDE:81A4       _action_fire
+ 0CDE:819C       _action_heal
+ 0CDE:818C       _action_highlight
+ 0CDE:8194       _action_sword
+ 0CDE:9BCA       _activeCard
+ 0CDE:81B4       _activeCardText
+ 0CDE:8E36       _activeCardTitle
+ 0000:4A07       _atexit
+ 0CDE:E17C       _attack_book
+ 0CDE:E16C       _backdrop
+ 0A21:0360       _backdrop_draw
+ 0A21:037E       _backdrop_draw_part
+ 0A21:03B0       _backdrop_free
+ 0A21:032C       _backdrop_init
+ 0CDE:1094       _backdrop_loaded
+ 0CDE:02CC       _bass_drum_6
+ 0CDE:09D2       _battle_song
+ 0CDE:81AC       _cardbg
+ 0CDE:252C       _cards
+ 0CDE:2528       _card_header
+ 0CDE:02BF       _carrier_offsets
+ 0B94:0082       _change_screen
+ 0000:22F2       _close
  0000:0BFA       _cprintf
- 0B34:000E       _create_offscreen_buffer
- 0C96:99F6       _curCard
- 0C96:99F0       _curGlyph
- 0C96:99E8       _curRenderChar
- 0C96:B412       _currentItem
- 0C96:D9C2       _currentSong
- 0000:4F8E       _delay
- 0B34:0092       _delete_offscreen_buffer
- 0905:011D       _destroy_battle
- 0968:0199       _destroy_menu
- 0905:029A       _draw_bg
- 0AE4:02CD       _draw_bitmap
- 0AE4:0337       _draw_bitmap_sprite
- 0905:0091       _draw_card
- 0B42:000A       _draw_fill
- 0968:000A       _draw_menu_bg
- 0968:0125       _draw_menu_box
- 0968:001F       _draw_menu_title
- 0B42:0028       _draw_pixel
- 0905:03FA       _draw_player_info
- 0B42:004D       _draw_rect
- 0A41:0363       _draw_text
- 0AE4:02FB       _draw_transparent_bitmap
- 0A02:0047       _draw_ui_sprite
- 0A02:00AE       _draw_ui_sprite_img
- 0C96:2484       _enemies
- 0C96:99FC       _enemyId
- 0C96:2480       _enemy_header
- 0905:02AF       _enter_step_intro
- 0905:04CB       _enter_step_play
- 0905:05C5       _enter_step_score
- 0905:03D7       _enter_step_select
- 0000:3591       _eof
- 0C96:007E       _errno
- 0C96:99F2       _errors
- 0000:4A6E       _exit
- 0B4D:0109       _exit_program
- 0000:440E       _farfree
- 0000:4522       _farmalloc
- 0000:4686       _farrealloc
- 0000:22F5       _fclose
- 0000:23B6       _fflush
- 0000:36EE       _fgetc
- 0000:37F0       _fgetchar
- 0000:2491       _fgets
- 0C96:9B00       _finishCount
- 0C96:0248       _flookup
- 0000:2582       _flushall
- 0000:280E       _fopen
- 0C96:E12A       _forceExit
- 0000:2847       _fprintf
- 0000:2D3E       _fputc
- 0000:2ED9       _fputchar
- 0000:2867       _fputs
- 0000:29DB       _fread
- 0000:440E       _free
- 0000:2AFF       _fseek
- 0AE4:0003       _fskip
- 0000:2B84       _ftell
- 0C96:E088       _game_state
+ 0B7A:0019       _create_offscreen_buffer
+ 0CDE:9AC6       _curCard
+ 0CDE:9AC0       _curGlyph
+ 0CDE:9AB8       _curRenderChar
+ 0CDE:B4E0       _currentEnemy
+ 0CDE:B4F6       _currentItem
+ 0CDE:DA9E       _currentSong
+ 0000:4FB7       _delay
+ 0B7A:009D       _delete_offscreen_buffer
+ 090D:0233       _destroy_battle
+ 0988:018E       _destroy_menu
+ 090D:00D3       _draw_action_bar
+ 0B2A:02D8       _draw_bitmap
+ 0B2A:0342       _draw_bitmap_sprite
+ 090D:0184       _draw_card
+ 0B89:0005       _draw_fill
+ 0988:000E       _draw_menu_bg
+ 0988:011A       _draw_menu_box
+ 0988:0018       _draw_menu_title
+ 0B89:0023       _draw_pixel
+ 090D:0541       _draw_player_info
+ 0B89:0048       _draw_rect
+ 0A87:036E       _draw_text
+ 0B2A:0306       _draw_transparent_bitmap
+ 0A21:006D       _draw_ui_sprite
+ 0A21:00D4       _draw_ui_sprite_img
+ 0CDE:2534       _enemies
+ 0CDE:9AC8       _enemyId
+ 0CDE:2530       _enemy_header
+ 090D:03F5       _enter_step_intro
+ 090D:064D       _enter_step_play
+ 090D:0748       _enter_step_score
+ 090D:051E       _enter_step_select
+ 0000:35BA       _eof
+ 0CDE:007E       _errno
+ 0CDE:9AC2       _errors
+ 0000:4A97       _exit
+ 0B94:0101       _exit_program
+ 0000:4437       _farfree
+ 0000:454B       _farmalloc
+ 0000:46AF       _farrealloc
+ 0000:231E       _fclose
+ 0000:23DF       _fflush
+ 0000:3717       _fgetc
+ 0000:3819       _fgetchar
+ 0000:24BA       _fgets
+ 0CDE:9BCC       _finishCount
+ 0CDE:029E       _flookup
+ 0000:25AB       _flushall
+ 0000:2837       _fopen
+ 0CDE:E2EA       _forceExit
+ 0000:2870       _fprintf
+ 0000:2D67       _fputc
+ 0000:2F02       _fputchar
+ 0000:2890       _fputs
+ 0000:2A04       _fread
+ 0000:4437       _free
+ 0000:2B28       _fseek
+ 0B2A:000E       _fskip
+ 0000:2BAD       _ftell
+ 0CDE:E248       _game_state
  0000:1300       _getch
  0000:1320       _getche
- 0A41:0314       _getKerning
+ 0A87:031F       _getKerning
  0000:0C18       _gettext
- 0000:4AD4       _getvect
- 0A3D:0008       _get_key_event
- 0A41:03D2       _get_text_glyphs
- 0C96:80CC       _i
- 0AE4:0329       _image_byte_pos
- 0C96:9B04       _initRender
- 0905:000D       _init_battle
- 0968:0034       _init_menu
- 0C96:0216       _init_redraw_menu
- 098A:0083       _init_timer
- 0C96:A790       _introTextName
- 0C96:9B0E       _introTextTitle
- 0C96:9B08       _intro_done
- 0000:3B76       _ioctl
- 0000:1843       _isatty
- 0C96:80D2       _k
+ 0000:4AFD       _getvect
+ 08F4:00AC       _get_enemy
+ 0A84:0003       _get_key_event
+ 0A5E:016E       _get_random_sentence
+ 0A5E:012E       _get_random_sentence_book
+ 0A87:03DD       _get_text_glyphs
+ 0CDE:E174       _heal_book
+ 0CDE:817C       _i
+ 0B2A:0334       _image_byte_pos
+ 0CDE:9BD0       _initRender
+ 090D:0000       _init_battle
+ 0988:002D       _init_menu
+ 0CDE:026C       _init_redraw_menu
+ 09A9:007D       _init_timer
+ 0CDE:A85E       _introTextName
+ 0CDE:9BDC       _introTextTitle
+ 0CDE:9BD6       _intro_done
+ 0000:3B9F       _ioctl
+ 0000:186C       _isatty
+ 0CDE:8182       _k
  0000:1374       _kbhit
- 0C96:E126       _key
- 0905:0236       _keypress_battle
- 0905:01D4       _keypress_battle_select
- 0968:01BE       _keypress_menu
- 0905:03D2       _keypress_step_intro
- 0905:0563       _keypress_step_play
- 0905:062D       _keypress_step_score
- 0905:0451       _keypress_step_select
- 0C96:E130       _lastRenderTick
- 0C96:E12C       _lastTick
- 0AE4:0022       _load_bmp
- 08E6:000F       _load_cards
- 08F1:000A       _load_enemies
- 08FC:0003       _load_global_fonts
- 0A02:000A       _load_ui_assets
- 0000:3BA3       _localeconv
- 0000:1858       _lseek
- 0B4D:0114       _main
- 0000:4518       _malloc
- 0000:1410       _memcmp
- 0000:1438       _memcpy
- 0000:14F7       _memmove
- 0000:1482       _memset
- 0C96:B414       _menuGlyphs
- 0C96:01D8       _menuItems
- 0C96:D99A       _menu_backimg
- 0C96:021A       _menu_height
- 0C96:02BE       _menu_song
- 0C96:D9A2       _menu_title
- 0C96:0218       _menu_width
- 0C96:021C       _menu_x
- 0C96:021E       _menu_y
- 0C96:0260       _modulator_offsets
+ 0CDE:E2E6       _key
+ 090D:0391       _keypress_battle
+ 090D:032F       _keypress_battle_select
+ 0988:01A8       _keypress_menu
+ 090D:0519       _keypress_step_intro
+ 090D:06E6       _keypress_step_play
+ 090D:07B1       _keypress_step_score
+ 090D:059D       _keypress_step_select
+ 0CDE:E2F0       _lastRenderTick
+ 0CDE:E2EC       _lastTick
+ 0B2A:002D       _load_bmp
+ 0A5E:0004       _load_book
+ 0A5E:00BE       _load_books
+ 08E9:0008       _load_cards
+ 08F4:0003       _load_enemies
+ 0903:0006       _load_global_fonts
+ 0A21:0004       _load_ui_assets
+ 0000:3BCC       _localeconv
+ 0000:1881       _lseek
+ 0B94:010C       _main
+ 0000:4541       _malloc
+ 0000:1439       _memcmp
+ 0000:1461       _memcpy
+ 0000:1520       _memmove
+ 0000:14AB       _memset
+ 0CDE:B4F8       _menuGlyphs
+ 0CDE:022E       _menuItems
+ 0CDE:0270       _menu_height
+ 0CDE:0314       _menu_song
+ 0CDE:DA7E       _menu_title
+ 0CDE:026E       _menu_width
+ 0CDE:0272       _menu_x
+ 0CDE:0274       _menu_y
+ 0CDE:02B6       _modulator_offsets
  0000:0CE0       _movetext
- 0000:14A5       _movmem
- 0C96:D9BA       _music_bpm
- 0C96:D9B8       _music_note_duration
- 0C96:D9BC       _music_resolution
- 0998:05B6       _music_timer
- 098A:003A       _newTimer
- 0C96:D9BE       _next_note_tick
- 0C96:0274       _note_counter
- 0C96:166E       _offscreen_buffer
- 0C96:D9AE       _oldTimer
- 0B4D:00D0       _on_keypress
- 0000:3835       _open
- 0C96:D9B4       _opl2
- 0C96:D9B6       _opl3
- 0998:033C       _opl_cleanup
- 0998:029D       _opl_init
- 0998:01CD       _opl_init_percussion
- 0998:012C       _opl_play_note
- 0998:016E       _opl_play_note_fullscale
- 0998:008C       _opl_set_carrier
- 0998:00EE       _opl_set_carrier_20h
- 0998:002A       _opl_set_modulator
- 0998:010D       _opl_set_modulator_20h
- 0998:01A6       _opl_stop_note
- 0998:028C       _opl_stop_percussion_notes
- 0998:0002       _opl_write
- 0A41:0000       _parseFntFile
- 0000:2C66       _perror
- 0C96:6210       _pixantiqua_font
- 0C96:6208       _pixantiqua_fontimg
- 0998:0665       _play_battle_song
- 0998:067F       _play_menu_song
- 0998:0368       _play_next_note
- 0998:05F8       _play_song
+ 0000:14CE       _movmem
+ 0CDE:DA96       _music_bpm
+ 0CDE:DA94       _music_note_duration
+ 0CDE:DA98       _music_resolution
+ 09B6:05C0       _music_timer
+ 09A9:0034       _newTimer
+ 0CDE:DA9A       _next_note_tick
+ 0CDE:02CA       _note_counter
+ 0CDE:171A       _offscreen_buffer
+ 0CDE:DA8A       _oldTimer
+ 0B94:00CB       _on_keypress
+ 0000:385E       _open
+ 0CDE:DA90       _opl2
+ 0CDE:DA92       _opl3
+ 09B6:0346       _opl_cleanup
+ 09B6:02A7       _opl_init
+ 09B6:01D7       _opl_init_percussion
+ 09B6:0136       _opl_play_note
+ 09B6:0178       _opl_play_note_fullscale
+ 09B6:0096       _opl_set_carrier
+ 09B6:00F8       _opl_set_carrier_20h
+ 09B6:0034       _opl_set_modulator
+ 09B6:0117       _opl_set_modulator_20h
+ 09B6:01B0       _opl_stop_note
+ 09B6:0296       _opl_stop_percussion_notes
+ 09B6:000C       _opl_write
+ 0A87:000B       _parseFntFile
+ 0000:2C8F       _perror
+ 0CDE:62C0       _pixantiqua_font
+ 0CDE:62B8       _pixantiqua_fontimg
+ 09B6:066F       _play_battle_song
+ 09B6:0689       _play_menu_song
+ 09B6:0372       _play_next_note
+ 09B6:0602       _play_song
  0000:087C       _pow10
- 0000:2CFD       _printf
+ 0000:2D26       _printf
  0000:0D88       _putch
  0000:0C7C       _puttext
- 0C96:99F4       _quitEarly
- 0000:4EA2       _raise
- 0000:6985       _RaiseException
- 0000:467F       _realloc
- 0C96:9B02       _redrawFlag
- 0C96:0214       _redraw_menu
- 098A:00C2       _remove_timer
- 0905:0196       _render_battle
- 0968:0144       _render_menu
- 0B4D:0031       _render_screen
- 0905:0313       _render_step_intro
- 0905:0521       _render_step_play
- 0905:05F6       _render_step_score
- 0905:0421       _render_step_select
- 0A41:0817       _render_text_glyphs
- 0A02:0034       _resolve_sprite
- 0C96:99FE       _scoreText
- 0C96:0272       _sequence_counter
- 0000:4860       _setblock
- 0000:145C       _setmem
- 098A:0009       _setPITRate
- 0000:3103       _setvbuf
- 0000:4AE7       _setvect
- 0A32:0006       _set_initial_state
- 0998:0564       _set_instrument
- 0B34:00B0       _set_palette
- 0B34:00DA       _set_shared_palette
- 0998:0503       _set_tempo
- 0B34:0002       _set_video_mode
- 0C96:136A       _shared_palette
- 0B4D:0053       _show_loading
- 0B34:0063       _show_offscreen_buffer
- 0000:4D74       _signal
- 0C96:4350       _silk_font
- 0C96:4348       _silk_fontimg
- 0C96:028E       _snare_hihat_7
- 0000:326D       _sprintf
- 0C96:80C8       _sprite_x
- 0C96:80CA       _sprite_y
- 0000:32F1       _sscanf
- 0C96:9B06       _step
- 0C96:9B0A       _stepTicks
- 0998:0699       _stop_song
- 0000:151C       _strcat
- 0000:155B       _strcmp
- 0000:158B       _strcpy
- 0000:15B4       _strlen
- 0000:15D5       _strncmp
- 0C96:D9AA       _ticks60
- 0C96:02A6       _tom_cymbal_8
- 0C96:E080       _ui_metal_box_img
+ 0CDE:9AC4       _quitEarly
+ 0000:4ECB       _raise
+ 0000:69AE       _RaiseException
+ 0000:46A8       _realloc
+ 0CDE:9BCE       _redrawFlag
+ 0CDE:026A       _redraw_menu
+ 09A9:00BC       _remove_timer
+ 090D:02F1       _render_battle
+ 0988:0139       _render_menu
+ 0B94:002C       _render_screen
+ 090D:0459       _render_step_intro
+ 090D:06A3       _render_step_play
+ 090D:0779       _render_step_score
+ 090D:0568       _render_step_select
+ 0A87:0822       _render_text_glyphs
+ 0A21:004E       _resolve_sprite
+ 0CDE:9ACA       _scoreText
+ 0CDE:02C8       _sequence_counter
+ 0000:4889       _setblock
+ 0000:1485       _setmem
+ 09A9:0003       _setPITRate
+ 0000:312C       _setvbuf
+ 0000:4B10       _setvect
+ 0A79:0001       _set_initial_state
+ 09B6:056E       _set_instrument
+ 0B7A:00BB       _set_palette
+ 0B7A:00E5       _set_shared_palette
+ 09B6:050D       _set_tempo
+ 0B7A:000D       _set_video_mode
+ 0CDE:1416       _shared_palette
+ 0B94:004E       _show_loading
+ 0B7A:006E       _show_offscreen_buffer
+ 0000:4D9D       _signal
+ 0CDE:4400       _silk_font
+ 0CDE:43F8       _silk_fontimg
+ 0CDE:02E4       _snare_hihat_7
+ 0CDE:9BD2       _spellType
+ 0000:3296       _sprintf
+ 0CDE:8178       _sprite_x
+ 0CDE:817A       _sprite_y
+ 0000:331A       _sscanf
+ 0CDE:9BD4       _step
+ 0CDE:9BD8       _stepTicks
+ 09B6:06A3       _stop_song
+ 0000:1545       _strcat
+ 0000:1584       _strcmp
+ 0000:15B4       _strcpy
+ 0000:15DD       _strlen
+ 0000:15FE       _strncmp
+ 0CDE:E180       _temporary_sentence
+ 0CDE:10C6       _thisIsNotRandom
+ 0CDE:DA86       _ticks60
+ 0CDE:02FC       _tom_cymbal_8
+ 0CDE:E15C       _ui_metal_box_img
+ 0CDE:E164       _ui_scroll_img
  0000:1352       _ungetch
- 0000:1DD2       _unlink
- 08E6:00A5       _unload_cards
- 08F1:009E       _unload_enemies
- 08FC:0068       _unload_global_fonts
- 0A02:001F       _unload_ui_assets
- 0905:0142       _update_battle
- 0968:00E7       _update_menu
- 0B4D:000F       _update_screen
- 0905:0393       _update_step_intro
- 0905:055E       _update_step_play
- 0905:0628       _update_step_score
- 0905:044C       _update_step_select
- 0A41:0920       _validate_font_bitmap
- 0C96:2490       _venice_font
- 0C96:2488       _venice_fontimg
- 0C96:166A       _video_buffer
- 0000:3293       _vsprintf
- 0000:3318       _vsscanf
- 0B34:0047       _wait_for_retrace
+ 0000:1DFB       _unlink
+ 0A5E:00F9       _unload_books
+ 08E9:009E       _unload_cards
+ 08F4:0097       _unload_enemies
+ 0903:006B       _unload_global_fonts
+ 0A21:0029       _unload_ui_assets
+ 090D:029D       _update_battle
+ 0988:00DC       _update_menu
+ 0B94:000A       _update_screen
+ 090D:04DA       _update_step_intro
+ 090D:06E1       _update_step_play
+ 090D:07AC       _update_step_score
+ 090D:0598       _update_step_select
+ 0A87:092B       _validate_font_bitmap
+ 0CDE:2540       _venice_font
+ 0CDE:2538       _venice_fontimg
+ 0CDE:1716       _video_buffer
+ 0000:32BC       _vsprintf
+ 0000:3341       _vsscanf
+ 0B7A:0052       _wait_for_retrace
  0000:111D       _wherex
  0000:1130       _wherey
- 0C96:80CE       _x
- 0C96:80D0       _y
- 0C96:222A       __8086
- 0C96:16F0       __8087
- 0000:4AB9       __abort
+ 0CDE:817E       _x
+ 0CDE:8180       _y
+ 0CDE:22DA       __8086
+ 0CDE:17A0       __8087
+ 0000:4AE2       __abort
  0000:1000  Abs  __AHINCR
  0000:000C  Abs  __AHSHIFT
- 0C96:222C       __atexitcnt
- 0C96:E14E       __atexittbl
- 0000:478E       __brk
- 0C96:0088       __brklvl
- 0C96:006A       __C0argc
- 0C96:006C       __C0argv
+ 0CDE:22DC       __atexitcnt
+ 0CDE:E30E       __atexittbl
+ 0000:47B7       __brk
+ 0CDE:0088       __brklvl
+ 0CDE:006A       __C0argc
+ 0CDE:006C       __C0argv
  0000:1219       __c0crtinit
- 0C96:0070       __C0environ
- 0C96:1829       __cChar
- 0000:4A97       __cexit
- 0C96:1828       __cFlag
+ 0CDE:0070       __C0environ
+ 0CDE:18D9       __cChar
+ 0000:4AC0       __cexit
+ 0CDE:18D8       __cFlag
  0000:0159       __checknull
  0000:0146       __cleanup
- 0000:3580       __close
+ 0000:35A9       __close
  0000:0AC8       __CPUTN
  0000:123A       __crtinit
- 0C96:20DC       __ctype
- 0000:8419       __CurrExcContext
+ 0CDE:218C       __ctype
+ 0000:8442       __CurrExcContext
  0000:0000  Abs  __cvtfak
- 0000:4AA9       __c_exit
- 0C96:16E0       __default87
- 0C96:E1DA       __DestructorCountPtr
- 0C96:181E       __directvideo
- 0C96:1C86       __doserrno
- 0000:182F       __DOSERROR
- 0C96:1C88       __dosErrorToSV
- 1AB5:0020       __emu
- 0C96:0074       __envLng
- 0C96:0076       __envseg
- 0C96:0078       __envSize
- 0000:523C       __ExceptInit
- 0000:76A0       __ExceptionHandler
- 0C96:0080       __Exception_list
- 0000:4A81       __exit
- 0C96:222E       __exitbuf
- 0C96:2232       __exitfopen
- 0C96:2236       __exitopen
- 0000:36D0       __fgetc
- 0000:252F       __flushall
- 0000:258B       __flushout
+ 0000:4AD2       __c_exit
+ 0CDE:178C       __default87
+ 0CDE:E39A       __DestructorCountPtr
+ 0CDE:18CE       __directvideo
+ 0CDE:1D36       __doserrno
+ 0000:1858       __DOSERROR
+ 0CDE:1D38       __dosErrorToSV
+ 1B19:0020       __emu
+ 0CDE:0074       __envLng
+ 0CDE:0076       __envseg
+ 0CDE:0078       __envSize
+ 0000:5265       __ExceptInit
+ 0000:76C9       __ExceptionHandler
+ 0CDE:0080       __Exception_list
+ 0000:4AAA       __exit
+ 0CDE:22DE       __exitbuf
+ 0CDE:22E2       __exitfopen
+ 0CDE:22E6       __exitopen
+ 0000:36F9       __fgetc
+ 0000:2558       __flushall
+ 0000:25B4       __flushout
  0000:13ED       __fmemset
- 0C96:1C78       __fmode
+ 0CDE:1D28       __fmode
  0000:0954       __fperror
- 0C96:21DE       __fpstklen
+ 0CDE:228E       __fpstklen
  0000:048E       __fpuint
- 0000:2D1C       __fputc
- 0000:2EF1       __FPUTN
- 0000:1716       __freeio
+ 0000:2D45       __fputc
+ 0000:2F1A       __FPUTN
+ 0000:173F       __freeio
  0000:13C7       __fsetmem
- 0000:27C1       __GETFP
- 0000:6939       __Global_unwind
- 0C96:0084       __heapbase
- 0C96:008C       __heaptop
- 0C96:005A       __Int0Vector
- 0C96:005E       __Int4Vector
- 0C96:0062       __Int5Vector
- 0C96:0066       __Int6Vector
- 0000:17F1       __IOERROR
- 0C96:16E4       __LDT
- 0C96:20A0       __localeconvention
- 0000:75CA       __Local_unwind
- 0000:3CAA       __LONGTOA
- 0000:160D       __MKNAME
+ 0000:1410       __fstrcpy
+ 0000:27EA       __GETFP
+ 0000:6962       __Global_unwind
+ 0CDE:0084       __heapbase
+ 0CDE:008C       __heaptop
+ 0CDE:005A       __Int0Vector
+ 0CDE:005E       __Int4Vector
+ 0CDE:0062       __Int5Vector
+ 0CDE:0066       __Int6Vector
+ 0000:181A       __IOERROR
+ 0CDE:1790       __LDT
+ 0CDE:2150       __localeconvention
+ 0000:75F3       __Local_unwind
+ 0000:3CD3       __LONGTOA
+ 0000:1636       __MKNAME
  0000:026F       __MMODEL
- 0C96:E146       __new_handler
- 0000:36EB       __Nfgetc
- 0C96:1C12       __nfile
+ 0CDE:E306       __new_handler
+ 0000:3714       __Nfgetc
+ 0CDE:1CC2       __nfile
  0000:131D       __Ngetche
- 0C96:1C7A       __notUmask
+ 0CDE:1D2A       __notUmask
  0000:134F       __Nungetch
- 0000:3A30       __open
- 0C96:1C14       __openfd
- 0000:26EE       __OPENFP
- 0C96:007C       __osmajor
- 0C96:007D       __osminor
- 0C96:007C       __osversion
+ 0000:3A59       __open
+ 0CDE:1CC4       __openfd
+ 0000:2717       __OPENFP
+ 0CDE:007C       __osmajor
+ 0CDE:007D       __osminor
+ 0CDE:007C       __osversion
  0000:0889       __POW10
- 0C96:16E2       __protected
- 0C96:007A       __psp
- 0000:18B8       __read
- 0000:3F40       __REALCVT
- 0C96:2426       __RealCvtVector
+ 0CDE:178E       __protected
+ 0CDE:007A       __psp
+ 0000:18E1       __read
+ 0000:3F69       __REALCVT
+ 0CDE:24D6       __RealCvtVector
  0000:01BB       __restorezero
- 0000:75EA       __Return_unwind
- 0000:353D       __rtl_chmod
- 0000:355E       __rtl_close
- 0000:39DD       __rtl_open
- 0000:1885       __rtl_read
- 0000:3B1A       __rtl_write
- 0000:47D1       __sbrk
- 0000:18D4       __scanner
- 0000:3F4C       __scanpop
- 0000:3F48       __scanrslt
- 0000:3F44       __scantod
- 0C96:242A       __ScanTodVector
- 0000:3D7F       __scantol
+ 0000:7613       __Return_unwind
+ 0000:3566       __rtl_chmod
+ 0000:3587       __rtl_close
+ 0000:3A06       __rtl_open
+ 0000:18AE       __rtl_read
+ 0000:3B43       __rtl_write
+ 0000:47FA       __sbrk
+ 0000:18FD       __scanner
+ 0000:3F75       __scanpop
+ 0000:3F71       __scanrslt
+ 0000:3F6D       __scantod
+ 0CDE:24DA       __ScanTodVector
+ 0000:3DA8       __scantol
  0000:0EE5       __SCREENIO
  0000:0FA2       __SCROLL
- 0000:166E       __setupio
- 0C96:2212       __stklen
+ 0000:1697       __setupio
+ 0CDE:22C2       __stklen
  0000:138A       __stpcpy
- 0C96:182A       __streams
- 0C96:1DCA       __sys_errlist
- 0C96:1E8A       __sys_nerr
+ 0CDE:18DA       __streams
+ 0CDE:1E7A       __sys_errlist
+ 0CDE:1F3A       __sys_nerr
  0000:015A       __terminate
  0000:0000  Abs  __turboCrt
  0000:0000  Abs  __turboCvt
- 0000:3D2C       __UTOA
+ 0000:3D55       __UTOA
  0000:0F23       __VALIDATEXY
- 0C96:007C       __version
- 0C96:180E       __video
+ 0CDE:007C       __version
+ 0CDE:18BE       __video
  0000:118A       __VideoInt
- 0000:1E06       __VPRINTER
+ 0000:1E2F       __VPRINTER
  0000:0A2A       __VPTR
  0000:0A4E       __VRAM
  0000:110F       __wherexy
- 0000:3B5A       __write
- 0C96:180C       __wscroll
- 0000:17D7       __xclose
+ 0000:3B83       __write
+ 0CDE:18BC       __wscroll
+ 0000:1800       __xclose
  0000:0666       __XCVT
- 0000:34AA       __xfclose
- 0000:34F4       __xfflush
- 0C96:0082       ___brklvl
- 0000:506E       ___call_terminate
- 0000:5141       ___call_unexpected
- 0C96:2286       ___CPPexceptionList
- 0000:4944       ___ErrorMessage
- 0C96:228A       ___exceptFlags
- 0C96:22AE       ___exceptionNameBuff
- 0C96:22AA       ___exceptMemAllocVars
- 0C96:22A6       ___exceptStaticBuffP
- 0C96:232E       ___ExceptStaticXbuff
- 0000:58E3       ___ExitExceptBlocks
- 0000:42CE       ___first
+ 0000:34D3       __xfclose
+ 0000:351D       __xfflush
+ 0CDE:0082       ___brklvl
+ 0000:5097       ___call_terminate
+ 0000:516A       ___call_unexpected
+ 0CDE:2336       ___CPPexceptionList
+ 0000:496D       ___ErrorMessage
+ 0CDE:233A       ___exceptFlags
+ 0CDE:235E       ___exceptionNameBuff
+ 0CDE:235A       ___exceptMemAllocVars
+ 0CDE:2356       ___exceptStaticBuffP
+ 0CDE:23DE       ___ExceptStaticXbuff
+ 0000:590C       ___ExitExceptBlocks
+ 0000:42F7       ___first
  0000:03BB       ___fpreset
- 0000:5874       ___InitExceptBlocks
- 0000:58F7       ___JumpToCatch__
- 0000:42D0       ___last
- 0000:3A49       ___read
- 0000:42D2       ___rover
- 0C96:228C       ___savedDS
- 0C96:228E       ___savedSI
- 0C96:E1CE       ___SignalPtr
- 0C96:2290       ___terminatePTR
- 0C96:2298       ___terminate_DS
- 0C96:22A2       ___throwExceptionName
- 0C96:229C       ___throwFileName
- 0C96:22A0       ___throwLineNumber
- 0C96:2294       ___unexpectdPTR
- 0C96:229A       ___unexpectd_DS
- 0000:3340       ___write
- 0C96:2214       ___xalloc
+ 0000:589D       ___InitExceptBlocks
+ 0000:5920       ___JumpToCatch__
+ 0000:42F9       ___last
+ 0000:3A72       ___read
+ 0000:42FB       ___rover
+ 0CDE:233C       ___savedDS
+ 0CDE:233E       ___savedSI
+ 0CDE:E38E       ___SignalPtr
+ 0CDE:2340       ___terminatePTR
+ 0CDE:2348       ___terminate_DS
+ 0CDE:2352       ___throwExceptionName
+ 0CDE:234C       ___throwFileName
+ 0CDE:2350       ___throwLineNumber
+ 0CDE:2344       ___unexpectdPTR
+ 0CDE:234A       ___unexpectd_DS
+ 0000:3369       ___write
+ 0CDE:22C4       ___xalloc
 
   Address         Publics by Value
 
- 0000:0000  Abs  FJARQQ
- 0000:0000  Abs  __turboCvt
- 0000:0000  Abs  FJCRQQ
  0000:0000  Abs  FIARQQ
- 0000:0000  Abs  FIDRQQ
- 0000:0000  Abs  FJSRQQ
- 0000:0000  Abs  FIWRQQ
  0000:0000  Abs  FICRQQ
  0000:0000  Abs  FISRQQ
+ 0000:0000  Abs  FJCRQQ
+ 0000:0000  Abs  __turboCvt
+ 0000:0000  Abs  FJSRQQ
  0000:0000  Abs  __turboCrt
+ 0000:0000  Abs  FIDRQQ
+ 0000:0000  Abs  FJARQQ
  0000:0000  Abs  __cvtfak
+ 0000:0000  Abs  FIWRQQ
  0000:0000  Abs  FIERQQ
  0000:000C  Abs  __AHSHIFT
  0000:1000  Abs  __AHINCR
@@ -603,460 +626,482 @@
  0000:138A       __stpcpy
  0000:13C7       __fsetmem
  0000:13ED       __fmemset
- 0000:1410       _memcmp
- 0000:1438       _memcpy
- 0000:145C       _setmem
- 0000:1482       _memset
- 0000:14A5       _movmem
- 0000:14F7       _memmove
- 0000:151C       _strcat
- 0000:155B       _strcmp
- 0000:158B       _strcpy
- 0000:15B4       _strlen
- 0000:15D5       _strncmp
- 0000:160D       __MKNAME
- 0000:166E       __setupio
- 0000:1716       __freeio
- 0000:17D7       __xclose
- 0000:17F1       __IOERROR
- 0000:182F       __DOSERROR
- 0000:1843       _isatty
- 0000:1858       _lseek
- 0000:1885       __rtl_read
- 0000:18B8       __read
- 0000:18D4       __scanner
- 0000:1DD2       _unlink
- 0000:1E06       __VPRINTER
- 0000:22C9       _close
- 0000:22F5       _fclose
- 0000:23B6       _fflush
- 0000:2491       _fgets
- 0000:252F       __flushall
- 0000:2582       _flushall
- 0000:258B       __flushout
- 0000:26EE       __OPENFP
- 0000:27C1       __GETFP
- 0000:280E       _fopen
- 0000:2847       _fprintf
- 0000:2867       _fputs
- 0000:29DB       _fread
- 0000:2AFF       _fseek
- 0000:2B84       _ftell
- 0000:2C66       _perror
- 0000:2CFD       _printf
- 0000:2D1C       __fputc
- 0000:2D3E       _fputc
- 0000:2ED9       _fputchar
- 0000:2EF1       __FPUTN
- 0000:3103       _setvbuf
- 0000:326D       _sprintf
- 0000:3293       _vsprintf
- 0000:32F1       _sscanf
- 0000:3318       _vsscanf
- 0000:3340       ___write
- 0000:34AA       __xfclose
- 0000:34F4       __xfflush
- 0000:353D       __rtl_chmod
- 0000:355E       __rtl_close
- 0000:3580       __close
- 0000:3591       _eof
- 0000:36D0       __fgetc
- 0000:36EB       __Nfgetc
- 0000:36EE       _fgetc
- 0000:37F0       _fgetchar
- 0000:3835       _open
- 0000:39DD       __rtl_open
- 0000:3A30       __open
- 0000:3A49       ___read
- 0000:3B1A       __rtl_write
- 0000:3B5A       __write
- 0000:3B76       _ioctl
- 0000:3BA3       _localeconv
- 0000:3BAD       LXMUL@
- 0000:3BAD       F_LXMUL@
- 0000:3BC4       N_LDIV@
- 0000:3BC7       LDIV@
- 0000:3BC7       F_LDIV@
- 0000:3BCB       N_LUDIV@
- 0000:3BCE       LUDIV@
- 0000:3BCE       F_LUDIV@
- 0000:3BD3       N_LMOD@
- 0000:3BD6       LMOD@
- 0000:3BD6       F_LMOD@
- 0000:3BDB       N_LUMOD@
- 0000:3BDE       F_LUMOD@
- 0000:3BDE       LUMOD@
- 0000:3C72       N_LXLSH@
- 0000:3C75       LXLSH@
- 0000:3C75       F_LXLSH@
- 0000:3C93       N_LXMUL@
- 0000:3CAA       __LONGTOA
- 0000:3D2C       __UTOA
- 0000:3D7F       __scantol
- 0000:3F40       __REALCVT
- 0000:3F44       __scantod
- 0000:3F48       __scanrslt
- 0000:3F4C       __scanpop
- 0000:41E0       operator delete(void far*)
- 0000:41F6       operator delete[](void far*)
- 0000:420C       set_new_handler(void(far*)())
- 0000:4279       operator new(unsigned int)
- 0000:42CE       ___first
- 0000:42D0       ___last
- 0000:42D2       ___rover
- 0000:440E       _free
- 0000:440E       _farfree
- 0000:4518       _malloc
- 0000:4522       _farmalloc
- 0000:467F       _realloc
- 0000:4686       _farrealloc
- 0000:478E       __brk
- 0000:47D1       __sbrk
- 0000:4860       _setblock
- 0000:4880       SCOPY@
- 0000:4880       F_SCOPY@
- 0000:489C       N_PADD@
- 0000:489F       F_PADD@
- 0000:489F       PADD@
- 0000:48CB       N_PSUB@
- 0000:48CE       PSUB@
- 0000:48CE       F_PSUB@
- 0000:48FC       N_SPUSH@
- 0000:4902       SPUSH@
- 0000:4902       F_SPUSH@
- 0000:4923       N_PCMP@
- 0000:4944       ___ErrorMessage
- 0000:49CA       _abort
- 0000:49DE       _atexit
- 0000:4A6E       _exit
- 0000:4A81       __exit
- 0000:4A97       __cexit
- 0000:4AA9       __c_exit
- 0000:4AB9       __abort
- 0000:4AD4       _getvect
- 0000:4AE7       _setvect
- 0000:4D74       _signal
- 0000:4EA2       _raise
- 0000:4F8E       _delay
- 0000:4FEF       terminate()
- 0000:4FF9       set_terminate(void(far*)())
- 0000:506E       ___call_terminate
- 0000:50ED       unexpected()
- 0000:50F6       set_unexpected(void(far*)())
- 0000:5141       ___call_unexpected
- 0000:5190       __getpolymorphicdtc(void far*,unsigned int)
- 0000:51E4       __getpolymorphicdtcfar(void far*,unsigned int)
- 0000:523C       __ExceptInit
- 0000:528A       xalloc::xalloc(const string far&,unsigned int)
- 0000:5309       xalloc::raise()
- 0000:54B5       xmsg::xmsg(const string far&)
- 0000:5580       xmsg::xmsg(const xmsg far&)
- 0000:562B       xmsg::~xmsg()
- 0000:56AE       xmsg::raise()
- 0000:572A       xmsg::operator =(const xmsg far&)
- 0000:5868       __refdestructorcount()
- 0000:586E       __refexceptionlist()
- 0000:5874       ___InitExceptBlocks
- 0000:58E3       ___ExitExceptBlocks
- 0000:58F7       ___JumpToCatch__
- 0000:67A4       _throwexception(void far*,void far*,void far*,void far*,unsigned int,unsigned int,unsigned int,unsigned char far*)
- 0000:67FD       _rethrowexception(unsigned int,unsigned char far*)
- 0000:6939       __Global_unwind
- 0000:6985       _RaiseException
- 0000:6F6C       _catchcleanup()
- 0000:75CA       __Local_unwind
- 0000:75EA       __Return_unwind
- 0000:76A0       __ExceptionHandler
- 0000:8419       __CurrExcContext
- 0000:846E       __throwfilename()
- 0000:8480       __throwlinenumber()
- 0000:848E       __throwexceptionname()
- 0000:84A0       typeinfo::typeinfo(const typeinfo far&)
- 0000:850E       typeinfo::operator =(const typeinfo far&)
- 0000:851D       typeinfo::~typeinfo()
- 0000:8552       typeinfo::operator ==(const typeinfo far&) const
- 0000:8583       typeinfo::operator !=(const typeinfo far&) const
- 0000:85A5       typeinfo::before(const typeinfo far&) const
- 0000:861C       typeinfo::name() const
- 0000:8636       __gettypeinfo(void far*,void far*,void far*,void far*)
- 0000:8903       __dynamiccast(void far*,void far*,void far*,void far*,int)
- 08E6:000F       _load_cards
- 08E6:00A5       _unload_cards
- 08F1:000A       _load_enemies
- 08F1:009E       _unload_enemies
- 08FC:0003       _load_global_fonts
- 08FC:0068       _unload_global_fonts
- 0905:000D       _init_battle
- 0905:0091       _draw_card
- 0905:011D       _destroy_battle
- 0905:0142       _update_battle
- 0905:0196       _render_battle
- 0905:01D4       _keypress_battle_select
- 0905:0236       _keypress_battle
- 0905:029A       _draw_bg
- 0905:02AF       _enter_step_intro
- 0905:0313       _render_step_intro
- 0905:0393       _update_step_intro
- 0905:03D2       _keypress_step_intro
- 0905:03D7       _enter_step_select
- 0905:03FA       _draw_player_info
- 0905:0421       _render_step_select
- 0905:044C       _update_step_select
- 0905:0451       _keypress_step_select
- 0905:04CB       _enter_step_play
- 0905:0521       _render_step_play
- 0905:055E       _update_step_play
- 0905:0563       _keypress_step_play
- 0905:05C5       _enter_step_score
- 0905:05F6       _render_step_score
- 0905:0628       _update_step_score
- 0905:062D       _keypress_step_score
- 0968:000A       _draw_menu_bg
- 0968:001F       _draw_menu_title
- 0968:0034       _init_menu
- 0968:00E7       _update_menu
- 0968:0125       _draw_menu_box
- 0968:0144       _render_menu
- 0968:0199       _destroy_menu
- 0968:01BE       _keypress_menu
- 098A:0009       _setPITRate
- 098A:003A       _newTimer
- 098A:0083       _init_timer
- 098A:00C2       _remove_timer
- 0998:0002       _opl_write
- 0998:002A       _opl_set_modulator
- 0998:008C       _opl_set_carrier
- 0998:00EE       _opl_set_carrier_20h
- 0998:010D       _opl_set_modulator_20h
- 0998:012C       _opl_play_note
- 0998:016E       _opl_play_note_fullscale
- 0998:01A6       _opl_stop_note
- 0998:01CD       _opl_init_percussion
- 0998:028C       _opl_stop_percussion_notes
- 0998:029D       _opl_init
- 0998:033C       _opl_cleanup
- 0998:0368       _play_next_note
- 0998:0503       _set_tempo
- 0998:0564       _set_instrument
- 0998:05B6       _music_timer
- 0998:05F8       _play_song
- 0998:0665       _play_battle_song
- 0998:067F       _play_menu_song
- 0998:0699       _stop_song
- 0A02:000A       _load_ui_assets
- 0A02:001F       _unload_ui_assets
- 0A02:0034       _resolve_sprite
- 0A02:0047       _draw_ui_sprite
- 0A02:00AE       _draw_ui_sprite_img
- 0A32:0006       _set_initial_state
- 0A3D:0008       _get_key_event
- 0A41:0000       _parseFntFile
- 0A41:0314       _getKerning
- 0A41:0363       _draw_text
- 0A41:03D2       _get_text_glyphs
- 0A41:0817       _render_text_glyphs
- 0A41:0920       _validate_font_bitmap
- 0AE4:0003       _fskip
- 0AE4:0022       _load_bmp
- 0AE4:02CD       _draw_bitmap
- 0AE4:02FB       _draw_transparent_bitmap
- 0AE4:0329       _image_byte_pos
- 0AE4:0337       _draw_bitmap_sprite
- 0B34:0002       _set_video_mode
- 0B34:000E       _create_offscreen_buffer
- 0B34:0047       _wait_for_retrace
- 0B34:0063       _show_offscreen_buffer
- 0B34:0092       _delete_offscreen_buffer
- 0B34:00B0       _set_palette
- 0B34:00DA       _set_shared_palette
- 0B42:000A       _draw_fill
- 0B42:0028       _draw_pixel
- 0B42:004D       _draw_rect
- 0B4D:000F       _update_screen
- 0B4D:0031       _render_screen
- 0B4D:0053       _show_loading
- 0B4D:0087       _change_screen
- 0B4D:00D0       _on_keypress
- 0B4D:0109       _exit_program
- 0B4D:0114       _main
- 0B75:003F       e087_Trap
- 0B75:04E0       e087_Entry
- 0B75:05A3       e087_Shortcut
- 0BD1:0000       string::string(const string far&)
- 0BD1:00E9       string::string(const char far*)
- 0BD1:0305       string::~string()
- 0BD1:038C       string::assert_element(unsigned int) const
- 0BD1:044A       string::assert_index(unsigned int) const
- 0BD1:0508       tsubstring::assert_element(unsigned int) const
- 0BD1:05C3       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
- 0BD1:06AC       tstringref::~tstringref()
- 0BD1:070D       tstringref::reserve(unsigned int)
- 0BD1:077B       tstringref::check_freeboard()
- 0BD1:07E3       tstringref::grow_to(unsigned int)
- 0BD1:0845       tstringref::round_capacity(unsigned int)
- 0BD1:0884       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
- 0BD1:0A43       string::set_case_sensitive(int)
- 0BD1:0A60       string::set_paranoid_check(int)
- 0BD1:0A7D       string::skip_whitespace(int)
- 0BD1:0A9A       string::initial_capacity(unsigned int)
- 0BD1:0AB7       string::resize_increment(unsigned int)
- 0BD1:0AE1       string::max_waste(unsigned int)
- 0C96:0000       DATASEG@
- 0C96:005A       __Int0Vector
- 0C96:005E       __Int4Vector
- 0C96:0062       __Int5Vector
- 0C96:0066       __Int6Vector
- 0C96:006A       __C0argc
- 0C96:006C       __C0argv
- 0C96:0070       __C0environ
- 0C96:0074       __envLng
- 0C96:0076       __envseg
- 0C96:0078       __envSize
- 0C96:007A       __psp
- 0C96:007C       __version
- 0C96:007C       __osversion
- 0C96:007C       __osmajor
- 0C96:007D       __osminor
- 0C96:007E       _errno
- 0C96:0080       __Exception_list
- 0C96:0082       ___brklvl
- 0C96:0084       __heapbase
- 0C96:0088       __brklvl
- 0C96:008C       __heaptop
- 0C96:01D8       _menuItems
- 0C96:0214       _redraw_menu
- 0C96:0216       _init_redraw_menu
- 0C96:0218       _menu_width
- 0C96:021A       _menu_height
- 0C96:021C       _menu_x
- 0C96:021E       _menu_y
- 0C96:0248       _flookup
- 0C96:0260       _modulator_offsets
- 0C96:0269       _carrier_offsets
- 0C96:0272       _sequence_counter
- 0C96:0274       _note_counter
- 0C96:0276       _bass_drum_6
- 0C96:028E       _snare_hihat_7
- 0C96:02A6       _tom_cymbal_8
- 0C96:02BE       _menu_song
- 0C96:097C       _battle_song
- 0C96:136A       _shared_palette
- 0C96:166A       _video_buffer
- 0C96:166E       _offscreen_buffer
- 0C96:16E0       __default87
- 0C96:16E2       __protected
- 0C96:16E4       __LDT
- 0C96:16F0       __8087
- 0C96:180C       __wscroll
- 0C96:180E       __video
- 0C96:181E       __directvideo
- 0C96:1828       __cFlag
- 0C96:1829       __cChar
- 0C96:182A       __streams
- 0C96:1C12       __nfile
- 0C96:1C14       __openfd
- 0C96:1C78       __fmode
- 0C96:1C7A       __notUmask
- 0C96:1C86       __doserrno
- 0C96:1C88       __dosErrorToSV
- 0C96:1DCA       __sys_errlist
- 0C96:1E8A       __sys_nerr
- 0C96:20A0       __localeconvention
- 0C96:20DC       __ctype
- 0C96:21DE       __fpstklen
- 0C96:2212       __stklen
- 0C96:2214       ___xalloc
- 0C96:222A       __8086
- 0C96:222C       __atexitcnt
- 0C96:222E       __exitbuf
- 0C96:2232       __exitfopen
- 0C96:2236       __exitopen
- 0C96:2286       ___CPPexceptionList
- 0C96:228A       ___exceptFlags
- 0C96:228C       ___savedDS
- 0C96:228E       ___savedSI
- 0C96:2290       ___terminatePTR
- 0C96:2294       ___unexpectdPTR
- 0C96:2298       ___terminate_DS
- 0C96:229A       ___unexpectd_DS
- 0C96:229C       ___throwFileName
- 0C96:22A0       ___throwLineNumber
- 0C96:22A2       ___throwExceptionName
- 0C96:22A6       ___exceptStaticBuffP
- 0C96:22AA       ___exceptMemAllocVars
- 0C96:22AE       ___exceptionNameBuff
- 0C96:232E       ___ExceptStaticXbuff
- 0C96:23C0       string::case_sensitive
- 0C96:23C2       string::paranoid_check
- 0C96:23C4       string::skip_white
- 0C96:23C6       string::initial_capac
- 0C96:23C8       string::resize_inc
- 0C96:23CA       string::freeboard
- 0C96:2426       __RealCvtVector
- 0C96:242A       __ScanTodVector
- 0C96:2478       _card_header
- 0C96:247C       _cards
- 0C96:2480       _enemy_header
- 0C96:2484       _enemies
- 0C96:2488       _venice_fontimg
- 0C96:2490       _venice_font
- 0C96:4348       _silk_fontimg
- 0C96:4350       _silk_font
- 0C96:6208       _pixantiqua_fontimg
- 0C96:6210       _pixantiqua_font
- 0C96:80C8       _sprite_x
- 0C96:80CA       _sprite_y
- 0C96:80CC       _i
- 0C96:80CE       _x
- 0C96:80D0       _y
- 0C96:80D2       _k
- 0C96:80D4       _backimg
- 0C96:80DC       _cardbg
- 0C96:80E4       _activeCardText
- 0C96:8D66       _activeCardTitle
- 0C96:99E8       _curRenderChar
- 0C96:99F0       _curGlyph
- 0C96:99F2       _errors
- 0C96:99F4       _quitEarly
- 0C96:99F6       _curCard
- 0C96:99F8       _card_x
- 0C96:99FA       _card_y
- 0C96:99FC       _enemyId
- 0C96:99FE       _scoreText
- 0C96:9AFE       _activeCard
- 0C96:9B00       _finishCount
- 0C96:9B02       _redrawFlag
- 0C96:9B04       _initRender
- 0C96:9B06       _step
- 0C96:9B08       _intro_done
- 0C96:9B0A       _stepTicks
- 0C96:9B0E       _introTextTitle
- 0C96:A790       _introTextName
- 0C96:B412       _currentItem
- 0C96:B414       _menuGlyphs
- 0C96:D99A       _menu_backimg
- 0C96:D9A2       _menu_title
- 0C96:D9AA       _ticks60
- 0C96:D9AE       _oldTimer
- 0C96:D9B2       _accumulator
- 0C96:D9B4       _opl2
- 0C96:D9B6       _opl3
- 0C96:D9B8       _music_note_duration
- 0C96:D9BA       _music_bpm
- 0C96:D9BC       _music_resolution
- 0C96:D9BE       _next_note_tick
- 0C96:D9C2       _currentSong
- 0C96:E080       _ui_metal_box_img
- 0C96:E088       _game_state
- 0C96:E126       _key
- 0C96:E12A       _forceExit
- 0C96:E12C       _lastTick
- 0C96:E130       _lastRenderTick
- 0C96:E146       __new_handler
- 0C96:E14E       __atexittbl
- 0C96:E1CE       ___SignalPtr
- 0C96:E1DA       __DestructorCountPtr
- 1AB5:0020       __emu
+ 0000:1410       __fstrcpy
+ 0000:1439       _memcmp
+ 0000:1461       _memcpy
+ 0000:1485       _setmem
+ 0000:14AB       _memset
+ 0000:14CE       _movmem
+ 0000:1520       _memmove
+ 0000:1545       _strcat
+ 0000:1584       _strcmp
+ 0000:15B4       _strcpy
+ 0000:15DD       _strlen
+ 0000:15FE       _strncmp
+ 0000:1636       __MKNAME
+ 0000:1697       __setupio
+ 0000:173F       __freeio
+ 0000:1800       __xclose
+ 0000:181A       __IOERROR
+ 0000:1858       __DOSERROR
+ 0000:186C       _isatty
+ 0000:1881       _lseek
+ 0000:18AE       __rtl_read
+ 0000:18E1       __read
+ 0000:18FD       __scanner
+ 0000:1DFB       _unlink
+ 0000:1E2F       __VPRINTER
+ 0000:22F2       _close
+ 0000:231E       _fclose
+ 0000:23DF       _fflush
+ 0000:24BA       _fgets
+ 0000:2558       __flushall
+ 0000:25AB       _flushall
+ 0000:25B4       __flushout
+ 0000:2717       __OPENFP
+ 0000:27EA       __GETFP
+ 0000:2837       _fopen
+ 0000:2870       _fprintf
+ 0000:2890       _fputs
+ 0000:2A04       _fread
+ 0000:2B28       _fseek
+ 0000:2BAD       _ftell
+ 0000:2C8F       _perror
+ 0000:2D26       _printf
+ 0000:2D45       __fputc
+ 0000:2D67       _fputc
+ 0000:2F02       _fputchar
+ 0000:2F1A       __FPUTN
+ 0000:312C       _setvbuf
+ 0000:3296       _sprintf
+ 0000:32BC       _vsprintf
+ 0000:331A       _sscanf
+ 0000:3341       _vsscanf
+ 0000:3369       ___write
+ 0000:34D3       __xfclose
+ 0000:351D       __xfflush
+ 0000:3566       __rtl_chmod
+ 0000:3587       __rtl_close
+ 0000:35A9       __close
+ 0000:35BA       _eof
+ 0000:36F9       __fgetc
+ 0000:3714       __Nfgetc
+ 0000:3717       _fgetc
+ 0000:3819       _fgetchar
+ 0000:385E       _open
+ 0000:3A06       __rtl_open
+ 0000:3A59       __open
+ 0000:3A72       ___read
+ 0000:3B43       __rtl_write
+ 0000:3B83       __write
+ 0000:3B9F       _ioctl
+ 0000:3BCC       _localeconv
+ 0000:3BD6       LXMUL@
+ 0000:3BD6       F_LXMUL@
+ 0000:3BED       N_LDIV@
+ 0000:3BF0       F_LDIV@
+ 0000:3BF0       LDIV@
+ 0000:3BF4       N_LUDIV@
+ 0000:3BF7       F_LUDIV@
+ 0000:3BF7       LUDIV@
+ 0000:3BFC       N_LMOD@
+ 0000:3BFF       F_LMOD@
+ 0000:3BFF       LMOD@
+ 0000:3C04       N_LUMOD@
+ 0000:3C07       LUMOD@
+ 0000:3C07       F_LUMOD@
+ 0000:3C9B       N_LXLSH@
+ 0000:3C9E       LXLSH@
+ 0000:3C9E       F_LXLSH@
+ 0000:3CBC       N_LXMUL@
+ 0000:3CD3       __LONGTOA
+ 0000:3D55       __UTOA
+ 0000:3DA8       __scantol
+ 0000:3F69       __REALCVT
+ 0000:3F6D       __scantod
+ 0000:3F71       __scanrslt
+ 0000:3F75       __scanpop
+ 0000:4209       operator delete(void far*)
+ 0000:421F       operator delete[](void far*)
+ 0000:4235       set_new_handler(void(far*)())
+ 0000:42A2       operator new(unsigned int)
+ 0000:42F7       ___first
+ 0000:42F9       ___last
+ 0000:42FB       ___rover
+ 0000:4437       _free
+ 0000:4437       _farfree
+ 0000:4541       _malloc
+ 0000:454B       _farmalloc
+ 0000:46A8       _realloc
+ 0000:46AF       _farrealloc
+ 0000:47B7       __brk
+ 0000:47FA       __sbrk
+ 0000:4889       _setblock
+ 0000:48A9       SCOPY@
+ 0000:48A9       F_SCOPY@
+ 0000:48C5       N_PADD@
+ 0000:48C8       PADD@
+ 0000:48C8       F_PADD@
+ 0000:48F4       N_PSUB@
+ 0000:48F7       PSUB@
+ 0000:48F7       F_PSUB@
+ 0000:4925       N_SPUSH@
+ 0000:492B       SPUSH@
+ 0000:492B       F_SPUSH@
+ 0000:494C       N_PCMP@
+ 0000:496D       ___ErrorMessage
+ 0000:49F3       _abort
+ 0000:4A07       _atexit
+ 0000:4A97       _exit
+ 0000:4AAA       __exit
+ 0000:4AC0       __cexit
+ 0000:4AD2       __c_exit
+ 0000:4AE2       __abort
+ 0000:4AFD       _getvect
+ 0000:4B10       _setvect
+ 0000:4D9D       _signal
+ 0000:4ECB       _raise
+ 0000:4FB7       _delay
+ 0000:5018       terminate()
+ 0000:5022       set_terminate(void(far*)())
+ 0000:5097       ___call_terminate
+ 0000:5116       unexpected()
+ 0000:511F       set_unexpected(void(far*)())
+ 0000:516A       ___call_unexpected
+ 0000:51B9       __getpolymorphicdtc(void far*,unsigned int)
+ 0000:520D       __getpolymorphicdtcfar(void far*,unsigned int)
+ 0000:5265       __ExceptInit
+ 0000:52B3       xalloc::xalloc(const string far&,unsigned int)
+ 0000:5332       xalloc::raise()
+ 0000:54DE       xmsg::xmsg(const string far&)
+ 0000:55A9       xmsg::xmsg(const xmsg far&)
+ 0000:5654       xmsg::~xmsg()
+ 0000:56D7       xmsg::raise()
+ 0000:5753       xmsg::operator =(const xmsg far&)
+ 0000:5891       __refdestructorcount()
+ 0000:5897       __refexceptionlist()
+ 0000:589D       ___InitExceptBlocks
+ 0000:590C       ___ExitExceptBlocks
+ 0000:5920       ___JumpToCatch__
+ 0000:67CD       _throwexception(void far*,void far*,void far*,void far*,unsigned int,unsigned int,unsigned int,unsigned char far*)
+ 0000:6826       _rethrowexception(unsigned int,unsigned char far*)
+ 0000:6962       __Global_unwind
+ 0000:69AE       _RaiseException
+ 0000:6F95       _catchcleanup()
+ 0000:75F3       __Local_unwind
+ 0000:7613       __Return_unwind
+ 0000:76C9       __ExceptionHandler
+ 0000:8442       __CurrExcContext
+ 0000:8497       __throwfilename()
+ 0000:84A9       __throwlinenumber()
+ 0000:84B7       __throwexceptionname()
+ 0000:84C9       typeinfo::typeinfo(const typeinfo far&)
+ 0000:8537       typeinfo::operator =(const typeinfo far&)
+ 0000:8546       typeinfo::~typeinfo()
+ 0000:857B       typeinfo::operator ==(const typeinfo far&) const
+ 0000:85AC       typeinfo::operator !=(const typeinfo far&) const
+ 0000:85CE       typeinfo::before(const typeinfo far&) const
+ 0000:8645       typeinfo::name() const
+ 0000:865F       __gettypeinfo(void far*,void far*,void far*,void far*)
+ 0000:892C       __dynamiccast(void far*,void far*,void far*,void far*,int)
+ 08E9:0008       _load_cards
+ 08E9:009E       _unload_cards
+ 08F4:0003       _load_enemies
+ 08F4:0097       _unload_enemies
+ 08F4:00AC       _get_enemy
+ 0903:0006       _load_global_fonts
+ 0903:006B       _unload_global_fonts
+ 090D:0000       _init_battle
+ 090D:00D3       _draw_action_bar
+ 090D:0184       _draw_card
+ 090D:0233       _destroy_battle
+ 090D:029D       _update_battle
+ 090D:02F1       _render_battle
+ 090D:032F       _keypress_battle_select
+ 090D:0391       _keypress_battle
+ 090D:03F5       _enter_step_intro
+ 090D:0459       _render_step_intro
+ 090D:04DA       _update_step_intro
+ 090D:0519       _keypress_step_intro
+ 090D:051E       _enter_step_select
+ 090D:0541       _draw_player_info
+ 090D:0568       _render_step_select
+ 090D:0598       _update_step_select
+ 090D:059D       _keypress_step_select
+ 090D:064D       _enter_step_play
+ 090D:06A3       _render_step_play
+ 090D:06E1       _update_step_play
+ 090D:06E6       _keypress_step_play
+ 090D:0748       _enter_step_score
+ 090D:0779       _render_step_score
+ 090D:07AC       _update_step_score
+ 090D:07B1       _keypress_step_score
+ 0988:000E       _draw_menu_bg
+ 0988:0018       _draw_menu_title
+ 0988:002D       _init_menu
+ 0988:00DC       _update_menu
+ 0988:011A       _draw_menu_box
+ 0988:0139       _render_menu
+ 0988:018E       _destroy_menu
+ 0988:01A8       _keypress_menu
+ 09A9:0003       _setPITRate
+ 09A9:0034       _newTimer
+ 09A9:007D       _init_timer
+ 09A9:00BC       _remove_timer
+ 09B6:000C       _opl_write
+ 09B6:0034       _opl_set_modulator
+ 09B6:0096       _opl_set_carrier
+ 09B6:00F8       _opl_set_carrier_20h
+ 09B6:0117       _opl_set_modulator_20h
+ 09B6:0136       _opl_play_note
+ 09B6:0178       _opl_play_note_fullscale
+ 09B6:01B0       _opl_stop_note
+ 09B6:01D7       _opl_init_percussion
+ 09B6:0296       _opl_stop_percussion_notes
+ 09B6:02A7       _opl_init
+ 09B6:0346       _opl_cleanup
+ 09B6:0372       _play_next_note
+ 09B6:050D       _set_tempo
+ 09B6:056E       _set_instrument
+ 09B6:05C0       _music_timer
+ 09B6:0602       _play_song
+ 09B6:066F       _play_battle_song
+ 09B6:0689       _play_menu_song
+ 09B6:06A3       _stop_song
+ 0A21:0004       _load_ui_assets
+ 0A21:0029       _unload_ui_assets
+ 0A21:004E       _resolve_sprite
+ 0A21:006D       _draw_ui_sprite
+ 0A21:00D4       _draw_ui_sprite_img
+ 0A21:032C       _backdrop_init
+ 0A21:0360       _backdrop_draw
+ 0A21:037E       _backdrop_draw_part
+ 0A21:03B0       _backdrop_free
+ 0A5E:0004       _load_book
+ 0A5E:00BE       _load_books
+ 0A5E:00F9       _unload_books
+ 0A5E:012E       _get_random_sentence_book
+ 0A5E:016E       _get_random_sentence
+ 0A79:0001       _set_initial_state
+ 0A84:0003       _get_key_event
+ 0A87:000B       _parseFntFile
+ 0A87:031F       _getKerning
+ 0A87:036E       _draw_text
+ 0A87:03DD       _get_text_glyphs
+ 0A87:0822       _render_text_glyphs
+ 0A87:092B       _validate_font_bitmap
+ 0B2A:000E       _fskip
+ 0B2A:002D       _load_bmp
+ 0B2A:02D8       _draw_bitmap
+ 0B2A:0306       _draw_transparent_bitmap
+ 0B2A:0334       _image_byte_pos
+ 0B2A:0342       _draw_bitmap_sprite
+ 0B7A:000D       _set_video_mode
+ 0B7A:0019       _create_offscreen_buffer
+ 0B7A:0052       _wait_for_retrace
+ 0B7A:006E       _show_offscreen_buffer
+ 0B7A:009D       _delete_offscreen_buffer
+ 0B7A:00BB       _set_palette
+ 0B7A:00E5       _set_shared_palette
+ 0B89:0005       _draw_fill
+ 0B89:0023       _draw_pixel
+ 0B89:0048       _draw_rect
+ 0B94:000A       _update_screen
+ 0B94:002C       _render_screen
+ 0B94:004E       _show_loading
+ 0B94:0082       _change_screen
+ 0B94:00CB       _on_keypress
+ 0B94:0101       _exit_program
+ 0B94:010C       _main
+ 0BBD:003F       e087_Trap
+ 0BBD:04E0       e087_Entry
+ 0BBD:05A3       e087_Shortcut
+ 0C19:0000       string::string(const string far&)
+ 0C19:00E9       string::string(const char far*)
+ 0C19:0305       string::~string()
+ 0C19:038C       string::assert_element(unsigned int) const
+ 0C19:044A       string::assert_index(unsigned int) const
+ 0C19:0508       tsubstring::assert_element(unsigned int) const
+ 0C19:05C3       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
+ 0C19:06AC       tstringref::~tstringref()
+ 0C19:070D       tstringref::reserve(unsigned int)
+ 0C19:077B       tstringref::check_freeboard()
+ 0C19:07E3       tstringref::grow_to(unsigned int)
+ 0C19:0845       tstringref::round_capacity(unsigned int)
+ 0C19:0884       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
+ 0C19:0A43       string::set_case_sensitive(int)
+ 0C19:0A60       string::set_paranoid_check(int)
+ 0C19:0A7D       string::skip_whitespace(int)
+ 0C19:0A9A       string::initial_capacity(unsigned int)
+ 0C19:0AB7       string::resize_increment(unsigned int)
+ 0C19:0AE1       string::max_waste(unsigned int)
+ 0CDE:0000       DATASEG@
+ 0CDE:005A       __Int0Vector
+ 0CDE:005E       __Int4Vector
+ 0CDE:0062       __Int5Vector
+ 0CDE:0066       __Int6Vector
+ 0CDE:006A       __C0argc
+ 0CDE:006C       __C0argv
+ 0CDE:0070       __C0environ
+ 0CDE:0074       __envLng
+ 0CDE:0076       __envseg
+ 0CDE:0078       __envSize
+ 0CDE:007A       __psp
+ 0CDE:007C       __version
+ 0CDE:007C       __osversion
+ 0CDE:007C       __osmajor
+ 0CDE:007D       __osminor
+ 0CDE:007E       _errno
+ 0CDE:0080       __Exception_list
+ 0CDE:0082       ___brklvl
+ 0CDE:0084       __heapbase
+ 0CDE:0088       __brklvl
+ 0CDE:008C       __heaptop
+ 0CDE:022E       _menuItems
+ 0CDE:026A       _redraw_menu
+ 0CDE:026C       _init_redraw_menu
+ 0CDE:026E       _menu_width
+ 0CDE:0270       _menu_height
+ 0CDE:0272       _menu_x
+ 0CDE:0274       _menu_y
+ 0CDE:029E       _flookup
+ 0CDE:02B6       _modulator_offsets
+ 0CDE:02BF       _carrier_offsets
+ 0CDE:02C8       _sequence_counter
+ 0CDE:02CA       _note_counter
+ 0CDE:02CC       _bass_drum_6
+ 0CDE:02E4       _snare_hihat_7
+ 0CDE:02FC       _tom_cymbal_8
+ 0CDE:0314       _menu_song
+ 0CDE:09D2       _battle_song
+ 0CDE:1094       _backdrop_loaded
+ 0CDE:10C6       _thisIsNotRandom
+ 0CDE:1416       _shared_palette
+ 0CDE:1716       _video_buffer
+ 0CDE:171A       _offscreen_buffer
+ 0CDE:178C       __default87
+ 0CDE:178E       __protected
+ 0CDE:1790       __LDT
+ 0CDE:17A0       __8087
+ 0CDE:18BC       __wscroll
+ 0CDE:18BE       __video
+ 0CDE:18CE       __directvideo
+ 0CDE:18D8       __cFlag
+ 0CDE:18D9       __cChar
+ 0CDE:18DA       __streams
+ 0CDE:1CC2       __nfile
+ 0CDE:1CC4       __openfd
+ 0CDE:1D28       __fmode
+ 0CDE:1D2A       __notUmask
+ 0CDE:1D36       __doserrno
+ 0CDE:1D38       __dosErrorToSV
+ 0CDE:1E7A       __sys_errlist
+ 0CDE:1F3A       __sys_nerr
+ 0CDE:2150       __localeconvention
+ 0CDE:218C       __ctype
+ 0CDE:228E       __fpstklen
+ 0CDE:22C2       __stklen
+ 0CDE:22C4       ___xalloc
+ 0CDE:22DA       __8086
+ 0CDE:22DC       __atexitcnt
+ 0CDE:22DE       __exitbuf
+ 0CDE:22E2       __exitfopen
+ 0CDE:22E6       __exitopen
+ 0CDE:2336       ___CPPexceptionList
+ 0CDE:233A       ___exceptFlags
+ 0CDE:233C       ___savedDS
+ 0CDE:233E       ___savedSI
+ 0CDE:2340       ___terminatePTR
+ 0CDE:2344       ___unexpectdPTR
+ 0CDE:2348       ___terminate_DS
+ 0CDE:234A       ___unexpectd_DS
+ 0CDE:234C       ___throwFileName
+ 0CDE:2350       ___throwLineNumber
+ 0CDE:2352       ___throwExceptionName
+ 0CDE:2356       ___exceptStaticBuffP
+ 0CDE:235A       ___exceptMemAllocVars
+ 0CDE:235E       ___exceptionNameBuff
+ 0CDE:23DE       ___ExceptStaticXbuff
+ 0CDE:2470       string::case_sensitive
+ 0CDE:2472       string::paranoid_check
+ 0CDE:2474       string::skip_white
+ 0CDE:2476       string::initial_capac
+ 0CDE:2478       string::resize_inc
+ 0CDE:247A       string::freeboard
+ 0CDE:24D6       __RealCvtVector
+ 0CDE:24DA       __ScanTodVector
+ 0CDE:2528       _card_header
+ 0CDE:252C       _cards
+ 0CDE:2530       _enemy_header
+ 0CDE:2534       _enemies
+ 0CDE:2538       _venice_fontimg
+ 0CDE:2540       _venice_font
+ 0CDE:43F8       _silk_fontimg
+ 0CDE:4400       _silk_font
+ 0CDE:62B8       _pixantiqua_fontimg
+ 0CDE:62C0       _pixantiqua_font
+ 0CDE:8178       _sprite_x
+ 0CDE:817A       _sprite_y
+ 0CDE:817C       _i
+ 0CDE:817E       _x
+ 0CDE:8180       _y
+ 0CDE:8182       _k
+ 0CDE:8184       _action_bar
+ 0CDE:818C       _action_highlight
+ 0CDE:8194       _action_sword
+ 0CDE:819C       _action_heal
+ 0CDE:81A4       _action_fire
+ 0CDE:81AC       _cardbg
+ 0CDE:81B4       _activeCardText
+ 0CDE:8E36       _activeCardTitle
+ 0CDE:9AB8       _curRenderChar
+ 0CDE:9AC0       _curGlyph
+ 0CDE:9AC2       _errors
+ 0CDE:9AC4       _quitEarly
+ 0CDE:9AC6       _curCard
+ 0CDE:9AC8       _enemyId
+ 0CDE:9ACA       _scoreText
+ 0CDE:9BCA       _activeCard
+ 0CDE:9BCC       _finishCount
+ 0CDE:9BCE       _redrawFlag
+ 0CDE:9BD0       _initRender
+ 0CDE:9BD2       _spellType
+ 0CDE:9BD4       _step
+ 0CDE:9BD6       _intro_done
+ 0CDE:9BD8       _stepTicks
+ 0CDE:9BDC       _introTextTitle
+ 0CDE:A85E       _introTextName
+ 0CDE:B4E0       _currentEnemy
+ 0CDE:B4F6       _currentItem
+ 0CDE:B4F8       _menuGlyphs
+ 0CDE:DA7E       _menu_title
+ 0CDE:DA86       _ticks60
+ 0CDE:DA8A       _oldTimer
+ 0CDE:DA8E       _accumulator
+ 0CDE:DA90       _opl2
+ 0CDE:DA92       _opl3
+ 0CDE:DA94       _music_note_duration
+ 0CDE:DA96       _music_bpm
+ 0CDE:DA98       _music_resolution
+ 0CDE:DA9A       _next_note_tick
+ 0CDE:DA9E       _currentSong
+ 0CDE:E15C       _ui_metal_box_img
+ 0CDE:E164       _ui_scroll_img
+ 0CDE:E16C       _backdrop
+ 0CDE:E174       _heal_book
+ 0CDE:E178       _ability_book
+ 0CDE:E17C       _attack_book
+ 0CDE:E180       _temporary_sentence
+ 0CDE:E248       _game_state
+ 0CDE:E2E6       _key
+ 0CDE:E2EA       _forceExit
+ 0CDE:E2EC       _lastTick
+ 0CDE:E2F0       _lastRenderTick
+ 0CDE:E306       __new_handler
+ 0CDE:E30E       __atexittbl
+ 0CDE:E38E       ___SignalPtr
+ 0CDE:E39A       __DestructorCountPtr
+ 1B19:0020       __emu
 
 Program entry point at 0000:0000
 

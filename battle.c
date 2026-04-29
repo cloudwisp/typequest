@@ -15,20 +15,18 @@
 #include "fonts.h"
 #include "cards.h"
 #include "sound.h"
-
-#define CARD_TITLE_OFFSET_X	 4
-#define CARD_TITLE_OFFSET_Y 	 16
-#define CARD_TITLE_HEIGHT		 18
-#define CARD_TITLE_WIDTH		 116
-#define CARD_DESC_OFFSET_X		 8
-#define CARD_DESC_OFFSET_Y		 100
-#define CARD_DESC_HEIGHT		 50
-#define CARD_DESC_WIDTH        104
+#include "enemies.h"
+#include "ui.h"
 
 int sprite_x, sprite_y;
 int i,x,y;
 unsigned int k;
-BITMAP backimg;
+
+BITMAP action_bar;
+BITMAP action_highlight;
+BITMAP action_sword;
+BITMAP action_heal;
+BITMAP action_fire;
 
 BITMAP cardbg;
 
@@ -41,14 +39,13 @@ int curGlyph;
 int errors;
 int quitEarly;
 int curCard;
-int card_x;
-int card_y;
 int enemyId;
 char scoreText[255];
 int activeCard;
 int finishCount;
 int redrawFlag;
 int initRender;
+int spellType;
 BattleStep step;
 
 //intro state
@@ -56,6 +53,7 @@ bool intro_done;
 unsigned long stepTicks;
 GlyphSet introTextTitle;
 GlyphSet introTextName;
+Enemy currentEnemy;
 
 
 void init_battle(){
@@ -65,32 +63,68 @@ void init_battle(){
   errors = 0;
   curCard = 0;
   quitEarly = 0;
-  enemyId = 0;
+  enemyId = 0; //TODO: randomize or pick from roster.
   finishCount = 0;
   redrawFlag = 0; //can be used by steps to invalidate screen
   initRender = 0;
+  spellType = 0;
   activeCard = game_state.inventory[0];
   play_battle_song();
-  load_bmp("comasset/forest.bmp", &backimg);
-  load_bmp("card.bmp", &cardbg);
 
-  card_x = 320 - cardbg.width - 2;
-  card_y = 2;
+  backdrop_init("comasset/forest.bmp");
+  load_bmp("card.bmp", &cardbg);
+  load_bmp("comasset/action.bmp", &action_bar);
+  load_bmp("comasset/actbdr.bmp", &action_highlight);
+  load_bmp("comasset/sword.bmp", &action_sword);
+  load_bmp("comasset/heal.bmp", &action_heal);
+  load_bmp("comasset/fire.bmp", &action_fire);
+
+  get_enemy(enemyId, &currentEnemy);
 
   enter_step_intro();
 
 
 }
 
+void draw_action_bar(){
+   int bar_x, bar_y, offset_x, offset_y, gap;
+   bar_x = SCREEN_WIDTH - 10 - action_bar.width;
+   bar_y = SCREEN_HEIGHT - action_bar.height;
+   offset_x = 12; //spell pos from left
+   offset_y = 5; //spell pos from top
+   gap = 6;
+
+   draw_transparent_bitmap(&action_bar, bar_x, bar_y);
+   draw_bitmap(&action_sword, bar_x + offset_x, bar_y + offset_y);
+   draw_bitmap(&action_fire, bar_x + offset_x + 16 + gap, bar_y + offset_y);
+   draw_bitmap(&action_heal, bar_x + offset_x + ((16 + gap) * 2), bar_y + offset_y);
+   draw_transparent_bitmap(&action_highlight, bar_x + 8 + ((16 + gap) * spellType), bar_y + 1);
+}
+
 void draw_card(){
-	draw_transparent_bitmap(&cardbg, card_x, card_y);
-   draw_text(&pixantiqua_font, &pixantiqua_fontimg, cards[activeCard].Title, card_x + CARD_TITLE_OFFSET_X, card_y + CARD_TITLE_OFFSET_Y, CARD_TITLE_WIDTH, CARD_TITLE_HEIGHT, ALIGN_LEFT, ALIGN_MIDDLE);
-   draw_text(&silk_font, &silk_fontimg, cards[activeCard].Description, card_x + CARD_DESC_OFFSET_X, card_y + CARD_DESC_OFFSET_Y, CARD_DESC_WIDTH, CARD_DESC_HEIGHT, ALIGN_LEFT, ALIGN_TOP);
+   int card_x, card_y, card_width, card_height;
+   card_width = 140;
+   card_height = 120;
+
+   card_x = SCREEN_WIDTH - 10 - card_width;
+   card_y = SCREEN_HEIGHT - 40 - card_height;
+
+   //draw_ui_sprite(UI_METAL_BOX, card_x, card_y, card_width, card_height);
+   draw_ui_sprite(UI_SCROLL_TITLE, card_x + 4, card_y + 4, card_width - 8, card_height);
+	//draw_transparent_bitmap(&cardbg, card_x, card_y);
+   draw_text(&pixantiqua_font, &pixantiqua_fontimg, cards[activeCard].Title, card_x + 24, card_y + 4, card_width - 48, 40, ALIGN_LEFT, ALIGN_MIDDLE);
+   draw_text(&silk_font, &silk_fontimg, cards[activeCard].Description, card_x + 24, card_y + 48, card_width - 48, 60, ALIGN_LEFT, ALIGN_TOP);
 }
 
 void destroy_battle(){
-  farfree(cardbg.data);
-  farfree(backimg.data);
+   farfree(cardbg.data);
+   backdrop_free();
+   farfree(action_bar.data);
+   farfree(action_highlight.data);
+   farfree(action_sword.data);
+   farfree(action_heal.data);
+   farfree(action_fire.data);
+
 }
 
 void update_battle(){
@@ -184,19 +218,13 @@ void keypress_battle(KeyEvent key){
 
 }
 
-void draw_bg(){
-   draw_bitmap(&backimg, 0, 0);
-}
-
 void enter_step_intro(){
 	step = Intro;
 	intro_done = 0;
    stepTicks = 0;
    initRender = 1;
 
-   //TODO: get enemy name
-
-   get_text_glyphs(&pixantiqua_font, &introTextTitle, "New Enemy", 0, 100, 320, 20, ALIGN_CENTER, ALIGN_MIDDLE);
+   get_text_glyphs(&pixantiqua_font, &introTextTitle, currentEnemy.Name, 0, 100, 320, 20, ALIGN_CENTER, ALIGN_MIDDLE);
    get_text_glyphs(&pixantiqua_font, &introTextName, "FIGHT START", 0, 120, 320, 20, ALIGN_CENTER, ALIGN_MIDDLE);
 
 
@@ -204,7 +232,7 @@ void enter_step_intro(){
 
 void render_step_intro(){
    if (initRender){
-      draw_bg();
+      backdrop_draw();
       initRender = 0;
    }
    //render in reverse order
@@ -248,12 +276,13 @@ void draw_player_info(){
 
 void render_step_select(){
    if (initRender){
-      draw_bg();
+      backdrop_draw();
       draw_player_info();
       initRender = 0;
    }
    if (redrawFlag){
       draw_card();
+      draw_action_bar();
       redrawFlag = 0;
    }
 }
@@ -270,6 +299,18 @@ void keypress_step_select(KeyEvent key){
 
       } else if (key.code == KEY_ENTER){
       	enter_step_play();
+      } else if (key.code == 49){
+         // numeric 1
+         spellType = 0; //TODO: add enum or def for these types
+         redrawFlag = 1;
+      } else if (key.code == 0x32){
+         // numeric 2
+         spellType = 1;
+         redrawFlag = 1;
+      } else if (key.code == 0x33){
+         // numeric 3
+         spellType = 2;
+         redrawFlag = 1;
       }
    } else if (key.code == KEY_RIGHT){
    	if (activeCard + 1 >= game_state.inventoryCount){
@@ -303,7 +344,7 @@ void enter_step_play(){
 
 void render_step_play(){
    if (initRender){
-      draw_bg();
+      backdrop_draw();
       draw_player_info();
       initRender = 0;
    }
@@ -346,7 +387,7 @@ void enter_step_score(){
 
 void render_step_score(){
    if (initRender){
-      draw_bg();
+      backdrop_draw();
       draw_text(&silk_font, &silk_fontimg, scoreText, 0, 0, 320, 200, ALIGN_CENTER, ALIGN_MIDDLE);
    }
 }
