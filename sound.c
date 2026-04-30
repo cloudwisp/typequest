@@ -365,6 +365,175 @@ Song battle_song = {
 };
 
 
+Song flood_song = {
+    //tempo
+    94,
+    //sequence count
+    8,
+    //instruments for each channel 0-9
+    {
+        { 
+            //0: Bass
+            1,      // active
+            0x21,   // mod_20
+            0x18,   // mod_40 output level
+            0x52,   // mod_60 attack/decay
+            0x40,   // mod_80 sustain/release
+            0x00,   // mod_E0 wave
+            0x01,   // car_20
+            0x00,   // car_40 output level
+            0x68,   // car_60 attack/decay
+            0x30,   // car_80 sustain/release
+            0x00,   // car_E0 wave
+            0x06    // feedback
+        },
+        //1: Lead 1
+        {
+            1,      // active
+            0x01,   // mod_20
+            0x3F,   // mod_40 output level
+            0xF7,   // mod_60 attack/decay
+            0xF0,   // mod_80 sustain/release
+            0x01,   // mod_E0 wave
+            0x01,   // car_20
+            0x00,   // car_40 output level
+            0xF7,   // car_60 attack/decay
+            0xF0,   // car_80 sustain/release
+            0x01,   // car_E0 wave
+            0x02    // feedback
+        },
+        // 2: Lead 2
+        {
+            1,      // active
+            0x01,   // mod_20
+            0x3F,   // mod_40 output level
+            0xF7,   // mod_60 attack/decay
+            0xF0,   // mod_80 sustain/release
+            0x01,   // mod_E0 wave
+            0x01,   // car_20
+            0x00,   // car_40 output level
+            0xF7,   // car_60 attack/decay
+            0xF0,   // car_80 sustain/release
+            0x01,   // car_E0 wave
+            0x02    // feedback
+        },
+        // 3: Mallets 1
+        {
+            1,      // active
+            0x01,   // mod_20
+            0x3F,   // mod_40 output level
+            0xF7,   // mod_60 attack/decay
+            0xF0,   // mod_80 sustain/release
+            0x01,   // mod_E0 wave
+            0x01,   // car_20
+            0x00,   // car_40 output level
+            0xF7,   // car_60 attack/decay
+            0xF0,   // car_80 sustain/release
+            0x01,   // car_E0 wave
+            0x02    // feedback
+        },
+        // 4: Mallets 2
+        {
+            1,      // active
+            0x01,   // mod_20
+            0x3F,   // mod_40 output level
+            0xF7,   // mod_60 attack/decay
+            0xF0,   // mod_80 sustain/release
+            0x01,   // mod_E0 wave
+            0x01,   // car_20
+            0x00,   // car_40 output level
+            0xF7,   // car_60 attack/decay
+            0xF0,   // car_80 sustain/release
+            0x01,   // car_E0 wave
+            0x02    // feedback
+        },
+        EMPTY_INSTRUMENT,
+        //Percussion - unused
+        EMPTY_ACTIVE_INSTRUMENT,
+        EMPTY_ACTIVE_INSTRUMENT,
+        EMPTY_ACTIVE_INSTRUMENT,
+        EMPTY_ACTIVE_INSTRUMENT,
+        EMPTY_ACTIVE_INSTRUMENT
+    },
+    //patterns, -1 is rest with stop previous note. -2 is rest with sustain (no stop)
+    {
+        //0: Bass phrase 1 bar 1
+        {  C2,  -2,  -2,  -2, Ds2,  -2,  -2,  -2,  -2,  -2, Ds2,  -2,  D2,  -2,  C2,  -2 },
+        //1: Bass phrase 1 bar 2.
+        {  G1,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2,  -2 },
+        //2: Chord low - phrase 1 bar 1
+        {  C4,  -2,  -2,  -2, Ds4,  -2,  C4,  -2, Ds4,  -2,  -2,  -2,  -2,  -2,  -2,  -2 },
+        //3: Chord high - phrase 1 bar 1
+        {  -2,  -2,  -2,  -2,  G4,  -2,  -2,  -2, Gs4,  -2,  -2,  -2,  G4,  -2,  -2,  -2 },
+        //4: Chord low - phrase 1 bar 2
+        {  G3,  -2,  -2,  -2, As3,  -2,  G3,  -2, As3,  -2,  -2,  -2,  -2,  -2,  -2,  -2 },
+        //5: Chord high - phrase 1 bar 2
+        {  -2,  -2,  -2,  -2,  D4,  -2,  -2,  -2, Ds4,  -2,  -2,  -2,  D4,  -2,  -2,  -2 },
+        //6: mallet phrase 1 - part 1
+        {  C5,  -2,  C5,  -2,  C5,  -2,  C5,  -2,  C5,  -2,  C5,  -2,  C5,  -2,  C5,  -2 },
+        //7: mallet phrase 1 - part 2
+        {  -2,  C4,  -2,  C4,  -2,  C4,  -2,  C4,  -2,  C4,  -2,  C4,  -2,  C4,  -2,  C4 },
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN,
+        EMPTY_PATTERN
+    },
+    //sequence - one row per channel, reference pattern index.
+    // -1 for no pattern
+    {
+        {  0,  1,  0,  1,  0,  1,  0,  1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        {  2,  4,  2,  4,  2,  4,  2,  4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        {  3,  5,  3,  5,  3,  5,  3,  5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1,  6,  6,  6,  6, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1,  7,  7,  7,  7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 },
+        { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 }
+    }
+};
+
+
 void opl_write(short index, char data) {
   if (index < 0x100) {
     outp(0x388,index);
@@ -668,7 +837,8 @@ void play_battle_song(){
   play_song(battle_song);
 }
 void play_menu_song(){
-  play_song(menu_song);
+  //play_song(menu_song);
+  play_song(flood_song);
 }
 
 void stop_song(){
