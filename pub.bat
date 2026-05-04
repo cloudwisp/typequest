@@ -1,0 +1,10 @@
+COPY *.exe dist
+COPY *.DB dist
+COPY *.BMP dist
+COPY *.FNT dist
+COPY heal.txt dist
+COPY attack.txt dist
+COPY ability.txt dist
+COPY font dist\font
+COPY comasset\ui dist\comasset\ui
+COPY comasset\*.bmp dist\comasset\
