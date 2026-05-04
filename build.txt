@@ -3,12 +3,15 @@ MAKE Version 5.0  Copyright (c) 1987, 1997 Borland International
 Available memory 473008 bytes
 
         Bcc +BccDos.cfg -P- -c @MAKE0002.@@@
+        Bcc +BccDos.cfg -P- -c @MAKE0003.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0004.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0005.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0006.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0007.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0008.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0009.@@@
+        Bcc +BccDos.cfg -P- -c @MAKE0010.@@@
+        Bcc +BccDos.cfg -P- -c @MAKE0012.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0013.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0014.@@@
         Bcc +BccDos.cfg -P- -c @MAKE0015.@@@
@@ -45,3 +48,18 @@ Warning typeques.c 165: Call to function 'unload_global_fonts' with no prototype
 Warning typeques.c 166: Call to function 'unload_enemies' with no prototype in function main
 Warning typeques.c 167: Call to function 'unload_cards' with no prototype in function main
 Warning typeques.c 168: Call to function 'unload_books' with no prototype in function main
+nction on_play_end
+Warning battle.c 435: Call to function 'enter_step_select' with no prototype in function on_play_end
+Warning battle.c 445: Call to function 'enter_step_enemyplay' with no prototype in function on_play_end
+Warning battle.c 453: Call to function 'enter_step_select' with no prototype in function on_enemy_play_end
+Warning battle.c 466: Call to function 'enter_step_select' with no prototype in function on_enemy_play_end
+Warning battle.c 477: Call to function 'enter_step_select' with no prototype in function on_enemy_play_end
+Warning battle.c 490: Call to function 'on_play_end' with no prototype in function keypress_step_play
+Warning battle.c 511: Call to function 'backdrop_draw' with no prototype in function render_step_score
+Warning battle.c 522: Parameter 'event' is never used in function keypress_step_score
+Warning battle.c 565: Call to function 'backdrop_draw' with no prototype in function render_step_enemyplay
+Warning battle.c 566: Call to function 'draw_player_info' with no prototype in function render_step_enemyplay
+Warning battle.c 567: Call to function 'draw_enemy_info' with no prototype in function render_step_enemyplay
+Warning battle.c 568: Call to function 'draw_card' with no prototype in function render_step_enemyplay
+Warning battle.c 592: Call to function 'on_enemy_play_end' with no prototype in function update_step_enemyplay
+Warning battle.c 602: Parameter 'event' is never used in function keypress_step_enemyplay

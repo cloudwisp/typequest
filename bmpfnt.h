@@ -81,6 +81,7 @@ void parseFntFile(const char *filename, BitmapFont *font);
 int getKerning(BitmapFont *font, int first, int second);
 void get_text_glyphs(BitmapFont *font, GlyphSet *glyphs, const char *text, int startX, int startY, int containerWidth, int containerHeight, TextAlign align, VerticalAlign vAlign);
 void render_text_glyphs(BitmapFont *font, BITMAP *spritesheet, GlyphSet *glyphs, int customTextColor);
+void render_text_glyph(BitmapFont *font, BITMAP *spritesheet, GlyphSet *glyphs, int customTextColor, int index);
 void draw_text(BitmapFont *font, BITMAP *spritesheet, const char *text, int startX, int startY, int containerWidth, int containerHeight, TextAlign align, VerticalAlign vAlign);
 void validate_font_bitmap(BitmapFont *font, BITMAP *spritesheet);
 

@@ -6,6 +6,7 @@ typedef enum {
 	Intro,
    Select,
    Play,
+   EnemyPlay,
    Score
 } BattleStep;
 
@@ -29,6 +30,12 @@ void enter_step_play();
 void render_step_play();
 void update_step_play();
 void keypress_step_play(KeyEvent event);
+
+void enter_step_enemyplay();
+void render_step_enemyplay();
+void update_step_enemyplay();
+void keypress_step_enemyplay(KeyEvent event);
+
 
 void enter_step_score();
 void render_step_score();

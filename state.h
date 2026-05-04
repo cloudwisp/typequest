@@ -24,6 +24,7 @@ typedef struct
    byte dexterity;
    byte intelligence;
    byte charisma;
+   byte maxhealth;
    byte reserved1;
    byte reserved2;
    byte reserved3;

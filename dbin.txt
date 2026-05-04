@@ -1,7 +1,7 @@
 [Start]
 title=Basic Attack 
 description=A strong arm flies swiftly through the air and strikes the enemy with ease.
-effect_type=3
+effect_type=2
 effect_amount=4
 min_wpm=110
 min_accuracy=20
@@ -11,7 +11,7 @@ icon_index=22
 [Start]
 title=Herbal Remedy
 description=Uncork the bottle quickly and drink the potion. You will feel better in no time.
-effect_type=4
+effect_type=1
 effect_amount=5
 min_wpm=120
 min_accuracy=90

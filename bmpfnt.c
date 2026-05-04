@@ -219,44 +219,46 @@ void get_text_glyphs(BitmapFont *font, GlyphSet *glyphs, const char *text, int s
     farfree(word);
 }
 
-void render_text_glyphs(BitmapFont *font, BITMAP *spritesheet, GlyphSet *glyphs, int customTextColor){
-	int i, k;
-	FontChar *ch;
+void render_text_glyph(BitmapFont *font, BITMAP *spritesheet, GlyphSet *glyphs, int customTextColor, int index){
+    FontChar *ch;
+    int k;
 	int maskColor;
-   FontStyle style;
+    FontStyle style;
+	ch = NULL;
+    for (k = 0; k < font->charCount; k++) {
+        if (font->chars[k].id == glyphs->glyphs[index].charId) {
+                    ch = &font->chars[k];
+            break;
+        }
+    }
+    style = glyphs->glyphs[index].style;
+    if (customTextColor){
+        maskColor = customTextColor;
+    } else {
+        maskColor = 15;
+        switch (style){
+            case Normal: maskColor = 15; break;
+            case Next: maskColor = 7; break;
+            case Incorrect: maskColor = 12; break;
+            case Correct: maskColor = 10; break;
+        }
+    }
 
-   for (i = 0; i < glyphs->glyphCount; i++){
+    draw_bitmap_sprite(
+        spritesheet,
+        ch->x, ch->y,
+        ch->width, ch->height,
+                glyphs->glyphs[index].x, glyphs->glyphs[index].y,
+                true,
+        maskColor
+    );
+}
 
-   			ch = NULL;
-            for (k = 0; k < font->charCount; k++) {
-                if (font->chars[k].id == glyphs->glyphs[i].charId) {
-						  ch = &font->chars[k];
-                    break;
-                }
-            }
-				style = glyphs->glyphs[i].style;
-				if (customTextColor){
-					maskColor = customTextColor;
-				} else {
-					maskColor = 15;
-					switch (style){
-					  case Normal: maskColor = 15; break;
-					  case Next: maskColor = 7; break;
-					  case Incorrect: maskColor = 12; break;
-					  case Correct: maskColor = 10; break;
-					}
-				}
-		
-            draw_bitmap_sprite(
-                spritesheet,
-                ch->x, ch->y,
-                ch->width, ch->height,
-					 glyphs->glyphs[i].x, glyphs->glyphs[i].y,
-					 true,
-                maskColor
-            );
-
-   }
+void render_text_glyphs(BitmapFont *font, BITMAP *spritesheet, GlyphSet *glyphs, int customTextColor){
+    int i;
+    for (i = 0; i < glyphs->glyphCount; i++){
+        render_text_glyph(font, spritesheet, glyphs, customTextColor, i);
+    }
 }
 
 void validate_font_bitmap(BitmapFont *font, BITMAP *spritesheet) {

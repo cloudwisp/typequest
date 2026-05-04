@@ -5,37 +5,37 @@
  08E98H 08F42H 000ABH CARDS_TEXT         CODE
  08F43H 09035H 000F3H ENEMIES_TEXT       CODE
  09036H 090CFH 0009AH FONTS_TEXT         CODE
- 090D0H 0988DH 007BEH BATTLE_TEXT        CODE
- 0988EH 09A92H 00205H MENU_TEXT          CODE
- 09A93H 09B6BH 000D9H TIMER_TEXT         CODE
- 09B6CH 0A213H 006A8H SOUND_TEXT         CODE
- 0A214H 0A5E3H 003D0H UI_TEXT            CODE
- 0A5E4H 0A790H 001ADH BOOK_TEXT          CODE
- 0A791H 0A842H 000B2H STATE_TEXT         CODE
- 0A843H 0A87AH 00038H KEYBOARD_TEXT      CODE
- 0A87BH 0B2ADH 00A33H BMPFNT_TEXT        CODE
- 0B2AEH 0B7ACH 004FFH BITMAP_TEXT        CODE
- 0B7ADH 0B894H 000E8H VGA_TEXT           CODE
- 0B895H 0B949H 000B5H DRAW_TEXT          CODE
- 0B94AH 0B94AH 00000H GLOBALS_TEXT       CODE
- 0B94AH 0BBC9H 00280H TYPEQUES_TEXT      CODE
- 0BBD0H 0C18FH 005C0H E87_PROG           CODE
- 0C190H 0CDDDH 00C4EH _TEXTC             CODE
- 0CDE0H 0CDE0H 00000H _FARDATA           FAR_DATA
- 0CDE0H 0CDE0H 00000H _FARBSS            FAR_BSS
- 0CDE0H 0CDE0H 00000H _OVERLAY_          OVRINFO
- 0CDE0H 0CDE0H 00000H _1STUB_            STUBSEG
- 0CDE0H 0F965H 02B86H _DATA              DATA
- 0F966H 0F969H 00004H _CVTSEG            DATA
- 0F96AH 0F96FH 00006H _SCNSEG            DATA
- 0F970H 0F970H 00000H _CONST             CONST
- 0F970H 0F99FH 00030H _INIT_             INITDATA
- 0F9A0H 0F9A0H 00000H _INITEND_          INITDATA
- 0F9A0H 0F9B7H 00018H _EXIT_             EXITDATA
- 0F9B8H 0F9B8H 00000H _EXITEND_          EXITDATA
- 0F9B8H 1B837H 0BE80H _BSS               BSS
- 1B838H 1B838H 00000H _BSSEND            BSSEND
- 1B840H 1B970H 00131H _STACK             STACK
+ 090D0H 09D01H 00C32H BATTLE_TEXT        CODE
+ 09D02H 09F06H 00205H MENU_TEXT          CODE
+ 09F07H 09FDFH 000D9H TIMER_TEXT         CODE
+ 09FE0H 0A687H 006A8H SOUND_TEXT         CODE
+ 0A688H 0AA57H 003D0H UI_TEXT            CODE
+ 0AA58H 0AC04H 001ADH BOOK_TEXT          CODE
+ 0AC05H 0ACBEH 000BAH STATE_TEXT         CODE
+ 0ACBFH 0ACF6H 00038H KEYBOARD_TEXT      CODE
+ 0ACF7H 0B743H 00A4DH BMPFNT_TEXT        CODE
+ 0B744H 0BC42H 004FFH BITMAP_TEXT        CODE
+ 0BC43H 0BD2AH 000E8H VGA_TEXT           CODE
+ 0BD2BH 0BDDFH 000B5H DRAW_TEXT          CODE
+ 0BDE0H 0BDE0H 00000H GLOBALS_TEXT       CODE
+ 0BDE0H 0C05FH 00280H TYPEQUES_TEXT      CODE
+ 0C060H 0C61FH 005C0H E87_PROG           CODE
+ 0C620H 0D26DH 00C4EH _TEXTC             CODE
+ 0D270H 0D270H 00000H _FARDATA           FAR_DATA
+ 0D270H 0D270H 00000H _FARBSS            FAR_BSS
+ 0D270H 0D270H 00000H _OVERLAY_          OVRINFO
+ 0D270H 0D270H 00000H _1STUB_            STUBSEG
+ 0D270H 0FE45H 02BD6H _DATA              DATA
+ 0FE46H 0FE49H 00004H _CVTSEG            DATA
+ 0FE4AH 0FE4FH 00006H _SCNSEG            DATA
+ 0FE50H 0FE50H 00000H _CONST             CONST
+ 0FE50H 0FE7FH 00030H _INIT_             INITDATA
+ 0FE80H 0FE80H 00000H _INITEND_          INITDATA
+ 0FE80H 0FE97H 00018H _EXIT_             EXITDATA
+ 0FE98H 0FE98H 00000H _EXITEND_          EXITDATA
+ 0FE98H 1BD2FH 0BE98H _BSS               BSS
+ 1BD30H 1BD30H 00000H _BSSEND            BSSEND
+ 1BD30H 1BE60H 00131H _STACK             STACK
 
   Address         Publics by Name
 
@@ -45,32 +45,32 @@
  0000:4235       set_new_handler(void(far*)())
  0000:5022       set_terminate(void(far*)())
  0000:511F       set_unexpected(void(far*)())
- 0C19:0000       string::string(const string far&)
- 0C19:00E9       string::string(const char far*)
- 0C19:0305       string::~string()
- 0C19:038C       string::assert_element(unsigned int) const
- 0C19:044A       string::assert_index(unsigned int) const
- 0CDE:2B20       string::case_sensitive
- 0CDE:2B2A       string::freeboard
- 0CDE:2B26       string::initial_capac
- 0C19:0A9A       string::initial_capacity(unsigned int)
- 0C19:0AE1       string::max_waste(unsigned int)
- 0CDE:2B22       string::paranoid_check
- 0CDE:2B28       string::resize_inc
- 0C19:0AB7       string::resize_increment(unsigned int)
- 0C19:0A43       string::set_case_sensitive(int)
- 0C19:0A60       string::set_paranoid_check(int)
- 0CDE:2B24       string::skip_white
- 0C19:0A7D       string::skip_whitespace(int)
+ 0C62:0000       string::string(const string far&)
+ 0C62:00E9       string::string(const char far*)
+ 0C62:0305       string::~string()
+ 0C62:038C       string::assert_element(unsigned int) const
+ 0C62:044A       string::assert_index(unsigned int) const
+ 0D27:2B70       string::case_sensitive
+ 0D27:2B7A       string::freeboard
+ 0D27:2B76       string::initial_capac
+ 0C62:0A9A       string::initial_capacity(unsigned int)
+ 0C62:0AE1       string::max_waste(unsigned int)
+ 0D27:2B72       string::paranoid_check
+ 0D27:2B78       string::resize_inc
+ 0C62:0AB7       string::resize_increment(unsigned int)
+ 0C62:0A43       string::set_case_sensitive(int)
+ 0C62:0A60       string::set_paranoid_check(int)
+ 0D27:2B74       string::skip_white
+ 0C62:0A7D       string::skip_whitespace(int)
  0000:5018       terminate()
- 0C19:05C3       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
- 0C19:06AC       tstringref::~tstringref()
- 0C19:077B       tstringref::check_freeboard()
- 0C19:07E3       tstringref::grow_to(unsigned int)
- 0C19:070D       tstringref::reserve(unsigned int)
- 0C19:0845       tstringref::round_capacity(unsigned int)
- 0C19:0884       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
- 0C19:0508       tsubstring::assert_element(unsigned int) const
+ 0C62:05C3       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
+ 0C62:06AC       tstringref::~tstringref()
+ 0C62:077B       tstringref::check_freeboard()
+ 0C62:07E3       tstringref::grow_to(unsigned int)
+ 0C62:070D       tstringref::reserve(unsigned int)
+ 0C62:0845       tstringref::round_capacity(unsigned int)
+ 0C62:0884       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
+ 0C62:0508       tsubstring::assert_element(unsigned int) const
  0000:8537       typeinfo::operator =(const typeinfo far&)
  0000:84C9       typeinfo::typeinfo(const typeinfo far&)
  0000:8546       typeinfo::~typeinfo()
@@ -98,11 +98,11 @@
  0000:84B7       __throwexceptionname()
  0000:8497       __throwfilename()
  0000:84A9       __throwlinenumber()
- 0CDE:0000       DATASEG@
+ 0D27:0000       DATASEG@
  0000:026D       DGROUP@
- 0BBD:04E0       e087_Entry
- 0BBD:05A3       e087_Shortcut
- 0BBD:003F       e087_Trap
+ 0C06:04E0       e087_Entry
+ 0C06:05A3       e087_Shortcut
+ 0C06:003F       e087_Trap
  0000:0000  Abs  FIARQQ
  0000:0000  Abs  FICRQQ
  0000:0000  Abs  FIDRQQ
@@ -144,72 +144,77 @@
  0000:48F7       PSUB@
  0000:48A9       SCOPY@
  0000:492B       SPUSH@
- 0CDE:E828       _ability_book
+ 0D27:E88E       _ability_book
  0000:49F3       _abort
- 0CDE:E13E       _accumulator
- 0CDE:8834       _action_bar
- 0CDE:8854       _action_fire
- 0CDE:884C       _action_heal
- 0CDE:883C       _action_highlight
- 0CDE:8844       _action_sword
- 0CDE:A27A       _activeCard
- 0CDE:8864       _activeCardText
- 0CDE:94E6       _activeCardTitle
+ 0D27:E1A4       _accumulator
+ 0D27:8884       _action_bar
+ 0D27:88A4       _action_fire
+ 0D27:889C       _action_heal
+ 0D27:888C       _action_highlight
+ 0D27:8894       _action_sword
+ 0D27:A2CA       _activeCard
+ 0D27:88B4       _activeCardText
+ 0D27:9536       _activeCardTitle
  0000:4A07       _atexit
- 0CDE:E82C       _attack_book
- 0CDE:E81C       _backdrop
- 0A21:0360       _backdrop_draw
- 0A21:037E       _backdrop_draw_part
- 0A21:03B0       _backdrop_free
- 0A21:032C       _backdrop_init
- 0CDE:1752       _backdrop_loaded
- 0CDE:02CC       _bass_drum_6
- 0CDE:09D2       _battle_song
- 0CDE:885C       _cardbg
- 0CDE:2BDC       _cards
- 0CDE:2BD8       _card_header
- 0CDE:02BF       _carrier_offsets
- 0B94:0082       _change_screen
+ 0D27:E892       _attack_book
+ 0D27:E882       _backdrop
+ 0A68:0364       _backdrop_draw
+ 0A68:0382       _backdrop_draw_part
+ 0A68:03B4       _backdrop_free
+ 0A68:0330       _backdrop_init
+ 0D27:1798       _backdrop_loaded
+ 0D27:0312       _bass_drum_6
+ 0D27:0A18       _battle_song
+ 0D27:88AC       _cardbg
+ 0D27:2C2C       _cards
+ 0D27:2C28       _card_header
+ 0D27:0305       _carrier_offsets
+ 0BDE:0078       _change_screen
  0000:22F2       _close
  0000:0BFA       _cprintf
- 0B7A:0019       _create_offscreen_buffer
- 0CDE:A176       _curCard
- 0CDE:A170       _curGlyph
- 0CDE:A168       _curRenderChar
- 0CDE:BB90       _currentEnemy
- 0CDE:BBA6       _currentItem
- 0CDE:E14E       _currentSong
+ 0BC4:000F       _create_offscreen_buffer
+ 0D27:A1C6       _curCard
+ 0D27:A1C0       _curGlyph
+ 0D27:A1B8       _curRenderChar
+ 0D27:BBF6       _currentEnemy
+ 0D27:BC0C       _currentItem
+ 0D27:E1B4       _currentSong
  0000:4FB7       _delay
- 0B7A:009D       _delete_offscreen_buffer
- 090D:0233       _destroy_battle
- 0988:018E       _destroy_menu
- 090D:00D3       _draw_action_bar
- 0B2A:02D8       _draw_bitmap
- 0B2A:0342       _draw_bitmap_sprite
- 090D:0184       _draw_card
- 0B89:0005       _draw_fill
- 0988:000E       _draw_menu_bg
- 0988:011A       _draw_menu_box
- 0988:0018       _draw_menu_title
- 0B89:0023       _draw_pixel
- 090D:0541       _draw_player_info
- 0B89:0048       _draw_rect
- 0A87:036E       _draw_text
- 0B2A:0306       _draw_transparent_bitmap
- 0A21:006D       _draw_ui_sprite
- 0A21:00D4       _draw_ui_sprite_img
- 0CDE:2BE4       _enemies
- 0CDE:A178       _enemyId
- 0CDE:2BE0       _enemy_header
- 090D:03F5       _enter_step_intro
- 090D:064D       _enter_step_play
- 090D:0748       _enter_step_score
- 090D:051E       _enter_step_select
+ 0BC4:0093       _delete_offscreen_buffer
+ 090D:027D       _destroy_battle
+ 09D0:0182       _destroy_menu
+ 090D:00F0       _draw_action_bar
+ 0B74:02CE       _draw_bitmap
+ 0B74:0338       _draw_bitmap_sprite
+ 090D:01CE       _draw_card
+ 090D:0622       _draw_enemy_info
+ 0BD2:000B       _draw_fill
+ 09D0:0002       _draw_menu_bg
+ 09D0:010E       _draw_menu_box
+ 09D0:000C       _draw_menu_title
+ 0BD2:0029       _draw_pixel
+ 090D:05B2       _draw_player_info
+ 0BD2:004E       _draw_rect
+ 0ACF:036A       _draw_text
+ 0B74:02FC       _draw_transparent_bitmap
+ 0A68:0071       _draw_ui_sprite
+ 0A68:00D8       _draw_ui_sprite_img
+ 0D27:2C34       _enemies
+ 0D27:A1C8       _enemyId
+ 0D27:A2E6       _enemyTypeTick
+ 0D27:A2D6       _enemy_chars_per_sec
+ 0D27:A2DE       _enemy_error_chance
+ 0D27:2C30       _enemy_header
+ 090D:0A8E       _enter_step_enemyplay
+ 090D:0460       _enter_step_intro
+ 090D:077C       _enter_step_play
+ 090D:09E2       _enter_step_score
+ 090D:0589       _enter_step_select
  0000:35BA       _eof
- 0CDE:007E       _errno
- 0CDE:A172       _errors
+ 0D27:007E       _errno
+ 0D27:A1C2       _errors
  0000:4A97       _exit
- 0B94:0101       _exit_program
+ 0BDE:00F7       _exit_program
  0000:4437       _farfree
  0000:454B       _farmalloc
  0000:46AF       _farrealloc
@@ -218,12 +223,12 @@
  0000:3717       _fgetc
  0000:3819       _fgetchar
  0000:24BA       _fgets
- 0CDE:A27C       _finishCount
- 0CDE:1090       _flood_song
- 0CDE:029E       _flookup
+ 0D27:A2CC       _finishCount
+ 0D27:10D6       _flood_song
+ 0D27:02E4       _flookup
  0000:25AB       _flushall
  0000:2837       _fopen
- 0CDE:E99A       _forceExit
+ 0D27:EA02       _forceExit
  0000:2870       _fprintf
  0000:2D67       _fputc
  0000:2F02       _fputchar
@@ -231,236 +236,244 @@
  0000:2A04       _fread
  0000:4437       _free
  0000:2B28       _fseek
- 0B2A:000E       _fskip
+ 0B74:0004       _fskip
  0000:2BAD       _ftell
- 0CDE:E8F8       _game_state
+ 0D27:E95E       _game_state
  0000:1300       _getch
  0000:1320       _getche
- 0A87:031F       _getKerning
+ 0ACF:031B       _getKerning
  0000:0C18       _gettext
  0000:4AFD       _getvect
  08F4:00AC       _get_enemy
- 0A84:0003       _get_key_event
- 0A5E:016E       _get_random_sentence
- 0A5E:012E       _get_random_sentence_book
- 0A87:03DD       _get_text_glyphs
- 0CDE:E824       _heal_book
- 0CDE:882C       _i
- 0B2A:0334       _image_byte_pos
- 0CDE:A280       _initRender
+ 0ACB:000F       _get_key_event
+ 090D:0A61       _get_random_card
+ 0AA5:0172       _get_random_sentence
+ 0AA5:0132       _get_random_sentence_book
+ 0ACF:03D9       _get_text_glyphs
+ 0D27:E88A       _heal_book
+ 0D27:887C       _i
+ 0B74:032A       _image_byte_pos
+ 0D27:A2D0       _initRender
  090D:0000       _init_battle
- 0988:002D       _init_menu
- 0CDE:026C       _init_redraw_menu
- 09A9:007D       _init_timer
- 0CDE:AF0E       _introTextName
- 0CDE:A28C       _introTextTitle
- 0CDE:A286       _intro_done
+ 09D0:0021       _init_menu
+ 0D27:02B2       _init_redraw_menu
+ 09F0:0081       _init_timer
+ 0D27:AF74       _introTextName
+ 0D27:A2F2       _introTextTitle
+ 0D27:A2EC       _intro_done
  0000:3B9F       _ioctl
  0000:186C       _isatty
- 0CDE:8832       _k
+ 0D27:8882       _k
  0000:1374       _kbhit
- 0CDE:E996       _key
- 090D:0391       _keypress_battle
- 090D:032F       _keypress_battle_select
- 0988:01A8       _keypress_menu
- 090D:0519       _keypress_step_intro
- 090D:06E6       _keypress_step_play
- 090D:07B1       _keypress_step_score
- 090D:059D       _keypress_step_select
- 0CDE:E9A0       _lastRenderTick
- 0CDE:E99C       _lastTick
- 0B2A:002D       _load_bmp
- 0A5E:0004       _load_book
- 0A5E:00BE       _load_books
+ 0D27:E9FE       _key
+ 090D:03ED       _keypress_battle
+ 090D:038B       _keypress_battle_select
+ 09D0:019C       _keypress_menu
+ 090D:0C2D       _keypress_step_enemyplay
+ 090D:0584       _keypress_step_intro
+ 090D:0981       _keypress_step_play
+ 090D:0A54       _keypress_step_score
+ 090D:06CC       _keypress_step_select
+ 0D27:A2D4       _lastRenderedGlyph
+ 0D27:EA08       _lastRenderTick
+ 0D27:EA04       _lastTick
+ 0B74:0023       _load_bmp
+ 0AA5:0008       _load_book
+ 0AA5:00C2       _load_books
  08E9:0008       _load_cards
  08F4:0003       _load_enemies
  0903:0006       _load_global_fonts
- 0A21:0004       _load_ui_assets
+ 0A68:0008       _load_ui_assets
  0000:3BCC       _localeconv
  0000:1881       _lseek
- 0B94:010C       _main
+ 0BDE:0102       _main
  0000:4541       _malloc
  0000:1439       _memcmp
  0000:1461       _memcpy
  0000:1520       _memmove
  0000:14AB       _memset
- 0CDE:BBA8       _menuGlyphs
- 0CDE:022E       _menuItems
- 0CDE:0270       _menu_height
- 0CDE:0314       _menu_song
- 0CDE:E12E       _menu_title
- 0CDE:026E       _menu_width
- 0CDE:0272       _menu_x
- 0CDE:0274       _menu_y
- 0CDE:02B6       _modulator_offsets
+ 0D27:BC0E       _menuGlyphs
+ 0D27:0274       _menuItems
+ 0D27:02B6       _menu_height
+ 0D27:035A       _menu_song
+ 0D27:E194       _menu_title
+ 0D27:02B4       _menu_width
+ 0D27:02B8       _menu_x
+ 0D27:02BA       _menu_y
+ 0D27:02FC       _modulator_offsets
  0000:0CE0       _movetext
  0000:14CE       _movmem
- 0CDE:E146       _music_bpm
- 0CDE:E144       _music_note_duration
- 0CDE:E148       _music_resolution
- 09B6:05C0       _music_timer
- 09A9:0034       _newTimer
- 0CDE:E14A       _next_note_tick
- 0CDE:02CA       _note_counter
- 0CDE:1DD8       _offscreen_buffer
- 0CDE:E13A       _oldTimer
- 0B94:00CB       _on_keypress
+ 0D27:E1AC       _music_bpm
+ 0D27:E1AA       _music_note_duration
+ 0D27:E1AE       _music_resolution
+ 09FE:05B4       _music_timer
+ 09F0:0038       _newTimer
+ 0D27:E1B0       _next_note_tick
+ 0D27:0310       _note_counter
+ 0D27:1E1E       _offscreen_buffer
+ 0D27:E1A0       _oldTimer
+ 090D:08D6       _on_enemy_play_end
+ 0BDE:00C1       _on_keypress
+ 090D:0829       _on_play_end
  0000:385E       _open
- 0CDE:E140       _opl2
- 0CDE:E142       _opl3
- 09B6:0346       _opl_cleanup
- 09B6:02A7       _opl_init
- 09B6:01D7       _opl_init_percussion
- 09B6:0136       _opl_play_note
- 09B6:0178       _opl_play_note_fullscale
- 09B6:0096       _opl_set_carrier
- 09B6:00F8       _opl_set_carrier_20h
- 09B6:0034       _opl_set_modulator
- 09B6:0117       _opl_set_modulator_20h
- 09B6:01B0       _opl_stop_note
- 09B6:0296       _opl_stop_percussion_notes
- 09B6:000C       _opl_write
- 0A87:000B       _parseFntFile
+ 0D27:E1A6       _opl2
+ 0D27:E1A8       _opl3
+ 09FE:033A       _opl_cleanup
+ 09FE:029B       _opl_init
+ 09FE:01CB       _opl_init_percussion
+ 09FE:012A       _opl_play_note
+ 09FE:016C       _opl_play_note_fullscale
+ 09FE:008A       _opl_set_carrier
+ 09FE:00EC       _opl_set_carrier_20h
+ 09FE:0028       _opl_set_modulator
+ 09FE:010B       _opl_set_modulator_20h
+ 09FE:01A4       _opl_stop_note
+ 09FE:028A       _opl_stop_percussion_notes
+ 09FE:0000       _opl_write
+ 0ACF:0007       _parseFntFile
  0000:2C8F       _perror
- 0CDE:6970       _pixantiqua_font
- 0CDE:6968       _pixantiqua_fontimg
- 09B6:066F       _play_battle_song
- 09B6:0689       _play_menu_song
- 09B6:0372       _play_next_note
- 09B6:0602       _play_song
+ 0D27:69C0       _pixantiqua_font
+ 0D27:69B8       _pixantiqua_fontimg
+ 09FE:0663       _play_battle_song
+ 09FE:067D       _play_menu_song
+ 09FE:0366       _play_next_note
+ 09FE:05F6       _play_song
  0000:087C       _pow10
  0000:2D26       _printf
  0000:0D88       _putch
  0000:0C7C       _puttext
- 0CDE:A174       _quitEarly
+ 0D27:A1C4       _quitEarly
  0000:4ECB       _raise
  0000:69AE       _RaiseException
  0000:46A8       _realloc
- 0CDE:A27E       _redrawFlag
- 0CDE:026A       _redraw_menu
- 09A9:00BC       _remove_timer
- 090D:02F1       _render_battle
- 0988:0139       _render_menu
- 0B94:002C       _render_screen
- 090D:0459       _render_step_intro
- 090D:06A3       _render_step_play
- 090D:0779       _render_step_score
- 090D:0568       _render_step_select
- 0A87:0822       _render_text_glyphs
- 0A21:004E       _resolve_sprite
- 0CDE:A17A       _scoreText
- 0CDE:02C8       _sequence_counter
+ 0D27:A2CE       _redrawFlag
+ 0D27:02B0       _redraw_menu
+ 09F0:00C0       _remove_timer
+ 090D:0344       _render_battle
+ 09D0:012D       _render_menu
+ 0BDE:0022       _render_screen
+ 090D:0B6A       _render_step_enemyplay
+ 090D:04C4       _render_step_intro
+ 090D:07E2       _render_step_play
+ 090D:0A1C       _render_step_score
+ 090D:0693       _render_step_select
+ 0ACF:081E       _render_text_glyph
+ 0ACF:0910       _render_text_glyphs
+ 0A68:0052       _resolve_sprite
+ 0D27:A1CA       _scoreText
+ 0D27:030E       _sequence_counter
  0000:4889       _setblock
  0000:1485       _setmem
- 09A9:0003       _setPITRate
+ 09F0:0007       _setPITRate
  0000:312C       _setvbuf
  0000:4B10       _setvect
- 0A79:0001       _set_initial_state
- 09B6:056E       _set_instrument
- 0B7A:00BB       _set_palette
- 0B7A:00E5       _set_shared_palette
- 09B6:050D       _set_tempo
- 0B7A:000D       _set_video_mode
- 0CDE:1AD4       _shared_palette
- 0B94:004E       _show_loading
- 0B7A:006E       _show_offscreen_buffer
+ 0AC0:0005       _set_initial_state
+ 09FE:0562       _set_instrument
+ 0BC4:00B1       _set_palette
+ 0BC4:00DB       _set_shared_palette
+ 09FE:0501       _set_tempo
+ 0BC4:0003       _set_video_mode
+ 0D27:1B1A       _shared_palette
+ 0BDE:0044       _show_loading
+ 0BC4:0064       _show_offscreen_buffer
  0000:4D9D       _signal
- 0CDE:4AB0       _silk_font
- 0CDE:4AA8       _silk_fontimg
- 0CDE:02E4       _snare_hihat_7
- 0CDE:A282       _spellType
+ 0D27:4B00       _silk_font
+ 0D27:4AF8       _silk_fontimg
+ 0D27:032A       _snare_hihat_7
+ 0D27:A2D2       _spellType
  0000:3296       _sprintf
- 0CDE:8828       _sprite_x
- 0CDE:882A       _sprite_y
+ 0D27:8878       _sprite_x
+ 0D27:887A       _sprite_y
  0000:331A       _sscanf
- 0CDE:A284       _step
- 0CDE:A288       _stepTicks
- 09B6:06A3       _stop_song
+ 0D27:A2EA       _step
+ 0D27:A2EE       _stepTicks
+ 09FE:0697       _stop_song
  0000:1545       _strcat
  0000:1584       _strcmp
  0000:15B4       _strcpy
  0000:15DD       _strlen
  0000:15FE       _strncmp
- 0CDE:E830       _temporary_sentence
- 0CDE:1784       _thisIsNotRandom
- 0CDE:E136       _ticks60
- 0CDE:02FC       _tom_cymbal_8
- 0CDE:E80C       _ui_metal_box_img
- 0CDE:E814       _ui_scroll_img
+ 0D27:E896       _temporary_sentence
+ 0D27:17CA       _thisIsNotRandom
+ 0D27:E19C       _ticks60
+ 0D27:0342       _tom_cymbal_8
+ 0D27:E872       _ui_metal_box_img
+ 0D27:E87A       _ui_scroll_img
  0000:1352       _ungetch
  0000:1DFB       _unlink
- 0A5E:00F9       _unload_books
+ 0AA5:00FD       _unload_books
  08E9:009E       _unload_cards
  08F4:0097       _unload_enemies
  0903:006B       _unload_global_fonts
- 0A21:0029       _unload_ui_assets
- 090D:029D       _update_battle
- 0988:00DC       _update_menu
- 0B94:000A       _update_screen
- 090D:04DA       _update_step_intro
- 090D:06E1       _update_step_play
- 090D:07AC       _update_step_score
- 090D:0598       _update_step_select
- 0A87:092B       _validate_font_bitmap
- 0CDE:2BF0       _venice_font
- 0CDE:2BE8       _venice_fontimg
- 0CDE:1DD4       _video_buffer
+ 0A68:002D       _unload_ui_assets
+ 090D:02E7       _update_battle
+ 09D0:00D0       _update_menu
+ 0BDE:0000       _update_screen
+ 090D:0BDC       _update_step_enemyplay
+ 090D:0545       _update_step_intro
+ 090D:0824       _update_step_play
+ 090D:0A4F       _update_step_score
+ 090D:06C7       _update_step_select
+ 0ACF:0941       _validate_font_bitmap
+ 0D27:2C40       _venice_font
+ 0D27:2C38       _venice_fontimg
+ 0D27:1E1A       _video_buffer
  0000:32BC       _vsprintf
  0000:3341       _vsscanf
- 0B7A:0052       _wait_for_retrace
+ 0BC4:0048       _wait_for_retrace
  0000:111D       _wherex
  0000:1130       _wherey
- 0CDE:882E       _x
- 0CDE:8830       _y
- 0CDE:298A       __8086
- 0CDE:1E50       __8087
+ 0D27:887E       _x
+ 0D27:8880       _y
+ 0D27:29DA       __8086
+ 0D27:1EA0       __8087
  0000:4AE2       __abort
  0000:1000  Abs  __AHINCR
  0000:000C  Abs  __AHSHIFT
- 0CDE:298C       __atexitcnt
- 0CDE:E9BE       __atexittbl
+ 0D27:29DC       __atexitcnt
+ 0D27:EA26       __atexittbl
  0000:47B7       __brk
- 0CDE:0088       __brklvl
- 0CDE:006A       __C0argc
- 0CDE:006C       __C0argv
+ 0D27:0088       __brklvl
+ 0D27:006A       __C0argc
+ 0D27:006C       __C0argv
  0000:1219       __c0crtinit
- 0CDE:0070       __C0environ
- 0CDE:1F89       __cChar
+ 0D27:0070       __C0environ
+ 0D27:1FD9       __cChar
  0000:4AC0       __cexit
- 0CDE:1F88       __cFlag
+ 0D27:1FD8       __cFlag
  0000:0159       __checknull
  0000:0146       __cleanup
  0000:35A9       __close
  0000:0AC8       __CPUTN
  0000:123A       __crtinit
- 0CDE:283C       __ctype
+ 0D27:288C       __ctype
  0000:8442       __CurrExcContext
  0000:0000  Abs  __cvtfak
  0000:4AD2       __c_exit
- 0CDE:1E4A       __default87
- 0CDE:EA4A       __DestructorCountPtr
- 0CDE:1F7E       __directvideo
- 0CDE:23E6       __doserrno
+ 0D27:1E90       __default87
+ 0D27:EAB2       __DestructorCountPtr
+ 0D27:1FCE       __directvideo
+ 0D27:2436       __doserrno
  0000:1858       __DOSERROR
- 0CDE:23E8       __dosErrorToSV
- 1B84:0020       __emu
- 0CDE:0074       __envLng
- 0CDE:0076       __envseg
- 0CDE:0078       __envSize
+ 0D27:2438       __dosErrorToSV
+ 1BD3:0020       __emu
+ 0D27:0074       __envLng
+ 0D27:0076       __envseg
+ 0D27:0078       __envSize
  0000:5265       __ExceptInit
  0000:76C9       __ExceptionHandler
- 0CDE:0080       __Exception_list
+ 0D27:0080       __Exception_list
  0000:4AAA       __exit
- 0CDE:298E       __exitbuf
- 0CDE:2992       __exitfopen
- 0CDE:2996       __exitopen
+ 0D27:29DE       __exitbuf
+ 0D27:29E2       __exitfopen
+ 0D27:29E6       __exitopen
  0000:36F9       __fgetc
  0000:2558       __flushall
  0000:25B4       __flushout
  0000:13ED       __fmemset
- 0CDE:23D8       __fmode
+ 0D27:2428       __fmode
  0000:0954       __fperror
- 0CDE:293E       __fpstklen
+ 0D27:298E       __fpstklen
  0000:048E       __fpuint
  0000:2D45       __fputc
  0000:2F1A       __FPUTN
@@ -469,37 +482,37 @@
  0000:1410       __fstrcpy
  0000:27EA       __GETFP
  0000:6962       __Global_unwind
- 0CDE:0084       __heapbase
- 0CDE:008C       __heaptop
- 0CDE:005A       __Int0Vector
- 0CDE:005E       __Int4Vector
- 0CDE:0062       __Int5Vector
- 0CDE:0066       __Int6Vector
+ 0D27:0084       __heapbase
+ 0D27:008C       __heaptop
+ 0D27:005A       __Int0Vector
+ 0D27:005E       __Int4Vector
+ 0D27:0062       __Int5Vector
+ 0D27:0066       __Int6Vector
  0000:181A       __IOERROR
- 0CDE:1E4E       __LDT
- 0CDE:2800       __localeconvention
+ 0D27:1E94       __LDT
+ 0D27:2850       __localeconvention
  0000:75F3       __Local_unwind
  0000:3CD3       __LONGTOA
  0000:1636       __MKNAME
  0000:026F       __MMODEL
- 0CDE:E9B6       __new_handler
+ 0D27:EA1E       __new_handler
  0000:3714       __Nfgetc
- 0CDE:2372       __nfile
+ 0D27:23C2       __nfile
  0000:131D       __Ngetche
- 0CDE:23DA       __notUmask
+ 0D27:242A       __notUmask
  0000:134F       __Nungetch
  0000:3A59       __open
- 0CDE:2374       __openfd
+ 0D27:23C4       __openfd
  0000:2717       __OPENFP
- 0CDE:007C       __osmajor
- 0CDE:007D       __osminor
- 0CDE:007C       __osversion
+ 0D27:007C       __osmajor
+ 0D27:007D       __osminor
+ 0D27:007C       __osversion
  0000:0889       __POW10
- 0CDE:1E4C       __protected
- 0CDE:007A       __psp
+ 0D27:1E92       __protected
+ 0D27:007A       __psp
  0000:18E1       __read
  0000:3F69       __REALCVT
- 0CDE:2B86       __RealCvtVector
+ 0D27:2BD6       __RealCvtVector
  0000:01BB       __restorezero
  0000:7613       __Return_unwind
  0000:3566       __rtl_chmod
@@ -512,44 +525,44 @@
  0000:3F75       __scanpop
  0000:3F71       __scanrslt
  0000:3F6D       __scantod
- 0CDE:2B8A       __ScanTodVector
+ 0D27:2BDA       __ScanTodVector
  0000:3DA8       __scantol
  0000:0EE5       __SCREENIO
  0000:0FA2       __SCROLL
  0000:1697       __setupio
- 0CDE:2972       __stklen
+ 0D27:29C2       __stklen
  0000:138A       __stpcpy
- 0CDE:1F8A       __streams
- 0CDE:252A       __sys_errlist
- 0CDE:25EA       __sys_nerr
+ 0D27:1FDA       __streams
+ 0D27:257A       __sys_errlist
+ 0D27:263A       __sys_nerr
  0000:015A       __terminate
  0000:0000  Abs  __turboCrt
  0000:0000  Abs  __turboCvt
  0000:3D55       __UTOA
  0000:0F23       __VALIDATEXY
- 0CDE:007C       __version
- 0CDE:1F6E       __video
+ 0D27:007C       __version
+ 0D27:1FBE       __video
  0000:118A       __VideoInt
  0000:1E2F       __VPRINTER
  0000:0A2A       __VPTR
  0000:0A4E       __VRAM
  0000:110F       __wherexy
  0000:3B83       __write
- 0CDE:1F6C       __wscroll
+ 0D27:1FBC       __wscroll
  0000:1800       __xclose
  0000:0666       __XCVT
  0000:34D3       __xfclose
  0000:351D       __xfflush
- 0CDE:0082       ___brklvl
+ 0D27:0082       ___brklvl
  0000:5097       ___call_terminate
  0000:516A       ___call_unexpected
- 0CDE:29E6       ___CPPexceptionList
+ 0D27:2A36       ___CPPexceptionList
  0000:496D       ___ErrorMessage
- 0CDE:29EA       ___exceptFlags
- 0CDE:2A0E       ___exceptionNameBuff
- 0CDE:2A0A       ___exceptMemAllocVars
- 0CDE:2A06       ___exceptStaticBuffP
- 0CDE:2A8E       ___ExceptStaticXbuff
+ 0D27:2A3A       ___exceptFlags
+ 0D27:2A5E       ___exceptionNameBuff
+ 0D27:2A5A       ___exceptMemAllocVars
+ 0D27:2A56       ___exceptStaticBuffP
+ 0D27:2ADE       ___ExceptStaticXbuff
  0000:590C       ___ExitExceptBlocks
  0000:42F7       ___first
  0000:03BB       ___fpreset
@@ -558,33 +571,33 @@
  0000:42F9       ___last
  0000:3A72       ___read
  0000:42FB       ___rover
- 0CDE:29EC       ___savedDS
- 0CDE:29EE       ___savedSI
- 0CDE:EA3E       ___SignalPtr
- 0CDE:29F0       ___terminatePTR
- 0CDE:29F8       ___terminate_DS
- 0CDE:2A02       ___throwExceptionName
- 0CDE:29FC       ___throwFileName
- 0CDE:2A00       ___throwLineNumber
- 0CDE:29F4       ___unexpectdPTR
- 0CDE:29FA       ___unexpectd_DS
+ 0D27:2A3C       ___savedDS
+ 0D27:2A3E       ___savedSI
+ 0D27:EAA6       ___SignalPtr
+ 0D27:2A40       ___terminatePTR
+ 0D27:2A48       ___terminate_DS
+ 0D27:2A52       ___throwExceptionName
+ 0D27:2A4C       ___throwFileName
+ 0D27:2A50       ___throwLineNumber
+ 0D27:2A44       ___unexpectdPTR
+ 0D27:2A4A       ___unexpectd_DS
  0000:3369       ___write
- 0CDE:2974       ___xalloc
+ 0D27:29C4       ___xalloc
 
   Address         Publics by Value
 
- 0000:0000  Abs  FJARQQ
- 0000:0000  Abs  FJCRQQ
- 0000:0000  Abs  FJSRQQ
- 0000:0000  Abs  FICRQQ
- 0000:0000  Abs  FIARQQ
- 0000:0000  Abs  __turboCvt
- 0000:0000  Abs  FIDRQQ
  0000:0000  Abs  __turboCrt
- 0000:0000  Abs  FIERQQ
- 0000:0000  Abs  FIWRQQ
- 0000:0000  Abs  FISRQQ
+ 0000:0000  Abs  FJCRQQ
  0000:0000  Abs  __cvtfak
+ 0000:0000  Abs  FISRQQ
+ 0000:0000  Abs  FICRQQ
+ 0000:0000  Abs  FJSRQQ
+ 0000:0000  Abs  FIERQQ
+ 0000:0000  Abs  FIARQQ
+ 0000:0000  Abs  FIDRQQ
+ 0000:0000  Abs  __turboCvt
+ 0000:0000  Abs  FIWRQQ
+ 0000:0000  Abs  FJARQQ
  0000:000C  Abs  __AHSHIFT
  0000:1000  Abs  __AHINCR
  0000:0146       __cleanup
@@ -697,8 +710,8 @@
  0000:3B83       __write
  0000:3B9F       _ioctl
  0000:3BCC       _localeconv
- 0000:3BD6       LXMUL@
  0000:3BD6       F_LXMUL@
+ 0000:3BD6       LXMUL@
  0000:3BED       N_LDIV@
  0000:3BF0       LDIV@
  0000:3BF0       F_LDIV@
@@ -712,8 +725,8 @@
  0000:3C07       LUMOD@
  0000:3C07       F_LUMOD@
  0000:3C9B       N_LXLSH@
- 0000:3C9E       F_LXLSH@
  0000:3C9E       LXLSH@
+ 0000:3C9E       F_LXLSH@
  0000:3CBC       N_LXMUL@
  0000:3CD3       __LONGTOA
  0000:3D55       __UTOA
@@ -813,297 +826,310 @@
  0903:0006       _load_global_fonts
  0903:006B       _unload_global_fonts
  090D:0000       _init_battle
- 090D:00D3       _draw_action_bar
- 090D:0184       _draw_card
- 090D:0233       _destroy_battle
- 090D:029D       _update_battle
- 090D:02F1       _render_battle
- 090D:032F       _keypress_battle_select
- 090D:0391       _keypress_battle
- 090D:03F5       _enter_step_intro
- 090D:0459       _render_step_intro
- 090D:04DA       _update_step_intro
- 090D:0519       _keypress_step_intro
- 090D:051E       _enter_step_select
- 090D:0541       _draw_player_info
- 090D:0568       _render_step_select
- 090D:0598       _update_step_select
- 090D:059D       _keypress_step_select
- 090D:064D       _enter_step_play
- 090D:06A3       _render_step_play
- 090D:06E1       _update_step_play
- 090D:06E6       _keypress_step_play
- 090D:0748       _enter_step_score
- 090D:0779       _render_step_score
- 090D:07AC       _update_step_score
- 090D:07B1       _keypress_step_score
- 0988:000E       _draw_menu_bg
- 0988:0018       _draw_menu_title
- 0988:002D       _init_menu
- 0988:00DC       _update_menu
- 0988:011A       _draw_menu_box
- 0988:0139       _render_menu
- 0988:018E       _destroy_menu
- 0988:01A8       _keypress_menu
- 09A9:0003       _setPITRate
- 09A9:0034       _newTimer
- 09A9:007D       _init_timer
- 09A9:00BC       _remove_timer
- 09B6:000C       _opl_write
- 09B6:0034       _opl_set_modulator
- 09B6:0096       _opl_set_carrier
- 09B6:00F8       _opl_set_carrier_20h
- 09B6:0117       _opl_set_modulator_20h
- 09B6:0136       _opl_play_note
- 09B6:0178       _opl_play_note_fullscale
- 09B6:01B0       _opl_stop_note
- 09B6:01D7       _opl_init_percussion
- 09B6:0296       _opl_stop_percussion_notes
- 09B6:02A7       _opl_init
- 09B6:0346       _opl_cleanup
- 09B6:0372       _play_next_note
- 09B6:050D       _set_tempo
- 09B6:056E       _set_instrument
- 09B6:05C0       _music_timer
- 09B6:0602       _play_song
- 09B6:066F       _play_battle_song
- 09B6:0689       _play_menu_song
- 09B6:06A3       _stop_song
- 0A21:0004       _load_ui_assets
- 0A21:0029       _unload_ui_assets
- 0A21:004E       _resolve_sprite
- 0A21:006D       _draw_ui_sprite
- 0A21:00D4       _draw_ui_sprite_img
- 0A21:032C       _backdrop_init
- 0A21:0360       _backdrop_draw
- 0A21:037E       _backdrop_draw_part
- 0A21:03B0       _backdrop_free
- 0A5E:0004       _load_book
- 0A5E:00BE       _load_books
- 0A5E:00F9       _unload_books
- 0A5E:012E       _get_random_sentence_book
- 0A5E:016E       _get_random_sentence
- 0A79:0001       _set_initial_state
- 0A84:0003       _get_key_event
- 0A87:000B       _parseFntFile
- 0A87:031F       _getKerning
- 0A87:036E       _draw_text
- 0A87:03DD       _get_text_glyphs
- 0A87:0822       _render_text_glyphs
- 0A87:092B       _validate_font_bitmap
- 0B2A:000E       _fskip
- 0B2A:002D       _load_bmp
- 0B2A:02D8       _draw_bitmap
- 0B2A:0306       _draw_transparent_bitmap
- 0B2A:0334       _image_byte_pos
- 0B2A:0342       _draw_bitmap_sprite
- 0B7A:000D       _set_video_mode
- 0B7A:0019       _create_offscreen_buffer
- 0B7A:0052       _wait_for_retrace
- 0B7A:006E       _show_offscreen_buffer
- 0B7A:009D       _delete_offscreen_buffer
- 0B7A:00BB       _set_palette
- 0B7A:00E5       _set_shared_palette
- 0B89:0005       _draw_fill
- 0B89:0023       _draw_pixel
- 0B89:0048       _draw_rect
- 0B94:000A       _update_screen
- 0B94:002C       _render_screen
- 0B94:004E       _show_loading
- 0B94:0082       _change_screen
- 0B94:00CB       _on_keypress
- 0B94:0101       _exit_program
- 0B94:010C       _main
- 0BBD:003F       e087_Trap
- 0BBD:04E0       e087_Entry
- 0BBD:05A3       e087_Shortcut
- 0C19:0000       string::string(const string far&)
- 0C19:00E9       string::string(const char far*)
- 0C19:0305       string::~string()
- 0C19:038C       string::assert_element(unsigned int) const
- 0C19:044A       string::assert_index(unsigned int) const
- 0C19:0508       tsubstring::assert_element(unsigned int) const
- 0C19:05C3       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
- 0C19:06AC       tstringref::~tstringref()
- 0C19:070D       tstringref::reserve(unsigned int)
- 0C19:077B       tstringref::check_freeboard()
- 0C19:07E3       tstringref::grow_to(unsigned int)
- 0C19:0845       tstringref::round_capacity(unsigned int)
- 0C19:0884       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
- 0C19:0A43       string::set_case_sensitive(int)
- 0C19:0A60       string::set_paranoid_check(int)
- 0C19:0A7D       string::skip_whitespace(int)
- 0C19:0A9A       string::initial_capacity(unsigned int)
- 0C19:0AB7       string::resize_increment(unsigned int)
- 0C19:0AE1       string::max_waste(unsigned int)
- 0CDE:0000       DATASEG@
- 0CDE:005A       __Int0Vector
- 0CDE:005E       __Int4Vector
- 0CDE:0062       __Int5Vector
- 0CDE:0066       __Int6Vector
- 0CDE:006A       __C0argc
- 0CDE:006C       __C0argv
- 0CDE:0070       __C0environ
- 0CDE:0074       __envLng
- 0CDE:0076       __envseg
- 0CDE:0078       __envSize
- 0CDE:007A       __psp
- 0CDE:007C       __version
- 0CDE:007C       __osversion
- 0CDE:007C       __osmajor
- 0CDE:007D       __osminor
- 0CDE:007E       _errno
- 0CDE:0080       __Exception_list
- 0CDE:0082       ___brklvl
- 0CDE:0084       __heapbase
- 0CDE:0088       __brklvl
- 0CDE:008C       __heaptop
- 0CDE:022E       _menuItems
- 0CDE:026A       _redraw_menu
- 0CDE:026C       _init_redraw_menu
- 0CDE:026E       _menu_width
- 0CDE:0270       _menu_height
- 0CDE:0272       _menu_x
- 0CDE:0274       _menu_y
- 0CDE:029E       _flookup
- 0CDE:02B6       _modulator_offsets
- 0CDE:02BF       _carrier_offsets
- 0CDE:02C8       _sequence_counter
- 0CDE:02CA       _note_counter
- 0CDE:02CC       _bass_drum_6
- 0CDE:02E4       _snare_hihat_7
- 0CDE:02FC       _tom_cymbal_8
- 0CDE:0314       _menu_song
- 0CDE:09D2       _battle_song
- 0CDE:1090       _flood_song
- 0CDE:1752       _backdrop_loaded
- 0CDE:1784       _thisIsNotRandom
- 0CDE:1AD4       _shared_palette
- 0CDE:1DD4       _video_buffer
- 0CDE:1DD8       _offscreen_buffer
- 0CDE:1E4A       __default87
- 0CDE:1E4C       __protected
- 0CDE:1E4E       __LDT
- 0CDE:1E50       __8087
- 0CDE:1F6C       __wscroll
- 0CDE:1F6E       __video
- 0CDE:1F7E       __directvideo
- 0CDE:1F88       __cFlag
- 0CDE:1F89       __cChar
- 0CDE:1F8A       __streams
- 0CDE:2372       __nfile
- 0CDE:2374       __openfd
- 0CDE:23D8       __fmode
- 0CDE:23DA       __notUmask
- 0CDE:23E6       __doserrno
- 0CDE:23E8       __dosErrorToSV
- 0CDE:252A       __sys_errlist
- 0CDE:25EA       __sys_nerr
- 0CDE:2800       __localeconvention
- 0CDE:283C       __ctype
- 0CDE:293E       __fpstklen
- 0CDE:2972       __stklen
- 0CDE:2974       ___xalloc
- 0CDE:298A       __8086
- 0CDE:298C       __atexitcnt
- 0CDE:298E       __exitbuf
- 0CDE:2992       __exitfopen
- 0CDE:2996       __exitopen
- 0CDE:29E6       ___CPPexceptionList
- 0CDE:29EA       ___exceptFlags
- 0CDE:29EC       ___savedDS
- 0CDE:29EE       ___savedSI
- 0CDE:29F0       ___terminatePTR
- 0CDE:29F4       ___unexpectdPTR
- 0CDE:29F8       ___terminate_DS
- 0CDE:29FA       ___unexpectd_DS
- 0CDE:29FC       ___throwFileName
- 0CDE:2A00       ___throwLineNumber
- 0CDE:2A02       ___throwExceptionName
- 0CDE:2A06       ___exceptStaticBuffP
- 0CDE:2A0A       ___exceptMemAllocVars
- 0CDE:2A0E       ___exceptionNameBuff
- 0CDE:2A8E       ___ExceptStaticXbuff
- 0CDE:2B20       string::case_sensitive
- 0CDE:2B22       string::paranoid_check
- 0CDE:2B24       string::skip_white
- 0CDE:2B26       string::initial_capac
- 0CDE:2B28       string::resize_inc
- 0CDE:2B2A       string::freeboard
- 0CDE:2B86       __RealCvtVector
- 0CDE:2B8A       __ScanTodVector
- 0CDE:2BD8       _card_header
- 0CDE:2BDC       _cards
- 0CDE:2BE0       _enemy_header
- 0CDE:2BE4       _enemies
- 0CDE:2BE8       _venice_fontimg
- 0CDE:2BF0       _venice_font
- 0CDE:4AA8       _silk_fontimg
- 0CDE:4AB0       _silk_font
- 0CDE:6968       _pixantiqua_fontimg
- 0CDE:6970       _pixantiqua_font
- 0CDE:8828       _sprite_x
- 0CDE:882A       _sprite_y
- 0CDE:882C       _i
- 0CDE:882E       _x
- 0CDE:8830       _y
- 0CDE:8832       _k
- 0CDE:8834       _action_bar
- 0CDE:883C       _action_highlight
- 0CDE:8844       _action_sword
- 0CDE:884C       _action_heal
- 0CDE:8854       _action_fire
- 0CDE:885C       _cardbg
- 0CDE:8864       _activeCardText
- 0CDE:94E6       _activeCardTitle
- 0CDE:A168       _curRenderChar
- 0CDE:A170       _curGlyph
- 0CDE:A172       _errors
- 0CDE:A174       _quitEarly
- 0CDE:A176       _curCard
- 0CDE:A178       _enemyId
- 0CDE:A17A       _scoreText
- 0CDE:A27A       _activeCard
- 0CDE:A27C       _finishCount
- 0CDE:A27E       _redrawFlag
- 0CDE:A280       _initRender
- 0CDE:A282       _spellType
- 0CDE:A284       _step
- 0CDE:A286       _intro_done
- 0CDE:A288       _stepTicks
- 0CDE:A28C       _introTextTitle
- 0CDE:AF0E       _introTextName
- 0CDE:BB90       _currentEnemy
- 0CDE:BBA6       _currentItem
- 0CDE:BBA8       _menuGlyphs
- 0CDE:E12E       _menu_title
- 0CDE:E136       _ticks60
- 0CDE:E13A       _oldTimer
- 0CDE:E13E       _accumulator
- 0CDE:E140       _opl2
- 0CDE:E142       _opl3
- 0CDE:E144       _music_note_duration
- 0CDE:E146       _music_bpm
- 0CDE:E148       _music_resolution
- 0CDE:E14A       _next_note_tick
- 0CDE:E14E       _currentSong
- 0CDE:E80C       _ui_metal_box_img
- 0CDE:E814       _ui_scroll_img
- 0CDE:E81C       _backdrop
- 0CDE:E824       _heal_book
- 0CDE:E828       _ability_book
- 0CDE:E82C       _attack_book
- 0CDE:E830       _temporary_sentence
- 0CDE:E8F8       _game_state
- 0CDE:E996       _key
- 0CDE:E99A       _forceExit
- 0CDE:E99C       _lastTick
- 0CDE:E9A0       _lastRenderTick
- 0CDE:E9B6       __new_handler
- 0CDE:E9BE       __atexittbl
- 0CDE:EA3E       ___SignalPtr
- 0CDE:EA4A       __DestructorCountPtr
- 1B84:0020       __emu
+ 090D:00F0       _draw_action_bar
+ 090D:01CE       _draw_card
+ 090D:027D       _destroy_battle
+ 090D:02E7       _update_battle
+ 090D:0344       _render_battle
+ 090D:038B       _keypress_battle_select
+ 090D:03ED       _keypress_battle
+ 090D:0460       _enter_step_intro
+ 090D:04C4       _render_step_intro
+ 090D:0545       _update_step_intro
+ 090D:0584       _keypress_step_intro
+ 090D:0589       _enter_step_select
+ 090D:05B2       _draw_player_info
+ 090D:0622       _draw_enemy_info
+ 090D:0693       _render_step_select
+ 090D:06C7       _update_step_select
+ 090D:06CC       _keypress_step_select
+ 090D:077C       _enter_step_play
+ 090D:07E2       _render_step_play
+ 090D:0824       _update_step_play
+ 090D:0829       _on_play_end
+ 090D:08D6       _on_enemy_play_end
+ 090D:0981       _keypress_step_play
+ 090D:09E2       _enter_step_score
+ 090D:0A1C       _render_step_score
+ 090D:0A4F       _update_step_score
+ 090D:0A54       _keypress_step_score
+ 090D:0A61       _get_random_card
+ 090D:0A8E       _enter_step_enemyplay
+ 090D:0B6A       _render_step_enemyplay
+ 090D:0BDC       _update_step_enemyplay
+ 090D:0C2D       _keypress_step_enemyplay
+ 09D0:0002       _draw_menu_bg
+ 09D0:000C       _draw_menu_title
+ 09D0:0021       _init_menu
+ 09D0:00D0       _update_menu
+ 09D0:010E       _draw_menu_box
+ 09D0:012D       _render_menu
+ 09D0:0182       _destroy_menu
+ 09D0:019C       _keypress_menu
+ 09F0:0007       _setPITRate
+ 09F0:0038       _newTimer
+ 09F0:0081       _init_timer
+ 09F0:00C0       _remove_timer
+ 09FE:0000       _opl_write
+ 09FE:0028       _opl_set_modulator
+ 09FE:008A       _opl_set_carrier
+ 09FE:00EC       _opl_set_carrier_20h
+ 09FE:010B       _opl_set_modulator_20h
+ 09FE:012A       _opl_play_note
+ 09FE:016C       _opl_play_note_fullscale
+ 09FE:01A4       _opl_stop_note
+ 09FE:01CB       _opl_init_percussion
+ 09FE:028A       _opl_stop_percussion_notes
+ 09FE:029B       _opl_init
+ 09FE:033A       _opl_cleanup
+ 09FE:0366       _play_next_note
+ 09FE:0501       _set_tempo
+ 09FE:0562       _set_instrument
+ 09FE:05B4       _music_timer
+ 09FE:05F6       _play_song
+ 09FE:0663       _play_battle_song
+ 09FE:067D       _play_menu_song
+ 09FE:0697       _stop_song
+ 0A68:0008       _load_ui_assets
+ 0A68:002D       _unload_ui_assets
+ 0A68:0052       _resolve_sprite
+ 0A68:0071       _draw_ui_sprite
+ 0A68:00D8       _draw_ui_sprite_img
+ 0A68:0330       _backdrop_init
+ 0A68:0364       _backdrop_draw
+ 0A68:0382       _backdrop_draw_part
+ 0A68:03B4       _backdrop_free
+ 0AA5:0008       _load_book
+ 0AA5:00C2       _load_books
+ 0AA5:00FD       _unload_books
+ 0AA5:0132       _get_random_sentence_book
+ 0AA5:0172       _get_random_sentence
+ 0AC0:0005       _set_initial_state
+ 0ACB:000F       _get_key_event
+ 0ACF:0007       _parseFntFile
+ 0ACF:031B       _getKerning
+ 0ACF:036A       _draw_text
+ 0ACF:03D9       _get_text_glyphs
+ 0ACF:081E       _render_text_glyph
+ 0ACF:0910       _render_text_glyphs
+ 0ACF:0941       _validate_font_bitmap
+ 0B74:0004       _fskip
+ 0B74:0023       _load_bmp
+ 0B74:02CE       _draw_bitmap
+ 0B74:02FC       _draw_transparent_bitmap
+ 0B74:032A       _image_byte_pos
+ 0B74:0338       _draw_bitmap_sprite
+ 0BC4:0003       _set_video_mode
+ 0BC4:000F       _create_offscreen_buffer
+ 0BC4:0048       _wait_for_retrace
+ 0BC4:0064       _show_offscreen_buffer
+ 0BC4:0093       _delete_offscreen_buffer
+ 0BC4:00B1       _set_palette
+ 0BC4:00DB       _set_shared_palette
+ 0BD2:000B       _draw_fill
+ 0BD2:0029       _draw_pixel
+ 0BD2:004E       _draw_rect
+ 0BDE:0000       _update_screen
+ 0BDE:0022       _render_screen
+ 0BDE:0044       _show_loading
+ 0BDE:0078       _change_screen
+ 0BDE:00C1       _on_keypress
+ 0BDE:00F7       _exit_program
+ 0BDE:0102       _main
+ 0C06:003F       e087_Trap
+ 0C06:04E0       e087_Entry
+ 0C06:05A3       e087_Shortcut
+ 0C62:0000       string::string(const string far&)
+ 0C62:00E9       string::string(const char far*)
+ 0C62:0305       string::~string()
+ 0C62:038C       string::assert_element(unsigned int) const
+ 0C62:044A       string::assert_index(unsigned int) const
+ 0C62:0508       tsubstring::assert_element(unsigned int) const
+ 0C62:05C3       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
+ 0C62:06AC       tstringref::~tstringref()
+ 0C62:070D       tstringref::reserve(unsigned int)
+ 0C62:077B       tstringref::check_freeboard()
+ 0C62:07E3       tstringref::grow_to(unsigned int)
+ 0C62:0845       tstringref::round_capacity(unsigned int)
+ 0C62:0884       tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
+ 0C62:0A43       string::set_case_sensitive(int)
+ 0C62:0A60       string::set_paranoid_check(int)
+ 0C62:0A7D       string::skip_whitespace(int)
+ 0C62:0A9A       string::initial_capacity(unsigned int)
+ 0C62:0AB7       string::resize_increment(unsigned int)
+ 0C62:0AE1       string::max_waste(unsigned int)
+ 0D27:0000       DATASEG@
+ 0D27:005A       __Int0Vector
+ 0D27:005E       __Int4Vector
+ 0D27:0062       __Int5Vector
+ 0D27:0066       __Int6Vector
+ 0D27:006A       __C0argc
+ 0D27:006C       __C0argv
+ 0D27:0070       __C0environ
+ 0D27:0074       __envLng
+ 0D27:0076       __envseg
+ 0D27:0078       __envSize
+ 0D27:007A       __psp
+ 0D27:007C       __version
+ 0D27:007C       __osversion
+ 0D27:007C       __osmajor
+ 0D27:007D       __osminor
+ 0D27:007E       _errno
+ 0D27:0080       __Exception_list
+ 0D27:0082       ___brklvl
+ 0D27:0084       __heapbase
+ 0D27:0088       __brklvl
+ 0D27:008C       __heaptop
+ 0D27:0274       _menuItems
+ 0D27:02B0       _redraw_menu
+ 0D27:02B2       _init_redraw_menu
+ 0D27:02B4       _menu_width
+ 0D27:02B6       _menu_height
+ 0D27:02B8       _menu_x
+ 0D27:02BA       _menu_y
+ 0D27:02E4       _flookup
+ 0D27:02FC       _modulator_offsets
+ 0D27:0305       _carrier_offsets
+ 0D27:030E       _sequence_counter
+ 0D27:0310       _note_counter
+ 0D27:0312       _bass_drum_6
+ 0D27:032A       _snare_hihat_7
+ 0D27:0342       _tom_cymbal_8
+ 0D27:035A       _menu_song
+ 0D27:0A18       _battle_song
+ 0D27:10D6       _flood_song
+ 0D27:1798       _backdrop_loaded
+ 0D27:17CA       _thisIsNotRandom
+ 0D27:1B1A       _shared_palette
+ 0D27:1E1A       _video_buffer
+ 0D27:1E1E       _offscreen_buffer
+ 0D27:1E90       __default87
+ 0D27:1E92       __protected
+ 0D27:1E94       __LDT
+ 0D27:1EA0       __8087
+ 0D27:1FBC       __wscroll
+ 0D27:1FBE       __video
+ 0D27:1FCE       __directvideo
+ 0D27:1FD8       __cFlag
+ 0D27:1FD9       __cChar
+ 0D27:1FDA       __streams
+ 0D27:23C2       __nfile
+ 0D27:23C4       __openfd
+ 0D27:2428       __fmode
+ 0D27:242A       __notUmask
+ 0D27:2436       __doserrno
+ 0D27:2438       __dosErrorToSV
+ 0D27:257A       __sys_errlist
+ 0D27:263A       __sys_nerr
+ 0D27:2850       __localeconvention
+ 0D27:288C       __ctype
+ 0D27:298E       __fpstklen
+ 0D27:29C2       __stklen
+ 0D27:29C4       ___xalloc
+ 0D27:29DA       __8086
+ 0D27:29DC       __atexitcnt
+ 0D27:29DE       __exitbuf
+ 0D27:29E2       __exitfopen
+ 0D27:29E6       __exitopen
+ 0D27:2A36       ___CPPexceptionList
+ 0D27:2A3A       ___exceptFlags
+ 0D27:2A3C       ___savedDS
+ 0D27:2A3E       ___savedSI
+ 0D27:2A40       ___terminatePTR
+ 0D27:2A44       ___unexpectdPTR
+ 0D27:2A48       ___terminate_DS
+ 0D27:2A4A       ___unexpectd_DS
+ 0D27:2A4C       ___throwFileName
+ 0D27:2A50       ___throwLineNumber
+ 0D27:2A52       ___throwExceptionName
+ 0D27:2A56       ___exceptStaticBuffP
+ 0D27:2A5A       ___exceptMemAllocVars
+ 0D27:2A5E       ___exceptionNameBuff
+ 0D27:2ADE       ___ExceptStaticXbuff
+ 0D27:2B70       string::case_sensitive
+ 0D27:2B72       string::paranoid_check
+ 0D27:2B74       string::skip_white
+ 0D27:2B76       string::initial_capac
+ 0D27:2B78       string::resize_inc
+ 0D27:2B7A       string::freeboard
+ 0D27:2BD6       __RealCvtVector
+ 0D27:2BDA       __ScanTodVector
+ 0D27:2C28       _card_header
+ 0D27:2C2C       _cards
+ 0D27:2C30       _enemy_header
+ 0D27:2C34       _enemies
+ 0D27:2C38       _venice_fontimg
+ 0D27:2C40       _venice_font
+ 0D27:4AF8       _silk_fontimg
+ 0D27:4B00       _silk_font
+ 0D27:69B8       _pixantiqua_fontimg
+ 0D27:69C0       _pixantiqua_font
+ 0D27:8878       _sprite_x
+ 0D27:887A       _sprite_y
+ 0D27:887C       _i
+ 0D27:887E       _x
+ 0D27:8880       _y
+ 0D27:8882       _k
+ 0D27:8884       _action_bar
+ 0D27:888C       _action_highlight
+ 0D27:8894       _action_sword
+ 0D27:889C       _action_heal
+ 0D27:88A4       _action_fire
+ 0D27:88AC       _cardbg
+ 0D27:88B4       _activeCardText
+ 0D27:9536       _activeCardTitle
+ 0D27:A1B8       _curRenderChar
+ 0D27:A1C0       _curGlyph
+ 0D27:A1C2       _errors
+ 0D27:A1C4       _quitEarly
+ 0D27:A1C6       _curCard
+ 0D27:A1C8       _enemyId
+ 0D27:A1CA       _scoreText
+ 0D27:A2CA       _activeCard
+ 0D27:A2CC       _finishCount
+ 0D27:A2CE       _redrawFlag
+ 0D27:A2D0       _initRender
+ 0D27:A2D2       _spellType
+ 0D27:A2D4       _lastRenderedGlyph
+ 0D27:A2D6       _enemy_chars_per_sec
+ 0D27:A2DE       _enemy_error_chance
+ 0D27:A2E6       _enemyTypeTick
+ 0D27:A2EA       _step
+ 0D27:A2EC       _intro_done
+ 0D27:A2EE       _stepTicks
+ 0D27:A2F2       _introTextTitle
+ 0D27:AF74       _introTextName
+ 0D27:BBF6       _currentEnemy
+ 0D27:BC0C       _currentItem
+ 0D27:BC0E       _menuGlyphs
+ 0D27:E194       _menu_title
+ 0D27:E19C       _ticks60
+ 0D27:E1A0       _oldTimer
+ 0D27:E1A4       _accumulator
+ 0D27:E1A6       _opl2
+ 0D27:E1A8       _opl3
+ 0D27:E1AA       _music_note_duration
+ 0D27:E1AC       _music_bpm
+ 0D27:E1AE       _music_resolution
+ 0D27:E1B0       _next_note_tick
+ 0D27:E1B4       _currentSong
+ 0D27:E872       _ui_metal_box_img
+ 0D27:E87A       _ui_scroll_img
+ 0D27:E882       _backdrop
+ 0D27:E88A       _heal_book
+ 0D27:E88E       _ability_book
+ 0D27:E892       _attack_book
+ 0D27:E896       _temporary_sentence
+ 0D27:E95E       _game_state
+ 0D27:E9FE       _key
+ 0D27:EA02       _forceExit
+ 0D27:EA04       _lastTick
+ 0D27:EA08       _lastRenderTick
+ 0D27:EA1E       __new_handler
+ 0D27:EA26       __atexittbl
+ 0D27:EAA6       ___SignalPtr
+ 0D27:EAB2       __DestructorCountPtr
+ 1BD3:0020       __emu
 
 Program entry point at 0000:0000
 

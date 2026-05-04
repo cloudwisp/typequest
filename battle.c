@@ -17,6 +17,7 @@
 #include "sound.h"
 #include "enemies.h"
 #include "ui.h"
+#include "book.h"
 
 int sprite_x, sprite_y;
 int i,x,y;
@@ -46,6 +47,10 @@ int finishCount;
 int redrawFlag;
 int initRender;
 int spellType;
+int lastRenderedGlyph;
+double enemy_chars_per_sec;
+double enemy_error_chance;
+unsigned long enemyTypeTick;
 BattleStep step;
 
 //intro state
@@ -80,6 +85,13 @@ void init_battle(){
   load_bmp("comasset/fire.bmp", &action_fire);
 
   get_enemy(enemyId, &currentEnemy);
+  game_state.enemyid = enemyId;
+  game_state.enemystats.health = currentEnemy.Health; //TODO: populate other enemy stats
+  game_state.enemystats.dexterity = 70;
+  game_state.enemystats.maxhealth = currentEnemy.Health;
+
+  //reset player health
+  game_state.stats.health = game_state.stats.maxhealth;
 
   enter_step_intro();
 
@@ -87,18 +99,31 @@ void init_battle(){
 }
 
 void draw_action_bar(){
-   int bar_x, bar_y, offset_x, offset_y, gap;
+   int bar_x, bar_y, offset_x, offset_y, gap, spellOffset;
    bar_x = SCREEN_WIDTH - 10 - action_bar.width;
    bar_y = SCREEN_HEIGHT - action_bar.height;
    offset_x = 12; //spell pos from left
    offset_y = 5; //spell pos from top
    gap = 6;
 
+   spellOffset = 0;
+   switch (spellType){
+      case SPELL_ATTACK:
+      spellOffset = 0;
+      break;
+      case SPELL_ABILITY:
+      spellOffset = 1;
+      break;
+      case SPELL_HEAL:
+      spellOffset = 2;
+      break;
+   }
+
    draw_transparent_bitmap(&action_bar, bar_x, bar_y);
    draw_bitmap(&action_sword, bar_x + offset_x, bar_y + offset_y);
    draw_bitmap(&action_fire, bar_x + offset_x + 16 + gap, bar_y + offset_y);
    draw_bitmap(&action_heal, bar_x + offset_x + ((16 + gap) * 2), bar_y + offset_y);
-   draw_transparent_bitmap(&action_highlight, bar_x + 8 + ((16 + gap) * spellType), bar_y + 1);
+   draw_transparent_bitmap(&action_highlight, bar_x + 8 + ((16 + gap) * spellOffset), bar_y + 1);
 }
 
 void draw_card(){
@@ -143,6 +168,9 @@ void update_battle(){
       case Play:
       	update_step_play();
       break;
+      case EnemyPlay:
+         update_step_enemyplay();
+      break;
       case Score:
       	update_step_score();
       break;
@@ -161,6 +189,9 @@ void render_battle(){
       break;
       case Play:
       	render_step_play();
+      break;
+      case EnemyPlay:
+         render_step_enemyplay();
       break;
       case Score:
       	render_step_score();
@@ -210,6 +241,9 @@ void keypress_battle(KeyEvent key){
       case Play:
       	keypress_step_play(key);
       break;
+      case EnemyPlay:
+         keypress_step_enemyplay(key);
+         break;
       case Score:
       	keypress_step_score(key);
       break;
@@ -267,17 +301,31 @@ void enter_step_select(){
    stepTicks = 0;
    redrawFlag = 1;
    initRender = 1;
+   activeCard = game_state.inventory[0];
 }
 
 
 void draw_player_info(){
-	draw_text(&silk_font, &silk_fontimg, game_state.player_name, 0, 0, 320, 200, ALIGN_CENTER, ALIGN_TOP);
+   byte buffer[20];
+   backdrop_draw_part(0, 0, 50, 24);
+	draw_text(&silk_font, &silk_fontimg, game_state.player_name, 0, 0, 320, 12, ALIGN_LEFT, ALIGN_TOP);
+   sprintf(&buffer, "Health: %d", game_state.stats.health);
+   draw_text(&silk_font, &silk_fontimg, buffer, 0, 12, 320, 12, ALIGN_LEFT, ALIGN_TOP);
+}
+
+void draw_enemy_info(){
+   byte buffer[20];
+   backdrop_draw_part(320 - 50, 0, 50, 24);
+	draw_text(&silk_font, &silk_fontimg, currentEnemy.Name, 0, 0, 320, 12, ALIGN_RIGHT, ALIGN_TOP);
+   sprintf(&buffer, "Health: %d", game_state.enemystats.health );
+   draw_text(&silk_font, &silk_fontimg, buffer, 0, 12, 320, 12, ALIGN_RIGHT, ALIGN_TOP);
 }
 
 void render_step_select(){
    if (initRender){
       backdrop_draw();
       draw_player_info();
+      draw_enemy_info();
       initRender = 0;
    }
    if (redrawFlag){
@@ -288,7 +336,7 @@ void render_step_select(){
 }
 
 void update_step_select(){
-
+   
 }
 
 void keypress_step_select(KeyEvent key){
@@ -300,16 +348,17 @@ void keypress_step_select(KeyEvent key){
       } else if (key.code == KEY_ENTER){
       	enter_step_play();
       } else if (key.code == 49){
+         //TODO: Switch out the inventory items to scroll through based on spell type
          // numeric 1
-         spellType = 0; //TODO: add enum or def for these types
+         spellType = SPELL_ATTACK;
          redrawFlag = 1;
       } else if (key.code == 0x32){
          // numeric 2
-         spellType = 1;
+         spellType = SPELL_ABILITY;
          redrawFlag = 1;
       } else if (key.code == 0x33){
          // numeric 3
-         spellType = 2;
+         spellType = SPELL_HEAL;
          redrawFlag = 1;
       }
    } else if (key.code == KEY_RIGHT){
@@ -339,13 +388,17 @@ void enter_step_play(){
    stepTicks = 0;
    initRender = 1;
    redrawFlag = 1;
-   get_text_glyphs(&pixantiqua_font, &activeCardText, &(cards[activeCard].Description), 10, 10, 300, 140, ALIGN_RIGHT, ALIGN_MIDDLE);
+   curGlyph = 0;
+   lastRenderedGlyph = 0;
+
+   get_text_glyphs(&pixantiqua_font, &activeCardText, get_random_sentence(cards[activeCard].EffectType), 10, 10, 300, 140, ALIGN_RIGHT, ALIGN_MIDDLE);
 }
 
 void render_step_play(){
    if (initRender){
       backdrop_draw();
       draw_player_info();
+      draw_enemy_info();
       initRender = 0;
    }
 	//currently the text can overlay previously rendered text. Use redraw flag if we're adding animations or anything.
@@ -360,6 +413,70 @@ void update_step_play(){
 	//TODO: count/calculate WPM and timeout
 }
 
+void on_play_end(){
+   int success = 1; //TODO: compute accuracy and WPM and compare it against the card stats
+   int newEnemyHealth;
+   int newPlayerHealth;
+   if (!success){
+      enter_step_enemyplay();
+   }
+   newEnemyHealth = game_state.enemystats.health;
+   newPlayerHealth = game_state.stats.health;
+   
+   switch (cards[activeCard].EffectType){
+      case SPELL_ATTACK:
+         newEnemyHealth = game_state.enemystats.health - cards[activeCard].Effect;
+      case SPELL_HEAL:
+         newPlayerHealth = game_state.stats.health + cards[activeCard].Effect;
+   }
+   if (newEnemyHealth <= 0){
+      game_state.enemystats.health = 0;
+      //enter_step_score();
+      enter_step_select();
+      return;
+   } else {
+      game_state.enemystats.health = newEnemyHealth;
+   }
+   if (newPlayerHealth >= game_state.stats.maxhealth){
+      game_state.stats.health = game_state.stats.maxhealth;
+   } else {
+      game_state.stats.health = newPlayerHealth;
+   }
+   enter_step_enemyplay();
+}
+
+void on_enemy_play_end(){
+   int success = 1; //TODO: compute accuracy and WPM and compare it against the card stats
+   int newEnemyHealth;
+   int newPlayerHealth;
+   if (!success){
+      enter_step_select();
+   }
+   newEnemyHealth = game_state.enemystats.health;
+   newPlayerHealth = game_state.stats.health;
+   
+   switch (cards[activeCard].EffectType){
+      case SPELL_ATTACK:
+         newPlayerHealth = game_state.stats.health - cards[activeCard].Effect;
+      case SPELL_HEAL:
+         newEnemyHealth = game_state.enemystats.health + cards[activeCard].Effect;
+   }
+   if (newPlayerHealth <= 0){
+      game_state.stats.health = 0;
+      enter_step_select();
+      //enter_step_score();
+      return;
+   } else {
+      game_state.stats.health = newPlayerHealth;
+   }
+   if (newEnemyHealth >= game_state.enemystats.maxhealth){
+      game_state.enemystats.health = game_state.enemystats.maxhealth;
+   } else {
+      game_state.enemystats.health = newEnemyHealth;
+   }
+   enter_step_select();
+}
+
 void keypress_step_play(KeyEvent key){
 	if (key.isAscii){
    	if (key.code == activeCardText.glyphs[curGlyph].charId){
@@ -370,7 +487,7 @@ void keypress_step_play(KeyEvent key){
    	}
    	curGlyph++;
    	if (curGlyph >= activeCardText.glyphCount){
-   		enter_step_score();
+   		on_play_end();
    		return;
    	}
    	activeCardText.glyphs[curGlyph].style = Next;
@@ -382,7 +499,11 @@ void enter_step_score(){
 	step = Score;
    stepTicks = 0;
    initRender = 1;
-	sprintf(scoreText, "You made %d errors", errors);
+   if (game_state.stats.health <= 0){
+      sprintf(scoreText, "You have been defeated");   
+   } else {
+      sprintf(scoreText, "You have defeated your enemy");
+   }
 }
 
 void render_step_score(){
@@ -398,4 +519,84 @@ void update_step_score(){
 
 void keypress_step_score(KeyEvent event){
 	change_screen(Menu); //TODO: Return to overworld or some other screen.
+}
+
+int get_random_card(int spellType){
+   //TODO: The enemy should have its own inventory with limited choice of spells
+   //TODO: for real random instead of just first heal
+   int i;
+   for (i = 0; i < card_header.Count; i++){
+      if (cards[i].Effect != spellType){
+         continue;
+      }
+      return i;
+   }
+   return 0;
+}
+
+void enter_step_enemyplay(){
+   step = EnemyPlay;
+   stepTicks = 0;
+   enemyTypeTick = 0;
+   initRender = 1;
+   redrawFlag = 1;
+   curGlyph = 0;
+   lastRenderedGlyph = 0;
+
+   //here the enemy should decide what action to take.
+   enemy_chars_per_sec = 20 * (game_state.enemystats.dexterity / (double)100); //dexterity is % of peak speed. E.g. 70 is 70% of 6 chars per second
+   enemy_error_chance = game_state.enemystats.endurance / (double)100; //endurance is chance of getting an error for any letter
+   
+   if (game_state.enemystats.health < (game_state.enemystats.maxhealth * 0.2)){
+      //heal below 20%
+      activeCard = get_random_card(SPELL_HEAL);
+   } else {
+      activeCard = get_random_card(SPELL_ATTACK);
+   }
+   
+   get_text_glyphs(&pixantiqua_font, &activeCardText, get_random_sentence(cards[activeCard].EffectType), 10, 10, 150, 180, ALIGN_RIGHT, ALIGN_MIDDLE);
+
+   
+}
+
+void render_step_enemyplay(){
+   int renderGlyph;
+   if (initRender){
+      backdrop_draw();
+      draw_player_info();
+      draw_enemy_info();
+      draw_card();
+      render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &activeCardText, 0);
+      initRender = 0;
+   }
+
+   //currently the text can overlay previously rendered text. Use redraw flag if we're adding animations or anything.
+   if (redrawFlag){
+      for (renderGlyph = lastRenderedGlyph; renderGlyph <= curGlyph; renderGlyph++){
+         render_text_glyph(&pixantiqua_font, &pixantiqua_fontimg, &activeCardText, 0, renderGlyph);
+      }
+      lastRenderedGlyph = curGlyph;
+      redrawFlag = 0;
+   }
+
+}
+ 
+void update_step_enemyplay(){ 
+   if (enemyTypeTick >= 1){
+      redrawFlag = 1;
+      enemyTypeTick = 0;
+      //TODO: error chance for now just make it correct always
+      activeCardText.glyphs[curGlyph].style = Correct;
+      curGlyph++;
+      if (curGlyph >= activeCardText.glyphCount){
+         on_enemy_play_end();
+         return;
+      }
+      
+   }
+   enemyTypeTick++;
+}
+
+void keypress_step_enemyplay(KeyEvent event){
+
 }
