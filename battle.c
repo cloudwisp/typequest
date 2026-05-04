@@ -86,8 +86,11 @@ void init_battle(){
 
   get_enemy(enemyId, &currentEnemy);
   game_state.enemyid = enemyId;
-  game_state.enemystats.health = currentEnemy.Health; //TODO: populate other enemy stats
+  //TODO: populate enemy stats from data file.
+  game_state.enemystats.health = currentEnemy.Health; 
   game_state.enemystats.dexterity = 70;
+  game_state.enemystats.damage = 80;
+  game_state.enemystats.mana = 90;
   game_state.enemystats.maxhealth = currentEnemy.Health;
 
   //reset player health
@@ -395,15 +398,21 @@ void enter_step_play(){
 }
 
 void render_step_play(){
+   int renderGlyph;
    if (initRender){
       backdrop_draw();
       draw_player_info();
       draw_enemy_info();
+      render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &activeCardText, 0);
       initRender = 0;
    }
-	//currently the text can overlay previously rendered text. Use redraw flag if we're adding animations or anything.
+	
+   //currently the text can overlay previously rendered text. Use redraw flag if we're adding animations or anything.
    if (redrawFlag){
-      render_text_glyphs(&pixantiqua_font, &pixantiqua_fontimg, &activeCardText, 0);
+      for (renderGlyph = lastRenderedGlyph; renderGlyph <= curGlyph; renderGlyph++){
+         render_text_glyph(&pixantiqua_font, &pixantiqua_fontimg, &activeCardText, 0, renderGlyph);
+      }
+      lastRenderedGlyph = curGlyph;
       redrawFlag = 0;
    }
 	
@@ -415,6 +424,7 @@ void update_step_play(){
 
 void on_play_end(){
    int success = 1; //TODO: compute accuracy and WPM and compare it against the card stats
+   double critical = 1;
    int newEnemyHealth;
    int newPlayerHealth;
    if (!success){
@@ -422,17 +432,23 @@ void on_play_end(){
    }
    newEnemyHealth = game_state.enemystats.health;
    newPlayerHealth = game_state.stats.health;
+
+   if (errors == 0){
+      critical = 1.2;
+   }
    
    switch (cards[activeCard].EffectType){
       case SPELL_ATTACK:
-         newEnemyHealth = game_state.enemystats.health - cards[activeCard].Effect;
+         newEnemyHealth = game_state.enemystats.health - (cards[activeCard].Effect * critical * (game_state.stats.damage / 100.0));
+         break;
       case SPELL_HEAL:
-         newPlayerHealth = game_state.stats.health + cards[activeCard].Effect;
+         newPlayerHealth = game_state.stats.health + (cards[activeCard].Effect * critical * (game_state.stats.mana / 100.0));
+         break;
    }
+
    if (newEnemyHealth <= 0){
       game_state.enemystats.health = 0;
-      //enter_step_score();
-      enter_step_select();
+      enter_step_score();
       return;
    } else {
       game_state.enemystats.health = newEnemyHealth;
@@ -451,20 +467,22 @@ void on_enemy_play_end(){
    int newPlayerHealth;
    if (!success){
       enter_step_select();
+      return;
    }
    newEnemyHealth = game_state.enemystats.health;
    newPlayerHealth = game_state.stats.health;
    
    switch (cards[activeCard].EffectType){
       case SPELL_ATTACK:
-         newPlayerHealth = game_state.stats.health - cards[activeCard].Effect;
+         newPlayerHealth = game_state.stats.health - (cards[activeCard].Effect * (game_state.enemystats.damage / 100.0));
+         break;
       case SPELL_HEAL:
-         newEnemyHealth = game_state.enemystats.health + cards[activeCard].Effect;
+         newEnemyHealth = game_state.enemystats.health + (cards[activeCard].Effect * (game_state.enemystats.mana / 100.0));
+         break;
    }
    if (newPlayerHealth <= 0){
       game_state.stats.health = 0;
-      enter_step_select();
-      //enter_step_score();
+      enter_step_score();
       return;
    } else {
       game_state.stats.health = newPlayerHealth;
@@ -582,7 +600,7 @@ void render_step_enemyplay(){
 }
  
 void update_step_enemyplay(){ 
-   if (enemyTypeTick >= 1){
+   if (enemyTypeTick >= (60 / enemy_chars_per_sec)){
       redrawFlag = 1;
       enemyTypeTick = 0;
       //TODO: error chance for now just make it correct always

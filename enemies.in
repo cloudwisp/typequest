@@ -1,8 +1,8 @@
 [Start]
 name=Gary the Wizard
-health=50
+health=22
 [End]
 [Start]
 name=Disgruntled Orc
-health=20
+health=26
 [End]

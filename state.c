@@ -6,12 +6,12 @@ void set_initial_state(GAME_STATE *state){
    state->difficulty = 0;
    strcpy(state->player_name, "Player 1");
    state->stats.level = 1;
-   state->stats.health = 40;
-   state->stats.maxhealth = 40;
-   state->stats.mana = 40;
+   state->stats.health = 60;
+   state->stats.maxhealth = 60;
+   state->stats.mana = 120;
 	state->stats.endurance = 70;
    state->stats.shield = 40;
-   state->stats.damage = 40;
+   state->stats.damage = 150;
    state->stats.dexterity = 70;
    state->stats.intelligence = 70;
    state->stats.charisma = 70;

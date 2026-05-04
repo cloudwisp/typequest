@@ -49,17 +49,17 @@ Warning typeques.c 166: Call to function 'unload_enemies' with no prototype in f
 Warning typeques.c 167: Call to function 'unload_cards' with no prototype in function main
 Warning typeques.c 168: Call to function 'unload_books' with no prototype in function main
 nction on_play_end
-Warning battle.c 435: Call to function 'enter_step_select' with no prototype in function on_play_end
-Warning battle.c 445: Call to function 'enter_step_enemyplay' with no prototype in function on_play_end
-Warning battle.c 453: Call to function 'enter_step_select' with no prototype in function on_enemy_play_end
-Warning battle.c 466: Call to function 'enter_step_select' with no prototype in function on_enemy_play_end
-Warning battle.c 477: Call to function 'enter_step_select' with no prototype in function on_enemy_play_end
-Warning battle.c 490: Call to function 'on_play_end' with no prototype in function keypress_step_play
-Warning battle.c 511: Call to function 'backdrop_draw' with no prototype in function render_step_score
-Warning battle.c 522: Parameter 'event' is never used in function keypress_step_score
-Warning battle.c 565: Call to function 'backdrop_draw' with no prototype in function render_step_enemyplay
-Warning battle.c 566: Call to function 'draw_player_info' with no prototype in function render_step_enemyplay
-Warning battle.c 567: Call to function 'draw_enemy_info' with no prototype in function render_step_enemyplay
-Warning battle.c 568: Call to function 'draw_card' with no prototype in function render_step_enemyplay
-Warning battle.c 592: Call to function 'on_enemy_play_end' with no prototype in function update_step_enemyplay
-Warning battle.c 602: Parameter 'event' is never used in function keypress_step_enemyplay
+Warning battle.c 451: Call to function 'enter_step_score' with no prototype in function on_play_end
+Warning battle.c 461: Call to function 'enter_step_enemyplay' with no prototype in function on_play_end
+Warning battle.c 469: Call to function 'enter_step_select' with no prototype in function on_enemy_play_end
+Warning battle.c 485: Call to function 'enter_step_score' with no prototype in function on_enemy_play_end
+Warning battle.c 495: Call to function 'enter_step_select' with no prototype in function on_enemy_play_end
+Warning battle.c 508: Call to function 'on_play_end' with no prototype in function keypress_step_play
+Warning battle.c 529: Call to function 'backdrop_draw' with no prototype in function render_step_score
+Warning battle.c 540: Parameter 'event' is never used in function keypress_step_score
+Warning battle.c 583: Call to function 'backdrop_draw' with no prototype in function render_step_enemyplay
+Warning battle.c 584: Call to function 'draw_player_info' with no prototype in function render_step_enemyplay
+Warning battle.c 585: Call to function 'draw_enemy_info' with no prototype in function render_step_enemyplay
+Warning battle.c 586: Call to function 'draw_card' with no prototype in function render_step_enemyplay
+Warning battle.c 610: Call to function 'on_enemy_play_end' with no prototype in function update_step_enemyplay
+Warning battle.c 620: Parameter 'event' is never used in function keypress_step_enemyplay
